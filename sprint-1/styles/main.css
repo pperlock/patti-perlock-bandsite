@@ -1,0 +1,28 @@
+/* Define the global font family */
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next";
+}
+/*# sourceMappingURL=main.css.map */
