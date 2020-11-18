@@ -20,9 +20,189 @@
   font-style: normal;
 }
 
+/*Color Palette*/
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: "Avenir Next";
+  color: #323232;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Media BreakPoints*/
+/*Color Palette*/
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #323232;
+  color: white;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+}
+
+.header__logo {
+  margin: 16px;
+}
+
+.header__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header__nav-item {
+  width: 50%;
+}
+
+.header__nav-item--active {
+  border-bottom: 3px solid white;
+}
+
+.header__nav-link {
+  color: white;
+}
+
+.hero {
+  background-image: url("../assets/images/hero-background.jpg");
+  background-size: cover;
+  color: white;
+  height: 183px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 5%;
+}
+
+.hero__title {
+  width: 70%;
+}
+
+.bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 5%;
+}
+
+.bio__title {
+  padding-top: 32px;
+}
+
+.bio__image {
+  margin: 24px 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  min-width: 90%;
+  max-width: 288px;
+}
+
+.bio__slogan {
+  padding-bottom: 32px;
+}
+
+.bio__signature {
+  padding-bottom: 40px;
+}
+
+.bio__name {
+  padding-bottom: 24px;
+}
+
+.bio__story-text {
+  padding-bottom: 40px;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5%;
+}
+
+.gallery__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.gallery__img {
+  width: 90%;
+  margin-bottom: 16px;
+}
+
+.footer {
+  background-color: #323232;
+  color: white;
+}
+
+.footer__cta {
+  padding-left: 5%;
+  padding-top: 40px;
+}
+
+.footer__cta-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 20px 0;
+}
+
+.footer__cta-social-icon {
+  padding-right: 30px;
+}
+
+.footer__cta-contact-name {
+  padding-bottom: 20px;
+}
+
+.footer__cta-contact-details {
+  padding-bottom: 20px;
+}
+
+.footer__cta-contact-email {
+  padding-bottom: 20px;
 }
 /*# sourceMappingURL=main.css.map */

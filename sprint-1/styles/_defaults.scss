@@ -1,7 +1,19 @@
 @import "typography";
+@import "variables";
 
 *{
     margin:0;
     padding:0;
+}
+
+body{
     font-family:"Avenir Next";
+    color:$global-text;
+}
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
 }

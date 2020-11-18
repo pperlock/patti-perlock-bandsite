@@ -1,2 +1,138 @@
 @import "defaults";
+@import "mixins";
+@import "variables";
 
+.header{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    background-color:$nav-fill;
+    color:white;
+    text-align:center;
+    box-sizing:border-box;
+    width:100%;
+    height:80px;
+
+    &__logo{
+        margin:16px;
+    }
+
+    &__nav{
+        &-list{
+            display:flex;
+            justify-content:space-around;
+            
+        }
+        &-item{
+            width:50%;
+            &--active{
+                border-bottom:3px solid white;
+            }
+
+        }
+        &-link{
+            color:white;
+        }
+    }
+}
+
+.hero{
+    background-image: url("../assets/images/hero-background.jpg");
+    background-size:cover;
+    color:white;
+    height:183px;
+    display:flex;
+    align-items:center;
+    padding-left:5%;
+
+    &__title{
+        width:70%;
+    }
+
+}
+
+.bio{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:0 5%;
+
+    &__title{
+        padding-top:32px;
+    }
+    &__image{
+        margin:24px 0;
+        align-self:center;
+        min-width:90%;
+        max-width:288px;
+        // width:90%;
+    }
+    &__slogan{
+        padding-bottom:32px;
+
+    }
+    &__signature{
+        padding-bottom:40px;
+
+    }
+    &__name{
+        padding-bottom:24px;
+    }
+    &__story{
+
+        &-text{
+            padding-bottom:40px; 
+        }
+    }
+}
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 5%;
+
+    &__title{
+        align-self:flex-start;
+    }
+    &__img{
+        width:90%;
+        margin-bottom:16px;
+    }
+}
+
+.footer{
+    background-color:$footer-fill;
+    color: white;
+
+    &__cta{
+        padding-left:5%;
+        padding-top:40px;
+        &-title{
+            
+        }
+        &-social{
+            display:flex;
+            justify-content:flex-start;
+            padding:20px 0;
+
+            &-icon{
+                padding-right:30px;
+            }
+        }
+        &-contact{
+            
+            &-name{
+                padding-bottom:20px;
+
+            }
+            &-details{
+                padding-bottom:20px;
+            }
+            &-email{
+                padding-bottom:20px;
+            }
+        }
+    }
+
+}
