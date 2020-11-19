@@ -66,21 +66,35 @@
 }
 
 .hero{
+    position:relative;
     background-image: url("../assets/images/hero-background.jpg");
     background-size:cover;
     color:white;
     height:183px;
     display:flex;
     align-items:center;
-    padding-left:$mobile-padding;
+    
 
     @include tablet{
         height:400px;
-        padding-left:$tablet-padding;
+        
     }
 
     &__title{
         width:70%;
+        padding-left:$mobile-padding;
+
+        @include tablet{
+            padding-left:$tablet-padding;
+        }
+    }
+
+    &__image--filter{
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-color:$hero-filter;
+        opacity:0.5;
     }
 
 }

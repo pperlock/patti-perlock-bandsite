@@ -152,6 +152,7 @@ h5 {
 }
 
 .hero {
+  position: relative;
   background-image: url("../assets/images/hero-background.jpg");
   background-size: cover;
   color: white;
@@ -162,18 +163,31 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 5%;
 }
 
 @media (min-width: 768px) {
   .hero {
     height: 400px;
-    padding-left: 3%;
   }
 }
 
 .hero__title {
   width: 70%;
+  padding-left: 5%;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    padding-left: 3%;
+  }
+}
+
+.hero__image--filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #323232;
+  opacity: 0.5;
 }
 
 .bio {
