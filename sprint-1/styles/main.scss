@@ -10,23 +10,51 @@
     color:white;
     text-align:center;
     box-sizing:border-box;
+    padding-top:16px;
+   
     width:100%;
     height:80px;
 
+    @include tablet{
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:center;
+    }
+
     &__logo{
-        margin:16px;
+        box-sizing:border-box;
+        @include tablet{
+            margin-left:5%;
+        }
+         
+        &-link{
+            font-weight:400;
+            color:white;
+        }
     }
 
     &__nav{
         &-list{
             display:flex;
             justify-content:space-around;
+            @include tablet{
+                align-items:flex-end;
+                // padding:20px 0 0 50px;
+             }
             
         }
         &-item{
             width:50%;
+            padding-bottom:5px;
+            
             &--active{
+                font-weight:bold;
                 border-bottom:3px solid white;
+            }
+
+            @include tablet{
+               margin:0 50px;
+            //    padding:40px 0 40px 0;
             }
 
         }
@@ -62,10 +90,9 @@
     }
     &__image{
         margin:24px 0;
-        align-self:center;
-        min-width:90%;
+        // align-self:center;
+        min-width:100%;
         max-width:288px;
-        // width:90%;
     }
     &__slogan{
         padding-bottom:32px;
@@ -94,9 +121,10 @@
 
     &__title{
         align-self:flex-start;
+        padding-bottom:24px;
     }
     &__img{
-        width:90%;
+        width:100%;
         margin-bottom:16px;
     }
 }
@@ -123,6 +151,7 @@
         &-contact{
             
             &-name{
+                font-weight:700;
                 padding-bottom:20px;
 
             }
@@ -132,6 +161,10 @@
             &-email{
                 padding-bottom:20px;
             }
+        }
+        &-copyright{
+            font-weight:400;
+            padding-bottom:40px;
         }
     }
 
