@@ -22,6 +22,7 @@
 
 /* Color Palette */
 /* Margins and Padding */
+/*Media BreakPoints*/
 * {
   margin: 0;
   padding: 0;
@@ -47,16 +48,44 @@ h1, .title {
   line-height: 32px;
 }
 
+@media (min-width: 768px) {
+  h1, .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
 h2, .subtitle {
   font-weight: 600;
   font-size: 14px;
   line-height: 22px;
 }
 
+@media (min-width: 768px) {
+  h2, .subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 h4, p, .list {
   font-weight: 100;
   font-size: 13px;
   line-height: 18px;
+}
+
+@media (min-width: 768px) {
+  h4, p, .list {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 h5 {
@@ -163,6 +192,7 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  Z-index: 0;
 }
 
 @media (min-width: 768px) {
@@ -174,11 +204,14 @@ h5 {
 .hero__title {
   width: 70%;
   padding-left: 5%;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
   .hero__title {
     padding-left: 3%;
+    font-size: 60px;
+    line-height: 68px;
   }
 }
 
@@ -188,6 +221,7 @@ h5 {
   width: 100%;
   background-color: #323232;
   opacity: 0.5;
+  z-index: 1;
 }
 
 .bio {
@@ -346,21 +380,25 @@ h5 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-bottom: 40px;
   }
 }
 
 @media (min-width: 768px) {
   .footer__top--left {
-    width: 50%;
+    width: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__top-title {
+    padding-right: 40px;
   }
 }
 
@@ -380,6 +418,7 @@ h5 {
 
 .footer__top-logo {
   display: none;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
@@ -413,6 +452,12 @@ h5 {
 
 .footer__contact-email {
   padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .footer__contact-email {
+    padding-bottom: 30px;
+  }
 }
 
 .footer__copyright {

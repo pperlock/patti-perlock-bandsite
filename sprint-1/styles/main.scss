@@ -73,19 +73,22 @@
     height:183px;
     display:flex;
     align-items:center;
+    Z-index:0;
     
 
     @include tablet{
-        height:400px;
-        
+        height:400px;        
     }
 
     &__title{
         width:70%;
         padding-left:$mobile-padding;
+        z-index:2;
 
         @include tablet{
             padding-left:$tablet-padding;
+            font-size:60px;
+            line-height:68px;
         }
     }
 
@@ -95,8 +98,8 @@
         width:100%;
         background-color:$hero-filter;
         opacity:0.5;
+        z-index:1;
     }
-
 }
 
 .bio{
@@ -212,19 +215,22 @@
             display:flex;
             justify-content:space-between;
             align-items:center;
+            padding-bottom:40px;
         }
 
         &--left{
             @include tablet{
-                width:50%;
+                width:60%;
                 display:flex;
-                justify-content:space-between;
                 align-items:center;
             }
         }
 
         &-title{
-            
+            @include tablet{
+               padding-right:40px;
+            } 
+ 
         }
         &-social{
             display:flex;
@@ -236,8 +242,9 @@
             }
         }
 
-                &-logo{
+        &-logo{
             display:none;
+            font-weight:400;
             @include tablet{
                 display:block;
             }
@@ -265,6 +272,10 @@
          }
          &-email{
              padding-bottom:20px;
+             
+             @include tablet{
+                padding-bottom:30px;
+            }
          }
     }
 
