@@ -20,7 +20,6 @@
         align-items:center;
     }
 
-
     &__logo-link{
             font-weight:400;
             color:white;
@@ -141,7 +140,7 @@
 
     &__content{
         @include desktop{
-            padding:0 8%;
+            padding:0 8.5%;
         }
     }
     &__image{
