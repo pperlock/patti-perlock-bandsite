@@ -134,26 +134,21 @@ h5 {
   }
 }
 
-.header__logo {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.header__logo-link {
+  font-weight: 400;
+  color: white;
 }
 
 @media (min-width: 768px) {
-  .header__logo {
+  .header__logo-link {
     margin-left: 3%;
   }
 }
 
 @media (min-width: 1440px) {
-  .header__logo {
+  .header__logo-link {
     margin-left: 12.5%;
   }
-}
-
-.header__logo-link {
-  font-weight: 400;
-  color: white;
 }
 
 .header__nav-list {
