@@ -42,7 +42,7 @@ a {
   text-decoration: none;
 }
 
-/*Default font formats for mobile*/
+/*Default font formats for breakpoints*/
 h1, .title {
   font-weight: 700;
   font-size: 24px;
@@ -284,15 +284,28 @@ h5 {
   padding-top: 32px;
 }
 
+@media (min-width: 1440px) {
+  .bio__title {
+    padding-top: 48px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bio__content {
+    padding: 0 8%;
+  }
+}
+
 .bio__image {
   margin: 24px 0;
   min-width: 100%;
   max-width: 100%;
+  height: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   .bio__image {
-    max-width: 47%;
+    margin: 48px auto;
   }
 }
 
@@ -300,26 +313,36 @@ h5 {
   padding-bottom: 32px;
 }
 
+@media (min-width: 1440px) {
+  .bio__slogan {
+    padding-bottom: 40px;
+  }
+}
+
 .bio__signature {
   padding-bottom: 40px;
+}
+
+@media (min-width: 1440px) {
+  .bio__signature {
+    padding-bottom: 56px;
+  }
 }
 
 .bio__name {
   padding-bottom: 24px;
 }
 
-.bio__story-text--left {
-  padding-bottom: 40px;
+@media (min-width: 1440px) {
+  .bio__name {
+    padding-bottom: 32px;
+  }
 }
 
 @media (min-width: 768px) {
   .bio__story-text--left {
     padding-right: 1.7%;
   }
-}
-
-.bio__story-text--right {
-  padding-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -333,6 +356,13 @@ h5 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bio__story {
+    padding-bottom: 48px;
   }
 }
 

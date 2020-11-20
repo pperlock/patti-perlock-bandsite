@@ -133,39 +133,64 @@
 
     &__title{
         padding-top:32px;
+        
+        @include desktop{
+            padding-top: 48px;
+        }
+    }
+
+    &__content{
+        @include desktop{
+            padding:0 8%;
+        }
     }
     &__image{
         margin:24px 0;
         min-width:100%;
         max-width:100%;
+        height:auto;
         
         @include tablet{
-            max-width:47%;
+            // max-width:47%;
+        }
+        @include desktop{
+            // min-width:83%;
+            // max-width:83%;
+            margin:48px auto;
         }
     }
     &__slogan{
         padding-bottom:32px;
 
+        @include desktop{
+            padding-bottom:40px;
+        }
+
     }
     &__signature{
         padding-bottom:40px;
 
+        @include desktop{
+            padding-bottom:56px;
+        }
+
     }
     &__name{
         padding-bottom:24px;
+        @include desktop{
+            padding-bottom:32px;
+        }
     }
     &__story{
 
         &-text{
              &--left{
-                padding-bottom:40px; 
                 @include tablet{
                     padding-right:1.7%;
                 }
             }
             
             &--right{
-                padding-bottom:40px; 
                 @include tablet{
                     padding-left:1.7%;
                 }
@@ -173,6 +198,10 @@
         }
         @include tablet{
             display:flex;
+            padding-bottom:40px;
+        }
+        @include desktop{
+            padding-bottom:48px;
         }
     }
 }
@@ -228,7 +257,6 @@
     @include desktop{
         padding:0 $desk-padding;;
     }
-
 
     &__top{
         padding-top:40px;
