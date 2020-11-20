@@ -9,6 +9,7 @@
 
 body{
     font-family:"Avenir Next";
+    font-weight:400;
     color:$global-text;
 }
 ul{
@@ -52,7 +53,7 @@ h3 {
 }
 // paragraphs, lists and contact information
 h4, p, .list{
-    font-weight:100;
+    font-weight:400;
     font-size:13px;
     line-height:18px;
 

@@ -30,6 +30,7 @@
 
 body {
   font-family: "Avenir Next";
+  font-weight: 400;
   color: #323232;
 }
 
@@ -76,7 +77,7 @@ h2, .subtitle {
 }
 
 h4, p, .list {
-  font-weight: 100;
+  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
@@ -144,6 +145,12 @@ h5 {
   }
 }
 
+@media (min-width: 1440px) {
+  .header__logo {
+    margin-left: 12.5%;
+  }
+}
+
 .header__logo-link {
   font-weight: 400;
   color: white;
@@ -168,11 +175,25 @@ h5 {
 }
 
 @media (min-width: 768px) {
+  .header__nav-item--active {
+    border-bottom: 7px solid white;
+  }
+}
+
+@media (min-width: 768px) {
   .header__nav-item {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     margin-left: 50px;
     padding: 24px 0 17px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header__nav-item {
+    margin-left: 56px;
+    padding: 24px 0 17px 0;
+    width: 80px;
   }
 }
 
@@ -201,8 +222,14 @@ h5 {
   }
 }
 
+@media (min-width: 1440px) {
+  .hero {
+    height: 670px;
+  }
+}
+
 .hero__title {
-  width: 70%;
+  width: 240px;
   padding-left: 5%;
   z-index: 2;
 }
@@ -212,6 +239,14 @@ h5 {
     padding-left: 3%;
     font-size: 60px;
     line-height: 68px;
+    width: 560px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero__title {
+    padding-left: 12.5%;
+    width: 40%;
   }
 }
 
@@ -244,6 +279,12 @@ h5 {
   }
 }
 
+@media (min-width: 1440px) {
+  .bio {
+    padding: 0 12.5%;
+  }
+}
+
 .bio__title {
   padding-top: 32px;
 }
@@ -251,7 +292,7 @@ h5 {
 .bio__image {
   margin: 24px 0;
   min-width: 100%;
-  max-width: 95%;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -320,6 +361,12 @@ h5 {
   }
 }
 
+@media (min-width: 1440px) {
+  .gallery {
+    padding: 0 12.5%;
+  }
+}
+
 .gallery__title {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -362,6 +409,12 @@ h5 {
 @media (min-width: 768px) {
   .footer {
     padding: 0 3%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    padding: 0 12.5%;
   }
 }
 

@@ -26,6 +26,9 @@
         @include tablet{
             margin-left:$tablet-padding;
         }
+        @include desktop{
+            margin-left:$desk-padding;
+        }
          
         &-link{
             font-weight:400;
@@ -37,11 +40,6 @@
         &-list{
             display:flex;
             justify-content:space-around;
-
-            @include tablet{
-                // padding:20px 0 0 50px;
-             }
-            
         }
         &-item{
             width:50%;
@@ -50,6 +48,11 @@
             &--active{
                 font-weight:bold;
                 border-bottom:3px solid white;
+
+                @include tablet{
+                    border-bottom:7px solid white;
+                }
+
             }
 
             @include tablet{
@@ -57,7 +60,11 @@
                 margin-left:50px;
                 padding:24px 0 17px 0;
             }
-
+            @include desktop{
+                margin-left:56px;
+                padding:24px 0 17px 0;
+                width:80px;
+            }
         }
         &-link{
             color:white;
@@ -71,6 +78,7 @@
     background-size:cover;
     color:white;
     height:183px;
+    // height:23vh;
     display:flex;
     align-items:center;
     Z-index:0;
@@ -80,8 +88,13 @@
         height:400px;        
     }
 
+    @include desktop{
+        height:670px;        
+    }
+
     &__title{
-        width:70%;
+        // width:70%;
+        width: 240px;
         padding-left:$mobile-padding;
         z-index:2;
 
@@ -89,6 +102,11 @@
             padding-left:$tablet-padding;
             font-size:60px;
             line-height:68px;
+            width: 560px;
+        }
+        @include desktop{
+            padding-left:$desk-padding;
+            width:40%;
         }
     }
 
@@ -111,6 +129,9 @@
     @include tablet{
         padding:0 $tablet-padding;
     }
+    @include desktop{
+        padding:0 $desk-padding;
+    }
 
     &__title{
         padding-top:32px;
@@ -118,7 +139,7 @@
     &__image{
         margin:24px 0;
         min-width:100%;
-        max-width:95%;
+        max-width:100%;
         
         @include tablet{
             max-width:47%;
@@ -138,9 +159,7 @@
     &__story{
 
         &-text{
-            
-        
-            &--left{
+             &--left{
                 padding-bottom:40px; 
                 @include tablet{
                     padding-right:1.7%;
@@ -169,7 +188,9 @@
     @include tablet{
         padding:0 $tablet-padding;
     }
-
+    @include desktop{
+        padding:0 $desk-padding;
+    }
 
     &__title{
         align-self:flex-start;
@@ -205,6 +226,9 @@
     @include tablet{
         padding:0 $tablet-padding;
         
+    }
+    @include desktop{
+        padding:0 $desk-padding;;
     }
 
 
