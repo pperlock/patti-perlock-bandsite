@@ -432,6 +432,12 @@ h5 {
   }
 }
 
+@media (min-width: 1440px) {
+  .footer__top {
+    padding: 48px 0 56px 0;
+  }
+}
+
 @media (min-width: 768px) {
   .footer__top--left {
     width: 60%;
@@ -464,6 +470,12 @@ h5 {
   padding-right: 30px;
 }
 
+@media (min-width: 1440px) {
+  .footer__top-social {
+    padding-right: 32px;
+  }
+}
+
 .footer__top-logo {
   display: none;
   font-weight: 400;
@@ -472,6 +484,13 @@ h5 {
 @media (min-width: 768px) {
   .footer__top-logo {
     display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer__top-logo {
+    height: 24px;
+    width: 150px;
   }
 }
 
@@ -486,6 +505,7 @@ h5 {
 @media (min-width: 768px) {
   .footer__contact {
     padding-right: 3%;
+    width: 32%;
   }
 }
 
@@ -494,8 +514,20 @@ h5 {
   padding-bottom: 20px;
 }
 
+@media (min-width: 1440px) {
+  .footer__contact-name {
+    padding-bottom: 24px;
+  }
+}
+
 .footer__contact-details {
   padding-bottom: 20px;
+}
+
+@media (min-width: 1440px) {
+  .footer__contact-details {
+    padding-bottom: 24px;
+  }
 }
 
 .footer__contact-email {
@@ -505,6 +537,12 @@ h5 {
 @media (min-width: 768px) {
   .footer__contact-email {
     padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer__contact-email {
+    padding-bottom: 40px;
   }
 }
 

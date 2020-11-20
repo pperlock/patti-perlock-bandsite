@@ -231,13 +231,17 @@
 
 
     &__top{
-         padding-top:40px;
+        padding-top:40px;
 
         @include tablet{
             display:flex;
             justify-content:space-between;
             align-items:center;
             padding-bottom:40px;
+        }
+
+        @include desktop{
+            padding: 48px 0 56px 0;
         }
 
         &--left{
@@ -262,6 +266,9 @@
             &-icon{
                 padding-right:30px;
             }
+            @include desktop{
+                padding-right:32px;
+            }
         }
 
         &-logo{
@@ -269,6 +276,11 @@
             font-weight:400;
             @include tablet{
                 display:block;
+            }
+
+            @include desktop{
+                height:24px;
+                width:150px;
             }
         }
     }
@@ -283,20 +295,32 @@
     &__contact{
         @include tablet{
             padding-right:$tablet-padding;
+            width:32%;
         }
         &-name{
              font-weight:700;
              padding-bottom:20px;
+             
+            @include desktop{
+                padding-bottom:24px;
+            }
 
          }
          &-details{
              padding-bottom:20px;
+            
+             @include desktop{
+                padding-bottom:24px;
+            }
          }
          &-email{
              padding-bottom:20px;
              
              @include tablet{
                 padding-bottom:30px;
+            }
+            @include desktop{
+                padding-bottom:40px;
             }
          }
     }
