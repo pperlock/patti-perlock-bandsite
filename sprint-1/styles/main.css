@@ -24,6 +24,27 @@
 }
 
 /**** Alternative Fonts ****/
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Medium.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Media Breakpoints ======================= */
@@ -33,7 +54,7 @@
 }
 
 body {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "Roboto";
   font-weight: 400;
   color: #323232;
 }
@@ -185,7 +206,6 @@ h5 {
 }
 
 .header__nav-item--active {
-  font-weight: bold;
   border-bottom: 3px solid #FFFFFF;
 }
 

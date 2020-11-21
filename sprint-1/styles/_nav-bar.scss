@@ -55,7 +55,6 @@
             
             // Apply the border to the active page
             &--active{
-                font-weight:bold;
                 border-bottom:3px solid $nav-active;
 
                 // Increase the border size for devices >=tablet    
