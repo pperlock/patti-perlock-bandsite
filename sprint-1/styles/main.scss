@@ -177,18 +177,22 @@
 
 
     &__images{
+        
         // Change to a 3 x 3 grid layout of the photos for devices >=tablet size
         @include tablet{
             display:flex;
             flex-wrap:wrap;
             justify-content:space-between;
+            // align-content:space-between;
         }
     }
 
     // Adjust the image widths and margins to maintain aspect ratios and attractive spacing across all devices
     &__img{
         width:100%;
-        margin-bottom:16px;
+        margin-bottom:$mobile-padding;
+        // margin-bottom:16px;
+
         // Put a filter over images to turn them black and white
         filter: grayscale(100%);
 
@@ -199,10 +203,11 @@
 
         @include tablet{
             width:31%;
-            margin-bottom:24px;
+            margin-bottom:$tablet-grid-spacing;
         }
         @include desktop{
             width:31.9%;
+            margin-bottom:$desktop-grid-spacing;
         }
     }
 }
