@@ -3,6 +3,8 @@
 @import "variables";
 
 @import "nav-bar";
+@import "footer";
+
 
 .hero{
     position:relative;
@@ -149,133 +151,11 @@
         
         @include tablet{
             width:31%;
-            // height:28%; 
             margin-bottom:24px;
         }
         @include tablet{
             width:32%;
-            // height:28%; 
-            margin-bottom:24px;
         }
     }
 }
 
-.footer{
-    background-color:$footer-fill;
-    color: white;
-
-    &__top{
-        padding-top:40px;
-
-        @include tablet{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding-bottom:40px;
-        }
-
-        @include desktop{
-            padding: 48px 0 56px 0;
-        }
-
-        &--left{
-            @include tablet{
-                width:60%;
-                display:flex;
-                align-items:center;
-            }
-        }
-
-        &-title{
-            @include tablet{
-               padding-right:40px;
-            } 
- 
-        }
-        &-social{
-            display:flex;
-            justify-content:flex-start;
-            padding:20px 0;
-
-            &-icon{
-                padding-right:30px;
-            }
-            @include desktop{
-                padding-right:32px;
-            }
-        }
-
-        &-logo{
-            display:none;
-            font-weight:400;
-            @include tablet{
-                display:block;
-            }
-
-            @include desktop{
-                height:24px;
-                width:150px;
-            }
-        }
-    }
-
-    &__contacts{
-        
-        @include tablet{
-            display:flex;
-        }
-    }
-
-    &__contact{
-        @include tablet{
-            // Creates consistent spacing between the contacts once they are flexed
-            padding-right:$tablet-padding;
-            width:32%;
-        }
-        @include desktop{
-            // Make the contacts boxes smaller when you get upto desktop
-            width:20%;
-        }
-        &-name{
-             font-weight:700;
-             padding-bottom:20px;
-             
-            @include desktop{
-                padding-bottom:24px;
-            }
-
-         }
-         &-details{
-             padding-bottom:20px;
-            
-             @include desktop{
-                padding-bottom:24px;
-            }
-         }
-         &-email{
-             padding-bottom:20px;
-             
-             @include tablet{
-                padding-bottom:30px;
-            }
-            @include desktop{
-                padding-bottom:40px;
-            }
-         }
-    }
-
-    &__copyright{
-        font-weight:400;
-        padding-bottom:40px;
-        
-        @include tablet{
-            display:flex;
-        }
-        &--left{
-            @include tablet{
-                margin-right:5px;
-            }
-        }
-    }
-
-}
