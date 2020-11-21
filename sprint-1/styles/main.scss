@@ -74,30 +74,28 @@
     background-image: url("../assets/images/hero-background.jpg");
     background-size:cover;
     color:white;
-    height:183px;
-    // height:23vh;
+    height:23vh;
     display:flex;
     align-items:center;
     Z-index:0;
     
 
     @include tablet{
-        height:400px;        
+        height:40vh;        
     }
 
-    @include desktop{
-        height:670px;        
-    }
+    // @include desktop{
+    //     height:670px;        
+    // }
 
     &__title{
-        // width:70%;
         width: 240px;
         padding-left:$mobile-padding;
         z-index:2;
 
         @include tablet{
             padding-left:$tablet-padding;
-            font-size:60px;
+            font-size:3.75rem;
             line-height:68px;
             width: 560px;
         }
@@ -149,12 +147,7 @@
         max-width:100%;
         height:auto;
         
-        @include tablet{
-            // max-width:47%;
-        }
         @include desktop{
-            // min-width:83%;
-            // max-width:83%;
             margin:48px auto;
         }
     }
@@ -184,8 +177,10 @@
 
         &-text{
              &--left{
+                padding-bottom: 24px;
                 @include tablet{
                     padding-right:1.7%;
+                    
                 }
             }
             

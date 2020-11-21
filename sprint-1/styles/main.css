@@ -45,54 +45,54 @@ a {
 /*Default font formats for breakpoints*/
 h1, .title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 @media (min-width: 768px) {
   h1, .title {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75;
   }
 }
 
 h2, .subtitle {
   font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 @media (min-width: 768px) {
   h2, .subtitle {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
 @media (min-width: 768px) {
   h3 {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
 h4, p, .list {
   font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.81rem;
+  line-height: 1.125rem;
 }
 
 @media (min-width: 768px) {
   h4, p, .list {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 
 h5 {
   font-weight: 400;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 /*Media BreakPoints*/
@@ -201,7 +201,7 @@ h5 {
   background-image: url("../assets/images/hero-background.jpg");
   background-size: cover;
   color: white;
-  height: 183px;
+  height: 23vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,13 +213,7 @@ h5 {
 
 @media (min-width: 768px) {
   .hero {
-    height: 400px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .hero {
-    height: 670px;
+    height: 40vh;
   }
 }
 
@@ -232,7 +226,7 @@ h5 {
 @media (min-width: 768px) {
   .hero__title {
     padding-left: 3%;
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 68px;
     width: 560px;
   }
@@ -337,6 +331,10 @@ h5 {
   .bio__name {
     padding-bottom: 32px;
   }
+}
+
+.bio__story-text--left {
+  padding-bottom: 24px;
 }
 
 @media (min-width: 768px) {
