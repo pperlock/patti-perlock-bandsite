@@ -200,6 +200,7 @@ h5 {
   position: relative;
   background-image: url("../assets/images/hero-background.jpg");
   background-size: cover;
+  background-position: center;
   color: white;
   height: 23vh;
   display: -webkit-box;
@@ -214,6 +215,12 @@ h5 {
 @media (min-width: 768px) {
   .hero {
     height: 40vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    height: 74vh;
   }
 }
 
