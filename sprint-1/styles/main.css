@@ -306,13 +306,8 @@ h5 {
 @media (min-width: 768px) {
   .footer__contact {
     padding-right: 3%;
-    width: 32%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .footer__contact {
-    width: 20%;
+    padding-right: 24px;
+    width: 220px;
   }
 }
 

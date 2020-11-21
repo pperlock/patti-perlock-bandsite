@@ -68,11 +68,9 @@
         @include tablet{
             // Creates consistent spacing between the contacts once they are flexed
             padding-right:$tablet-padding;
-            width:32%;
-        }
-        @include desktop{
-            // Make the contacts boxes smaller when you get upto desktop
-            width:20%;
+            padding-right:24px;
+            // width:32%;
+            width:220px;
         }
         &-name{
              font-weight:700;
