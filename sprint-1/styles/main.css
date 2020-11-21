@@ -4,22 +4,22 @@
 /**** Default Fonts ****/
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Regular.otf");
+  src: url("../assets/fonts/Linotype - Avenir Next LT Pro.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Bold.otf");
+  src: url("../assets/fonts/Linotype - Avenir Next LT Pro Demi.ttf");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Demi.otf");
-  font-weight: 700;
+  src: url("../assets/fonts/Linotype - Avenir Next LT Pro Bold.ttf");
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -82,7 +82,6 @@ h2 {
 }
 
 h4, p, .list {
-  font-weight: 400;
   font-size: 0.81rem;
   line-height: 1.125rem;
 }
@@ -95,7 +94,6 @@ h4, p, .list {
 }
 
 h5 {
-  font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
@@ -309,7 +307,7 @@ h5 {
 }
 
 .footer__contact-name {
-  font-weight: 700;
+  font-weight: bold;
   padding-bottom: 20px;
 }
 
