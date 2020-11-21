@@ -78,7 +78,7 @@
         }
     }
     &__slogan{
-        padding-bottom:32px;
+        padding-bottom:24px;
 
         @include desktop{
             padding-bottom:40px;
@@ -100,7 +100,7 @@
         }
     }
     &__story{
-
+            padding-bottom: 32px;
         &-text{
              &--left{
                 padding-bottom: 24px;
@@ -130,6 +130,7 @@
     display:flex;
     flex-direction:column;
     align-items:center;
+    background-color: $gallery-fill;
 
     &__title{
         align-self:flex-start;

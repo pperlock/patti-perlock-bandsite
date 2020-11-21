@@ -1,20 +1,29 @@
-/* Color Palette */
+/*======================= Color Palette ======================= */
 
 // Global Fonts
 $global-text:#323232;
 $text-label: #AFAFAF;
 $text-field: #E1E1E1;
 $text-hover: #0065AD;
+$nav-inactive:#AFAFAF;
+$nav-active:#FFFFFF;
 
 // Background Fill colors
 $text-field-background: #FAFAFA;
 $nav-fill:#323232;
 $footer-fill:#323232;
 $hero-filter:#323232;
+$gallery-fill: #FAFAFA;
 
-/* Margins and Padding */
+/*======================= Margins and Padding ======================= */
 
 // The outside padding used for alignment for all elements 
+
+// Corresponds to 16px @ 320px screen width
 $mobile-padding:5%;
+
+// Corresponds to 24px @ 768px screen width
 $tablet-padding:3%;
+
+// Corresponds to 180px @ 1440px screen width
 $desk-padding:12.5%;

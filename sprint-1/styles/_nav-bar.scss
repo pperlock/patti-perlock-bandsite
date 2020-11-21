@@ -34,10 +34,10 @@
             
             &--active{
                 font-weight:bold;
-                border-bottom:3px solid white;
+                border-bottom:3px solid $nav-active;
 
                 @include tablet{
-                    border-bottom:7px solid white;
+                    border-bottom:7px solid $nav-active;
                 }
 
             }
@@ -54,7 +54,15 @@
             }
         }
         &-link{
-            color:white;
+            color:$nav-inactive;
+
+            &--active{
+                color:white;
+            }
+
+            &:hover{
+                font-style:italic;
+            }
         }
     }
 }
