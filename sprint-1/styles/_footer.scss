@@ -1,10 +1,14 @@
+@import "variables";
+
+/*======================= Global Footer ======================= */
 .footer{
     background-color:$footer-fill;
-    color: white;
+    color: $global-contrast;
 
     &__top{
         padding-top:40px;
 
+        // Put the title, social icons and logo in a row for devices >=tablet
         @include tablet{
             display:flex;
             justify-content:space-between;
@@ -16,6 +20,7 @@
             padding: 48px 0 56px 0;
         }
 
+        // Split the top part of the footer into two sections for easier alignment for devices >=tablet
         &--left{
             @include tablet{
                 width:60%;
@@ -31,10 +36,12 @@
  
         }
         &-social{
+            // Put the social icons in a row for all devices - spacing is controlled by static padding instead of justify-content
             display:flex;
             justify-content:flex-start;
             padding:20px 0;
 
+            // Set the icon spacing depending on device size
             &-icon{
                 padding-right:30px;
             }
@@ -44,12 +51,15 @@
         }
 
         &-logo{
+            // Hide the logo for mobile display
             display:none;
-            font-weight:400;
+
+            // Show the logo for devices >= tablet size
             @include tablet{
                 display:block;
             }
 
+            // Increase the logo size for desktops
             @include desktop{
                 height:24px;
                 width:150px;
@@ -58,7 +68,7 @@
     }
 
     &__contacts{
-        
+        // Put the contact information in a row for devices >= tablet size       
         @include tablet{
             display:flex;
         }
@@ -69,9 +79,11 @@
             // Creates consistent spacing between the contacts once they are flexed
             padding-right:$tablet-padding;
             padding-right:24px;
-            // width:32%;
+            // Set the width of each contact to be absolute to keep them from moving across devices
             width:220px;
         }
+
+        // Adjust the alignment and spacing for each of the contact components
         &-name{
              font-weight:700;
              padding-bottom:20px;
@@ -81,6 +93,7 @@
             }
 
          }
+
          &-details{
              padding-bottom:20px;
             
@@ -88,12 +101,14 @@
                 padding-bottom:24px;
             }
          }
+
          &-email{
              padding-bottom:20px;
              
              @include tablet{
                 padding-bottom:30px;
             }
+
             @include desktop{
                 padding-bottom:40px;
             }
@@ -103,11 +118,12 @@
     &__copyright{
         font-weight:400;
         padding-bottom:40px;
+        // Used absolute measurements to ensure it stays on 2 lines for all mobile devices
         width:204px;
         
+        // Displays the contact information in one line for devices >= tablet size
         @include tablet{
             width:100%;
-        }
-        
+        }    
     }
 }

@@ -1,13 +1,13 @@
-/*Media BreakPoints*/
+/*======================= Media Breakpoints ======================= */
 
-// Change to tablet format >=768px
+// Changes to tablet format >=768px
 @mixin tablet{
     @media (min-width:768px){
         @content;
     }
 }
 
-// Change to desktop format >=1440px
+// Changes to desktop format >=1440px
 @mixin desktop{
     @media (min-width:1440px){
         @content;
