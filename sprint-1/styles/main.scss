@@ -23,14 +23,7 @@
     &__logo-link{
             font-weight:400;
             color:white;
-
-            @include tablet{
-                margin-left:$tablet-padding;
-            }
-    
-            @include desktop{
-                margin-left:$desk-padding;
-            }
+            padding-right:0;
     }
 
     &__nav{
@@ -90,17 +83,14 @@
 
     &__title{
         width: 240px;
-        padding-left:$mobile-padding;
         z-index:2;
 
         @include tablet{
-            padding-left:$tablet-padding;
             font-size:3.75rem;
             line-height:68px;
             width: 560px;
         }
         @include desktop{
-            padding-left:$desk-padding;
             width:40%;
         }
     }
@@ -119,14 +109,6 @@
     display:flex;
     flex-direction:column;
     align-items:flex-start;
-    padding:0 $mobile-padding;
-
-    @include tablet{
-        padding:0 $tablet-padding;
-    }
-    @include desktop{
-        padding:0 $desk-padding;
-    }
 
     &__title{
         padding-top:32px;
@@ -204,14 +186,6 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:0 $mobile-padding;
-
-    @include tablet{
-        padding:0 $tablet-padding;
-    }
-    @include desktop{
-        padding:0 $desk-padding;
-    }
 
     &__title{
         align-self:flex-start;
@@ -242,15 +216,6 @@
 .footer{
     background-color:$footer-fill;
     color: white;
-    padding-left:$mobile-padding;
-
-    @include tablet{
-        padding:0 $tablet-padding;
-        
-    }
-    @include desktop{
-        padding:0 $desk-padding;;
-    }
 
     &__top{
         padding-top:40px;
@@ -316,8 +281,13 @@
 
     &__contact{
         @include tablet{
+            // Creates consistent spacing between the contacts once they are flexed
             padding-right:$tablet-padding;
             width:32%;
+        }
+        @include desktop{
+            // Make the contacts boxes smaller when you get upto desktop
+            width:20%;
         }
         &-name{
              font-weight:700;

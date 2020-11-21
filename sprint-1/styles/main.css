@@ -95,6 +95,22 @@ h5 {
   line-height: 1.25rem;
 }
 
+.hero__title, .bio, .gallery, .footer, .header__logo-link {
+  padding: 0 5%;
+}
+
+@media (min-width: 768px) {
+  .hero__title, .bio, .gallery, .footer, .header__logo-link {
+    padding: 0 3%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero__title, .bio, .gallery, .footer, .header__logo-link {
+    padding: 0 12.5%;
+  }
+}
+
 /*Media BreakPoints*/
 /* Color Palette */
 /* Margins and Padding */
@@ -137,18 +153,7 @@ h5 {
 .header__logo-link {
   font-weight: 400;
   color: white;
-}
-
-@media (min-width: 768px) {
-  .header__logo-link {
-    margin-left: 3%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .header__logo-link {
-    margin-left: 12.5%;
-  }
+  padding-right: 0;
 }
 
 .header__nav-list {
@@ -226,13 +231,11 @@ h5 {
 
 .hero__title {
   width: 240px;
-  padding-left: 5%;
   z-index: 2;
 }
 
 @media (min-width: 768px) {
   .hero__title {
-    padding-left: 3%;
     font-size: 3.75rem;
     line-height: 68px;
     width: 560px;
@@ -241,7 +244,6 @@ h5 {
 
 @media (min-width: 1440px) {
   .hero__title {
-    padding-left: 12.5%;
     width: 40%;
   }
 }
@@ -266,19 +268,6 @@ h5 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 0 5%;
-}
-
-@media (min-width: 768px) {
-  .bio {
-    padding: 0 3%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .bio {
-    padding: 0 12.5%;
-  }
 }
 
 .bio__title {
@@ -382,19 +371,6 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 5%;
-}
-
-@media (min-width: 768px) {
-  .gallery {
-    padding: 0 3%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .gallery {
-    padding: 0 12.5%;
-  }
 }
 
 .gallery__title {
@@ -433,19 +409,6 @@ h5 {
 .footer {
   background-color: #323232;
   color: white;
-  padding-left: 5%;
-}
-
-@media (min-width: 768px) {
-  .footer {
-    padding: 0 3%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .footer {
-    padding: 0 12.5%;
-  }
 }
 
 .footer__top {
@@ -541,6 +504,12 @@ h5 {
   .footer__contact {
     padding-right: 3%;
     width: 32%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer__contact {
+    width: 20%;
   }
 }
 

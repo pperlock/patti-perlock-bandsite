@@ -71,3 +71,15 @@ h5{
     line-height:1.25rem;
 
 }
+
+.hero__title, .bio, .gallery, .footer, .header__logo-link{
+    
+    padding:0 $mobile-padding;
+
+    @include tablet{
+        padding:0 $tablet-padding;
+    }
+    @include desktop{
+        padding:0 $desk-padding;
+    }
+}
