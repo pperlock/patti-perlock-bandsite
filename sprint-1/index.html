@@ -7,6 +7,7 @@
     <title>Bandsite</title>
 </head>
 <body>
+    <!-- Page Header containing site navigation -->
     <header class="header">
         <a class="header__logo-link" href="index.html"><img class="header__logo" src="./assets/logo/Logo-bandsite.png" alt="bandsite logo"></a>
         <nav class="header__nav">
@@ -17,11 +18,13 @@
         </nav>
     </header>
     <main>
+        <!-- Hero Section - contains a background image, page title and image filter -->
         <section class="hero">
             <h1 class="hero__title">Gaspard Augé & Xavier de Rosnay</h1>
             <div class="hero__image--filter"></div>
         </section>
 
+        <!-- Biography Section -->
         <section class="bio">
             <h2 class="section__title bio__title">About The Musicians</h2>
             <div class="bio__content">
@@ -29,6 +32,7 @@
                 <h2 class='bio__quote'>"We are more comfortable with not fighting what comes naturally.  Before we might have thought, 'We need to be smarter than this'"</h2>
                 <p class="bio__signature">- Xavier de Rosnay</p>
                 <h2 class="bio__name">Xavier de Rosnay & Gaspard Augé</h2>
+                <!-- Container created around the biography text for flex ability -->
                 <div class="bio__story">
                     <p class="bio__story-text">Xavier De Rosnay and Gaspard Augé had a few
                         mutual friends, who happened to run a record label,
@@ -56,35 +60,43 @@
             </div>
         </section>
 
+        <!-- Photo Gallery Section -->
         <section class="gallery">
             <h2 class="section__title gallery__title">Photo Gallery</h2>
+            <!-- Container image adding to flex a 3x3 grid of images -->
             <div class="gallery__images">
-                <img src="./assets/images/Photo-gallery-1.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-2.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-3.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-4.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-5.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-6.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-7.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-8.jpg" alt="" class="gallery__img">
-                <img src="./assets/images/Photo-gallery-9.jpg" alt="" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-1.jpg" alt="smoky concert" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-2.jpg" alt="woman dancing" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-3.jpg" alt="hands in a crowd" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-4.jpg" alt="woman in lights" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-5.jpg" alt="concert fireworks" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-6.jpg" alt="singer with microphone" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-7.jpg" alt="stage lights" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-8.jpg" alt="turntable" class="gallery__img">
+                <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti over crowd" class="gallery__img">
             </div>
         </section>
     </main>
+
+    <!-- Page Footer -->
     <footer class="footer">
+               <!-- Footer separated into top and bottom sections for easier alignment -->
         <div class="footer__top">
-                <div class="footer__top--left">
-                    <h2 class="section__title footer__top-title">Get In Touch</h2>
-                    <div class="footer__top-social">
-                        <img class="footer__top-social-icon" src="./assets/icons/PNG/Icon-instagram.png" alt="instagram icon" class="footer__social-icon">
-                        <img class="footer__top-social-icon" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon" class="footer__social-icon">
-                        <img class="footer__top-social-icon" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon" class="footer__social-icon">
-                    </div>
+            <!-- Social icons and title have been separated from logo to allow for easier alignment -->
+            <div class="footer__top--left">
+                <h2 class="section__title footer__top-title">Get In Touch</h2>
+                <div class="footer__top-social">
+                    <img class="footer__top-social-icon" src="./assets/icons/PNG/Icon-instagram.png" alt="instagram icon" class="footer__social-icon">
+                    <img class="footer__top-social-icon" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon" class="footer__social-icon">
+                    <img class="footer__top-social-icon" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon" class="footer__social-icon">
                 </div>
-                <img class="footer__top-logo" src= "./assets/logo/Logo-bandsite.png" alt="bandsite logo">
+            </div>
+            <a href="./index.html"><img class="footer__top-logo" src= "./assets/logo/Logo-bandsite.png" alt="bandsite logo"></a>
         </div>
+
+        <!-- Container surrounding contact elements to allow for flexing at devices >=tablet size -->
         <div class="footer__contacts">
-            <div class="footer__contact">
+             <div class="footer__contact">
                 <div class="footer__contact-name">
                     <p>Richard Rovner</p>
                     <p>The Bees Knees Management</p>

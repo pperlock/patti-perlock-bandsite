@@ -1,9 +1,13 @@
+// Import variables for use on footer
 @import "variables";
+
+// Import mixins  for use in footer
+@import "mixins";
 
 /*======================= Global Footer ======================= */
 .footer{
     background-color:$footer-fill;
-    color: $global-contrast;
+    color:$global-contrast;
 
     &__top{
         // Put the title, social icons and logo in a row for devices >=tablet
@@ -11,7 +15,6 @@
             display:flex;
             justify-content:space-between;
             align-items:baseline;
-            padding-bottom:16px;
         }
 
         // Split the top part of the footer into two sections for easier alignment for devices >=tablet
@@ -76,36 +79,16 @@
             width:220px;
         }
 
-        // Adjust the alignment and spacing for each of the contact components
         &-name{
-             font-weight:bold;
-             padding-bottom:20px;
-             
-            @include desktop{
-                padding-bottom:24px;
-            }
-
-         }
-
-         &-details{
-             padding-bottom:20px;
-            
-             @include desktop{
-                padding-bottom:24px;
-            }
-         }
-
-         &-email{
-            padding-bottom:20px;
-             
-            @include tablet{
-                padding-bottom:30px;
-            }
-
+            font-weight:600;
+        }
+        
+        &-email{
+            padding-bottom:30px;
             @include desktop{
                 padding-bottom:40px;
             }
-         }
+        }
     }
 
     &__copyright{

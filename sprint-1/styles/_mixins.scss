@@ -1,3 +1,4 @@
+// Import variables for mixin use
 @import "variables";
 
 /*======================= Media Breakpoints ======================= */
@@ -9,9 +10,9 @@
     }
 }
 
-// Changes to desktop format >=1440px
+// Changes to desktop format >=1200px
 @mixin desktop{
-    @media (min-width:1440px){
+    @media (min-width:1200px){
         @content;
     }
 }
@@ -30,19 +31,9 @@
     }
 }
 
+// Create grid spacing for photo gallery
 @mixin space-grid($image-width, $image-padding){
     width:$image-width;
     margin-bottom:$image-padding;
 }
 
-@mixin space-bio-story($column-spacing){
-    .header__story-text{
-        &--left{
-            padding-right:$column-spacing;
-        }
-
-        &--right{
-            padding-left:$column-spacing;
-        }
-    }
-}

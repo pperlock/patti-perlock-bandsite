@@ -70,7 +70,7 @@ a {
   color: #FFFFFF;
 }
 
-/*Default font formats for breakpoints.  HTML font size is 16px*/
+/*Default font formats for breakpoints from styleguide.  HTML font size is 16px*/
 h1, .title, .section__title {
   font-weight: 700;
   font-size: 1.5rem;
@@ -81,23 +81,6 @@ h1, .title, .section__title {
   h1, .title, .section__title {
     font-size: 2.25rem;
     line-height: 2.75;
-  }
-}
-
-.section__title {
-  line-height: 1.2;
-  padding: 32px 0 24px 0;
-}
-
-@media (min-width: 768px) {
-  .section__title {
-    padding: 48px 0 32px 0;
-  }
-}
-
-@media (min-width: 1440px) {
-  .section__title {
-    padding: 48px 0 48px 0;
   }
 }
 
@@ -149,14 +132,49 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .hero__title, .bio, .gallery, .footer, .header__logo-link {
     padding: 0 12.5%;
   }
 }
 
+.section__title {
+  line-height: 1.2;
+  padding: 32px 0 24px 0;
+}
+
+@media (min-width: 768px) {
+  .section__title {
+    padding: 40px 0 32px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section__title {
+    padding: 40px 0 40px 0;
+  }
+}
+
+.footer__contact div {
+  padding-bottom: 20px;
+}
+
+@media (min-width: 1200px) {
+  .footer__contact div {
+    padding-bottom: 24px;
+  }
+}
+
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
 /*======================= Global Header and Navigation Bar ======================= */
 .header {
   display: -webkit-box;
@@ -170,7 +188,6 @@ h5 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #323232;
-  color: #FFFFFF;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -219,7 +236,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .header__nav-item {
     margin-left: 56px;
   }
@@ -250,6 +267,9 @@ h5 {
 
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
 /*======================= Global Footer ======================= */
 .footer {
   background-color: #323232;
@@ -267,7 +287,6 @@ h5 {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
-    padding-bottom: 16px;
   }
 }
 
@@ -317,7 +336,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .footer__top-logo {
     height: 24px;
     width: 150px;
@@ -341,37 +360,14 @@ h5 {
 }
 
 .footer__contact-name {
-  font-weight: bold;
-  padding-bottom: 20px;
-}
-
-@media (min-width: 1440px) {
-  .footer__contact-name {
-    padding-bottom: 24px;
-  }
-}
-
-.footer__contact-details {
-  padding-bottom: 20px;
-}
-
-@media (min-width: 1440px) {
-  .footer__contact-details {
-    padding-bottom: 24px;
-  }
+  font-weight: 600;
 }
 
 .footer__contact-email {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
-@media (min-width: 768px) {
-  .footer__contact-email {
-    padding-bottom: 30px;
-  }
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .footer__contact-email {
     padding-bottom: 40px;
   }
@@ -411,7 +407,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .hero {
     height: 74vh;
   }
@@ -454,7 +450,7 @@ h5 {
           align-items: flex-start;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .bio__content {
     padding: 0 8.5%;
   }
@@ -472,7 +468,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .bio__image {
     margin: 0 auto 48px auto;
   }
@@ -482,21 +478,21 @@ h5 {
   padding-bottom: 32px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .bio__quote {
-    padding-bottom: 40px;
     width: 90%;
   }
 }
 
 .bio__signature {
+  font-size: 0.875rem;
   font-weight: 600;
   padding-bottom: 40px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .bio__signature {
-    padding-bottom: 56px;
+    font-size: 1rem;
   }
 }
 
@@ -504,7 +500,7 @@ h5 {
   padding-bottom: 24px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .bio__name {
     padding-bottom: 32px;
   }
@@ -541,7 +537,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .bio__story-text {
     padding-bottom: 48px;
   }
@@ -580,7 +576,7 @@ h5 {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .gallery__img {
     width: 31.9%;
     margin-bottom: 2.26%;

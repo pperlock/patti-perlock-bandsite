@@ -1,4 +1,8 @@
+// Import Variables for nav-bar use
 @import "variables";
+
+// Import mixins for use in nav-bar
+@import "mixins";
 
 /*======================= Global Header and Navigation Bar ======================= */
 
@@ -8,7 +12,6 @@
     flex-direction:column;
     justify-content: space-between;
     background-color:$nav-fill;
-    color:$global-contrast;
     text-align:center;
     box-sizing:border-box;
     padding-top:16px;
@@ -62,7 +65,6 @@
                     border-bottom:7px solid $nav-active;
                 }
             }
-
         }
         
         // Apply settings to the navigation links based on their state

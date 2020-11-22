@@ -1,6 +1,12 @@
 /*Import any global default styles including partials containing typography, variables, and mixins*/
 @import "defaults";
 
+// Import the global variables
+@import "variables";
+
+// Import mixins
+@import "mixins";
+
 // Import the global header and navigation bar styling
 @import "nav-bar";
 
@@ -91,20 +97,20 @@
     //Assign all the absolute vertical spacings for all the device sizes
     &__quote{
         padding-bottom:32px;
-
         @include desktop{
-            padding-bottom:40px;
             width:90%;
         }
     }
 
     &__signature{
+        font-size:0.875rem;
         font-weight:600;
         padding-bottom:40px;
 
-        @include desktop{
-            padding-bottom:56px;
+        @include tablet{
+            font-size:1rem;
         }
+
     }
 
     &__name{
