@@ -1,3 +1,5 @@
+@import "variables";
+
 /*======================= Media Breakpoints ======================= */
 
 // Changes to tablet format >=768px
@@ -14,3 +16,21 @@
     }
 }
 
+// Make the hero image responsive vertically
+@mixin responsive-hero{
+    height:23vh;
+
+    // Change hero height ratio to increase as device size increases
+    @include tablet{
+        height:40vh;        
+    }
+
+    @include desktop{
+        height:74vh;        
+    }
+}
+
+@mixin space-grid($image-width, $image-padding){
+    width:$image-width;
+    margin-bottom:$image-padding;
+}

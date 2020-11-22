@@ -34,6 +34,8 @@ a{
     color:$global-contrast;
 }
 
+
+
 /*Default font formats for breakpoints.  HTML font size is 16px*/
 
 // Headers
@@ -47,9 +49,27 @@ h1, .title{
         line-height:2.75;
     }
 }
+
+.section__title{
+    //Remove the line height from the section titles to attain style guide spacing between elements
+   
+    @extend .title;
+    line-height:1.2;
+    
+    // Set up consistent padding for the title of each section
+    padding: $mobile-section-top 0 $mobile-section-bottom 0;
+
+    @include tablet{
+        padding: $tablet-section-top 0 $tablet-section-bottom 0;
+    }
+    @include desktop{
+        padding: $desktop-section-top 0 $desktop-section-bottom 0;
+    }
+}
+
 // Subheader
 h2{
-    font-weight:600;
+    font-weight:700;
     font-size:0.875rem;
     line-height:1.375rem;
     
@@ -67,9 +87,11 @@ h3{
 }
 
 // paragraphs, lists and contact information
-h4, p, .list{
+h4, p, address, .list{
     font-size:0.81rem;
     line-height:1.125rem;
+    // Added to remove the italics from the address tags
+    font-style:normal;
 
     @include tablet{
         font-size:0.875rem;
@@ -82,6 +104,7 @@ h5{
     font-size:0.75rem;
     line-height:1.25rem;
 }
+
 
 // Define the default padding on the left and right side of the page for consistent alignment
 .hero__title, .bio, .gallery, .footer, .header__logo-link{

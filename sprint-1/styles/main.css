@@ -47,6 +47,8 @@
 
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
 /*======================= Media Breakpoints ======================= */
 * {
   margin: 0;
@@ -69,21 +71,38 @@ a {
 }
 
 /*Default font formats for breakpoints.  HTML font size is 16px*/
-h1, .title {
+h1, .title, .section__title {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
 @media (min-width: 768px) {
-  h1, .title {
+  h1, .title, .section__title {
     font-size: 2.25rem;
     line-height: 2.75;
   }
 }
 
+.section__title {
+  line-height: 1.2;
+  padding: 32px 0 24px 0;
+}
+
+@media (min-width: 768px) {
+  .section__title {
+    padding: 48px 0 32px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section__title {
+    padding: 48px 0 48px 0;
+  }
+}
+
 h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
@@ -102,13 +121,14 @@ h2 {
   }
 }
 
-h4, p, .list {
+h4, p, address, .list {
   font-size: 0.81rem;
   line-height: 1.125rem;
+  font-style: normal;
 }
 
 @media (min-width: 768px) {
-  h4, p, .list {
+  h4, p, address, .list {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -236,10 +256,6 @@ h5 {
   color: #FFFFFF;
 }
 
-.footer__top {
-  padding-top: 24px;
-}
-
 @media (min-width: 768px) {
   .footer__top {
     display: -webkit-box;
@@ -248,9 +264,9 @@ h5 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
     padding-bottom: 16px;
   }
 }
@@ -261,10 +277,14 @@ h5 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
+}
+
+.footer__top-title {
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -280,17 +300,11 @@ h5 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: 20px 0;
+  padding-bottom: 32px;
 }
 
 .footer__top-social-icon {
-  padding-right: 30px;
-}
-
-@media (min-width: 1440px) {
-  .footer__top-social {
-    padding-right: 32px;
-  }
+  padding-right: 32px;
 }
 
 .footer__top-logo {
@@ -440,16 +454,6 @@ h5 {
           align-items: flex-start;
 }
 
-.bio__title {
-  padding-top: 32px;
-}
-
-@media (min-width: 1440px) {
-  .bio__title {
-    padding-top: 48px;
-  }
-}
-
 @media (min-width: 1440px) {
   .bio__content {
     padding: 0 8.5%;
@@ -457,19 +461,25 @@ h5 {
 }
 
 .bio__image {
-  margin: 24px 0;
+  margin-bottom: 24px;
   min-width: 100%;
   max-width: 100%;
 }
 
+@media (min-width: 768px) {
+  .bio__image {
+    margin-bottom: 32px;
+  }
+}
+
 @media (min-width: 1440px) {
   .bio__image {
-    margin: 48px auto;
+    margin: 0 auto 48px auto;
   }
 }
 
 .bio__slogan {
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 @media (min-width: 1440px) {
@@ -499,7 +509,7 @@ h5 {
 }
 
 .bio__story {
-  padding-bottom: 32px;
+  padding-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -544,10 +554,6 @@ h5 {
   padding-bottom: 16px;
 }
 
-.gallery__title {
-  padding: 32px 0 24px 0;
-}
-
 @media (min-width: 768px) {
   .gallery__images {
     display: -webkit-box;
@@ -568,11 +574,6 @@ h5 {
           filter: grayscale(100%);
 }
 
-.gallery__img:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
 @media (min-width: 768px) {
   .gallery__img {
     width: 31%;
@@ -585,5 +586,10 @@ h5 {
     width: 31.9%;
     margin-bottom: 2.26%;
   }
+}
+
+.gallery__img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 /*# sourceMappingURL=main.css.map */

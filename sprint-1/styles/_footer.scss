@@ -6,13 +6,11 @@
     color: $global-contrast;
 
     &__top{
-        padding-top:24px;
-
         // Put the title, social icons and logo in a row for devices >=tablet
         @include tablet{
             display:flex;
             justify-content:space-between;
-            align-items:center;
+            align-items:baseline;
             padding-bottom:16px;
         }
 
@@ -21,11 +19,13 @@
             @include tablet{
                 width:60%;
                 display:flex;
-                align-items:center;
+                align-items: baseline;
             }
         }
 
         &-title{
+            // Increase font size to match mockup
+            font-size:2rem;
             @include tablet{
                padding-right:40px;
             } 
@@ -35,13 +35,10 @@
             // Put the social icons in a row for all devices - spacing is controlled by static padding instead of justify-content
             display:flex;
             justify-content:flex-start;
-            padding:20px 0;
+            padding-bottom:32px;
 
-            // Set the icon spacing depending on device size
+            // Set the icon spacing 
             &-icon{
-                padding-right:30px;
-            }
-            @include desktop{
                 padding-right:32px;
             }
         }
@@ -99,9 +96,9 @@
          }
 
          &-email{
-             padding-bottom:20px;
+            padding-bottom:20px;
              
-             @include tablet{
+            @include tablet{
                 padding-bottom:30px;
             }
 

@@ -14,7 +14,7 @@
     // Change to relative positioning to allow for placement of image filter
     position:relative;
     
-    // Used to center the hero title
+    // Used to center the hero title vertically
     display:flex;
     align-items:center;
 
@@ -26,17 +26,8 @@
     //Push the hero section to the bottom of the stack
     Z-index:0;
     
-    // Make the height of the hero image responsive
-    height:23vh;
-
-    // Change hero height ratio to increase as device size increases
-    @include tablet{
-        height:40vh;        
-    }
-
-    @include desktop{
-        height:74vh;        
-    }
+    // have the hero image respond vertically
+    @include responsive-hero;
 
     &__title{
         width: 240px;
@@ -76,11 +67,6 @@
     align-items:flex-start;
 
     &__title{
-        padding-top:32px;
-        
-        @include desktop{
-            padding-top: 48px;
-        }
     }
 
     &__content{
@@ -90,25 +76,28 @@
         }
     }
     &__image{
-        margin:24px 0;
+        margin-bottom:24px;
         // Size to the full width of the content container
         min-width:100%;
         max-width:100%;
+
+        @include tablet{
+            margin-bottom:32px;
+        }
         
         // Assign absolute vertical margins set in style guide and automatic left and right margins to center in the content container for desktops
         @include desktop{
-            margin:48px auto;
+            margin:0 auto 48px auto;
         }
     }
 
     //Assign all the absolute vertical spacings for all the device sizes
     &__slogan{
-        padding-bottom:24px;
+        padding-bottom:32px;
 
         @include desktop{
             padding-bottom:40px;
         }
-
     }
 
     &__signature{
@@ -117,7 +106,6 @@
         @include desktop{
             padding-bottom:56px;
         }
-
     }
 
     &__name{
@@ -128,8 +116,7 @@
     }
 
     &__story{
-        
-        padding-bottom: 32px;
+        padding-bottom: 40px;
         
         // Split the story section into two columns for devices >=tablet size
         @include tablet{
@@ -141,8 +128,7 @@
         @include desktop{
             padding-bottom:48px;
         }
-        
-        
+ 
         &-text{
              &--left{
                 // Apply padding to bottom of first paragraph on mobile to separate the two parts of the story vertically
@@ -171,43 +157,35 @@
     // Added 40px of vertical separation between the gallery and the footer by adding gallery padding to 24px of image margins
     padding-bottom:16px;
 
-    &__title{
-        padding:32px 0 24px 0;
-    }
-
-
     &__images{
-        
+
         // Change to a 3 x 3 grid layout of the photos for devices >=tablet size
         @include tablet{
             display:flex;
             flex-wrap:wrap;
             justify-content:space-between;
-            // align-content:space-between;
         }
     }
 
     // Adjust the image widths and margins to maintain aspect ratios and attractive spacing across all devices
     &__img{
-        width:100%;
-        margin-bottom:$mobile-padding;
-        // margin-bottom:16px;
 
+        // Apply the appropriate grid spacing based on device size
+        @include space-grid(100%, $mobile-grid-spacing);
+        
+        @include tablet{
+            @include space-grid(31%, $tablet-grid-spacing);
+        }
+        @include desktop{
+            @include space-grid(31.9%, $desktop-grid-spacing);
+        }
+ 
         // Put a filter over images to turn them black and white
         filter: grayscale(100%);
 
         // Return the images to full color when the user hovers over them
         &:hover{
             filter: grayscale(0);
-        }
-
-        @include tablet{
-            width:31%;
-            margin-bottom:$tablet-grid-spacing;
-        }
-        @include desktop{
-            width:31.9%;
-            margin-bottom:$desktop-grid-spacing;
         }
     }
 }
