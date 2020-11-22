@@ -478,17 +478,19 @@ h5 {
   }
 }
 
-.bio__slogan {
+.bio__quote {
   padding-bottom: 32px;
 }
 
 @media (min-width: 1440px) {
-  .bio__slogan {
+  .bio__quote {
     padding-bottom: 40px;
+    width: 90%;
   }
 }
 
 .bio__signature {
+  font-weight: 600;
   padding-bottom: 40px;
 }
 
@@ -509,42 +511,39 @@ h5 {
 }
 
 .bio__story {
-  padding-bottom: 40px;
+  padding-bottom: 16px;
 }
 
 @media (min-width: 768px) {
   .bio__story {
+    padding-bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: space-between;
-            flex-direction: space-between;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.bio__story-text {
+  padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .bio__story-text {
+    width: 47%;
     padding-bottom: 40px;
   }
 }
 
 @media (min-width: 1440px) {
-  .bio__story {
+  .bio__story-text {
     padding-bottom: 48px;
-  }
-}
-
-.bio__story-text--left {
-  padding-bottom: 24px;
-}
-
-@media (min-width: 768px) {
-  .bio__story-text--left {
-    padding-bottom: 0;
-    padding-right: 20px;
-  }
-}
-
-@media (min-width: 768px) {
-  .bio__story-text--right {
-    padding-left: 20px;
   }
 }
 

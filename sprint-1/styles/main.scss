@@ -66,9 +66,6 @@
     flex-direction:column;
     align-items:flex-start;
 
-    &__title{
-    }
-
     &__content{
         // Add increased padding to the content section for desktop screens
         @include desktop{
@@ -92,15 +89,17 @@
     }
 
     //Assign all the absolute vertical spacings for all the device sizes
-    &__slogan{
+    &__quote{
         padding-bottom:32px;
 
         @include desktop{
             padding-bottom:40px;
+            width:90%;
         }
     }
 
     &__signature{
+        font-weight:600;
         padding-bottom:40px;
 
         @include desktop{
@@ -116,34 +115,29 @@
     }
 
     &__story{
-        padding-bottom: 40px;
+        // Add padding to the bottom for mobile to maintain vertical spacing between paragraphs while achieve spacing between sections 
+        padding-bottom:16px;
         
-        // Split the story section into two columns for devices >=tablet size
+        // Align the paragraphs side by side for devices >=tablet size
         @include tablet{
+            // Remove the extra padding on the bottom for devices >=tablet
+            padding-bottom:0;
             display:flex;
-            flex-direction:space-between;
-            padding-bottom:40px;
-        }
-        
-        @include desktop{
-            padding-bottom:48px;
+            flex-direction:row;
+            justify-content:space-between;
         }
  
+        //Assign the spacing to each individual paragraph
         &-text{
-             &--left{
-                // Apply padding to bottom of first paragraph on mobile to separate the two parts of the story vertically
-                padding-bottom: 24px;
-                @include tablet{
-                    // Remove the padding from the bottom of the first paragraph for devices >=tablet size
-                    padding-bottom:0;
-                    // Split the padding between the two paragraphs evenly and make it an absolute value to retain spacing
-                    padding-right:20px;
-                }
+            padding-bottom:24px;
+ 
+            @include tablet{
+                width:47%;
+                padding-bottom:40px;
             }
-            &--right{
-                @include tablet{
-                    padding-left:20px;
-                }
+
+            @include desktop{
+                padding-bottom:48px;
             }
         }
     }

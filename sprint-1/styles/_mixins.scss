@@ -34,3 +34,15 @@
     width:$image-width;
     margin-bottom:$image-padding;
 }
+
+@mixin space-bio-story($column-spacing){
+    .header__story-text{
+        &--left{
+            padding-right:$column-spacing;
+        }
+
+        &--right{
+            padding-left:$column-spacing;
+        }
+    }
+}
