@@ -1,0 +1,83 @@
+// Import Variables for nav-bar use
+@import "variables";
+
+// Import mixins for use in nav-bar
+@import "mixins";
+
+/*======================= Global Header and Navigation Bar ======================= */
+
+.header{
+    // Put the logo and nav list in a column and push the list to the bottom
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    background-color:$nav-fill;
+    text-align:center;
+    box-sizing:border-box;
+    padding-top:16px;
+    width:100%;
+    // Set static to be consistent across all devices
+    height:80px;
+
+    @include tablet{
+        // Put logo and nav list in a row for devices >= tablet size
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:center;
+   }
+
+    &__logo-link{
+        // Remove the padding from the right side that was assigned in default styling
+        padding-right:0;
+    }
+
+    &__nav{
+        // Align the nav list items in a row and space them evenly
+        &-list{
+            display:flex;
+            justify-content:space-around;
+        }
+
+        // Create a border that underlines each nav list item
+        &-item{
+            // Stretch the width of the list item to extend the underline
+            width:50%;
+            // Push the border down to sit on the edge of the header
+            padding-bottom:5px;
+            
+            // change to a set width, margin and padding for devices >=tablet
+            @include tablet{
+                margin-left:50px;
+                padding:24px 0 17px 0;
+                width:80px;
+            }
+
+            @include desktop{
+                margin-left:56px;
+            }
+            
+            // Apply the border to the active page
+            &--active{
+                border-bottom:3px solid $nav-active;
+
+                // Increase the border size for devices >=tablet    
+                @include tablet{
+                    border-bottom:7px solid $nav-active;
+                }
+            }
+        }
+        
+        // Apply settings to the navigation links based on their state
+        &-link{
+            color:$nav-inactive;
+
+            &--active{
+                color:$global-contrast;
+            }
+            &:hover{
+                font-style:italic;
+                color:$nav-active;
+            }
+        }
+    }
+}

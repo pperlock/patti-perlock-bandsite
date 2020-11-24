@@ -1,0 +1,226 @@
+/*Import any global default styles including partials containing typography, variables, and mixins*/
+@import "./partials/defaults";
+
+// Import the global variables
+@import "./partials/variables";
+
+// Import mixins
+@import "./partials/mixins";
+
+// Import the global header and navigation bar styling
+@import "./partials/nav-bar";
+
+// Import the global footer styling
+@import "./partials/footer";
+
+
+/*======================= Hero Section ======================= */
+
+.hero{
+    // Change to relative positioning to allow for placement of image filter
+    position:relative;
+    
+    // Used to center the hero title vertically
+    display:flex;
+    align-items:center;
+
+    // Add a background image that centered on and covers the entire section
+    background-image: url("../assets/images/hero-background.jpg");
+    background-size:cover;
+    background-position:center;
+
+    //Push the hero section to the bottom of the stack
+    Z-index:0;
+    
+    // have the hero image respond vertically
+    @include responsive-hero;
+
+    &__title{
+        width: 240px;
+        color:$global-contrast;
+        //Place the title on top of the image and its filter
+        z-index:2;
+
+        // Set explicit font styling that only applies to the titles for devices >= tablet
+        @include tablet{
+            font-size:3.75rem;
+            line-height:68px;
+
+            // Apply an absolute measurement to maintain a two line format across devices
+            width: 560px;
+        }
+    }
+
+    // Apply a semi-transparent filter to the image to make the title more prominent
+    &__image--filter{
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-color:$hero-filter;
+        opacity:0.5;
+        //Put the filter in the middle of the stack
+        z-index:1;
+    }
+}
+
+
+/*======================= Bio Section ======================= */
+
+.bio{
+    // Align the bio containers in a column and push them to the left
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    &__content{
+        // Add increased padding to the content section for desktop screens
+        @include desktop{
+            padding:0 8.5%;
+        }
+    }
+    &__image{
+        margin-bottom:24px;
+        // Size to the full width of the content container
+        min-width:100%;
+        max-width:100%;
+
+        @include tablet{
+            margin-bottom:32px;
+        }
+        
+        // Assign absolute vertical margins set in style guide and automatic left and right margins to center in the content container for desktops
+        @include desktop{
+            margin:0 auto 48px auto;
+        }
+    }
+
+    //Assign all the absolute vertical spacings for all the device sizes
+    &__quote{
+        padding-bottom:32px;
+        @include desktop{
+            width:90%;
+        }
+    }
+
+    &__signature{
+        font-size:0.875rem;
+        font-weight:600;
+        padding-bottom:40px;
+
+        @include tablet{
+            font-size:1rem;
+        }
+
+    }
+
+    &__name{
+        padding-bottom:24px;
+        @include desktop{
+            padding-bottom:32px;
+        }
+    }
+
+    &__story{
+        // Add padding to the bottom for mobile to maintain vertical spacing between paragraphs while achieve spacing between sections 
+        padding-bottom:16px;
+        
+        // Align the paragraphs side by side for devices >=tablet size
+        @include tablet{
+            // Remove the extra padding on the bottom for devices >=tablet
+            padding-bottom:0;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+        }
+ 
+        //Assign the spacing to each individual paragraph
+        &-text{
+            padding-bottom:24px;
+ 
+            @include tablet{
+                width:47%;
+                padding-bottom:40px;
+            }
+
+            @include desktop{
+                padding-bottom:48px;
+            }
+        }
+    }
+}
+
+/*======================= Photo Gallery Section ======================= */
+
+.gallery{
+    background-color: $gallery-fill;
+
+    // Added 40px of vertical separation between the gallery and the footer by adding gallery padding to 24px of image margins
+    padding-bottom:16px;
+
+    &__images{
+
+        // Change to a 3 x 3 grid layout of the photos for devices >=tablet size
+        @include tablet{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+        }
+    }
+
+    // Adjust the image widths and margins to maintain aspect ratios and attractive spacing across all devices
+    &__img{
+
+        // Apply the appropriate grid spacing based on device size
+        @include space-grid(100%, $mobile-grid-spacing);
+        
+        @include tablet{
+            @include space-grid(31%, $tablet-grid-spacing);
+        }
+        @include desktop{
+            @include space-grid(31.9%, $desktop-grid-spacing);
+        }
+ 
+        // Put a filter over images to turn them black and white
+        filter: grayscale(100%);
+
+        // Return the images to full color when the user hovers over them
+        &:hover{
+            filter: grayscale(0);
+        }
+    }
+}
+
+/*======================= Join the Conversation ======================= */
+
+.comments{
+    display:flex;
+    flex-direction:column;
+
+    &__details{
+        display:flex;
+    }
+
+    &__avatar{
+        margin-top:20px;
+        background-color:grey;
+        border-radius:100px;
+        width:50px;
+        height:50px;
+    } 
+
+    &__form{
+        display:flex;
+        flex-direction:column;
+        margin-left:$mobile-padding;
+        flex-grow:2;
+
+    }
+
+    &__name{
+        @include input-text(16px, 16px, 24px);
+    }
+    &__comment{
+        @include input-text(16px, 100px, 24px);
+    }
+
+}

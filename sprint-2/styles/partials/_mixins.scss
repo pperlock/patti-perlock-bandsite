@@ -1,0 +1,53 @@
+// Import variables for mixin use
+@import "variables";
+
+/*======================= Media Breakpoints ======================= */
+
+// Changes to tablet format >=768px
+@mixin tablet{
+    @media (min-width:768px){
+        @content;
+    }
+}
+
+// Changes to desktop format >=1200px
+@mixin desktop{
+    @media (min-width:1200px){
+        @content;
+    }
+}
+
+// Make the hero image responsive vertically
+@mixin responsive-hero{
+    height:23vh;
+
+    // Change hero height ratio to increase as device size increases
+    @include tablet{
+        height:40vh;        
+    }
+
+    @include desktop{
+        height:74vh;        
+    }
+}
+
+// Create grid spacing for photo gallery
+@mixin space-grid($image-width, $image-padding){
+    width:$image-width;
+    margin-bottom:$image-padding;
+}
+
+// Create Button
+// @mixin create-button(size){
+//     @extend .button;
+//     width:70%;
+// }
+
+
+@mixin input-text ($padding-top, $padding-bottom, $bottom-margin){
+    border-radius:4px;
+    border:2px solid $text-field-border;
+    background-color:$text-field-background;
+    padding:$padding-top 0 $padding-bottom 5px;
+    margin-bottom: $bottom-margin;
+}
