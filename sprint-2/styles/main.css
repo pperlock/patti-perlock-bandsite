@@ -117,25 +117,25 @@ h4, p, address, .list {
   }
 }
 
-h5, label {
+h5, label, .shows__label {
   font-size: 0.75rem;
   line-height: 1.25rem;
   color: #AFAFAF;
   font-weight: 600;
 }
 
-.hero__title, .bio, .gallery, .comments, .footer, .header__logo-link {
+.hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
   padding: 0 5%;
 }
 
 @media (min-width: 768px) {
-  .hero__title, .bio, .gallery, .comments, .footer, .header__logo-link {
+  .hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
     padding: 0 3%;
   }
 }
 
 @media (min-width: 1200px) {
-  .hero__title, .bio, .gallery, .comments, .footer, .header__logo-link {
+  .hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
     padding: 0 12.5%;
   }
 }
@@ -175,6 +175,25 @@ h5, label {
   border: none;
   cursor: pointer;
   margin-bottom: 24px;
+}
+
+.show__details li {
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .show__details li {
+    width: 30%;
+  }
+}
+
+.shows__label {
+  margin-right: 20px;
+  padding-bottom: 16px;
 }
 
 /*======================= Color Palette ======================= */
@@ -397,32 +416,16 @@ h5, label {
   }
 }
 
-/*======================= Hero Section ======================= */
 .hero {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-image: url("../assets/images/hero-background.jpg");
-  background-size: cover;
-  background-position: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   Z-index: 0;
-  height: 23vh;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    height: 40vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero {
-    height: 74vh;
-  }
 }
 
 .hero__title {
@@ -446,6 +449,26 @@ h5, label {
   background-color: #323232;
   opacity: 0.5;
   z-index: 1;
+}
+
+/*======================= Hero Section ======================= */
+.hero {
+  background-image: url("../assets/images/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 23vh;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    height: 74vh;
+  }
 }
 
 /*======================= Bio Section ======================= */

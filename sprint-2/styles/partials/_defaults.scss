@@ -81,7 +81,7 @@ h4, p, address, .list{
 }
 
 // labels
-h5, label{
+h5, label, .shows__label{
     font-size:0.75rem;
     line-height:1.25rem;
     color:$text-label;
@@ -90,7 +90,7 @@ h5, label{
 
 
 // Define the default padding on the left and right side of the page for consistent alignment
-.hero__title, .bio, .gallery, .comments, .footer, .header__logo-link{
+.hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link{
     
     padding:0 $mobile-padding;
 
@@ -130,11 +130,6 @@ h5, label{
      
 }
 
-// .comments__form input{
-//     padding: 16px 0 ;
-//     
-// }
-
 // Default button styling
 .button{
     border-radius:4px;
@@ -144,4 +139,21 @@ h5, label{
     border:none;
     cursor: pointer;
     margin-bottom:24px;
+}
+
+// Show spacing for tablet
+
+.show__details li {
+    font-size:1rem;
+    font-weight:400;
+    flex-grow:1;
+
+    @include tablet{
+        width:30%;
+    }
+}
+
+.shows__label{
+    margin-right:20px;
+    padding-bottom:16px;
 }

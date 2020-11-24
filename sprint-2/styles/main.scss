@@ -13,54 +13,16 @@
 // Import the global footer styling
 @import "./partials/footer";
 
+@import "./partials/hero";
+
 
 /*======================= Hero Section ======================= */
 
 .hero{
-    // Change to relative positioning to allow for placement of image filter
-    position:relative;
-    
-    // Used to center the hero title vertically
-    display:flex;
-    align-items:center;
-
     // Add a background image that centered on and covers the entire section
-    background-image: url("../assets/images/hero-background.jpg");
-    background-size:cover;
-    background-position:center;
-
-    //Push the hero section to the bottom of the stack
-    Z-index:0;
-    
+    @include hero-background("../assets/images/hero-background.jpg");
     // have the hero image respond vertically
-    @include responsive-hero;
-
-    &__title{
-        width: 240px;
-        color:$global-contrast;
-        //Place the title on top of the image and its filter
-        z-index:2;
-
-        // Set explicit font styling that only applies to the titles for devices >= tablet
-        @include tablet{
-            font-size:3.75rem;
-            line-height:68px;
-
-            // Apply an absolute measurement to maintain a two line format across devices
-            width: 560px;
-        }
-    }
-
-    // Apply a semi-transparent filter to the image to make the title more prominent
-    &__image--filter{
-        position:absolute;
-        height:100%;
-        width:100%;
-        background-color:$hero-filter;
-        opacity:0.5;
-        //Put the filter in the middle of the stack
-        z-index:1;
-    }
+    @include responsive-hero($mobile-bio-ratio,$tablet-bio-ratio,$desktop-bio-ratio);
 }
 
 
@@ -232,17 +194,17 @@
     }
 
     &__name{
-        @include input-text(16px, 16px);
+        @include input-text(16px, 16px,24px);
     }
     &__comment{
-        @include input-text(16px, 60px);
+        @include input-text(16px, 60px, 24px);
     }
     &__button{
         align-self:flex-end;
-        @include input-button(100%,32px);
+        @include input-button(100%);
         
         @include tablet{
-            @include input-button(160px,24px);
+            @include input-button(160px);
         }
     }
 

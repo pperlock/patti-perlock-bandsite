@@ -12,3 +12,89 @@
 
 // Import the global footer styling
 @import "./partials/footer";
+
+@import "./partials/hero";
+
+
+.hero{
+    // Add a background image that centered on and covers the entire section
+    @include hero-background("../assets/images/shows-hero-background.jpg");
+    @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
+
+    &__subtitle{
+        padding-top:64px;
+        padding-bottom: 24px;
+        color:$global-contrast;
+        z-index:2;
+    }
+
+    &__song{
+        border-radius:4px;
+        padding-right:$mobile-padding;
+    }
+}
+
+.shows{
+    &__labels-tablet{
+        display:none;        
+        @include tablet{
+            display:flex;
+            width:75%;
+        }
+    }
+    &__title{
+        padding-bottom:40px;
+    }
+
+    &__list{
+        margin-bottom:24px;
+    }
+}    
+
+.show{
+    border-bottom:2px solid grey;
+    margin-bottom:16px;
+    // Put the show details in a row for devices >=tablet size
+    @include tablet{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    &__details{
+        @include tablet{
+            width:75%;
+            display:flex;
+            align-items:baseline;
+            flex-grow:3;
+        }
+    }
+
+    &__label--mobile{
+        @extend .shows__label;
+
+        // Remove the individual labels for devices >=tablet size
+        @include tablet{
+            display:none;
+        }
+    }
+
+    &__date{
+        padding-bottom:24px;
+    }
+    &__venue{
+        padding-bottom:24px;
+    }
+    &__location{
+
+    }
+    &__cta{
+        margin-top:32px;
+        width:100%;
+        @include tablet{
+            margin-top:0;
+            width:160px;
+            align-self:flex-end;
+            flex-grow:1;
+        }
+    }
+}

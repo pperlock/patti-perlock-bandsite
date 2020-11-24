@@ -1,0 +1,39 @@
+
+.hero{
+    // Change to relative positioning to allow for placement of image filter
+    position:relative;
+    
+    // Used to center the hero title vertically
+    display:flex;
+    flex-direction:column;
+    
+    //Push the hero section to the bottom of the stack
+    Z-index:0;
+    
+    &__title{
+        width: 240px;
+        color:$global-contrast;
+        //Place the title on top of the image and its filter
+        z-index:2;
+
+        // Set explicit font styling that only applies to the titles for devices >= tablet
+        @include tablet{
+            font-size:3.75rem;
+            line-height:68px;
+
+            // Apply an absolute measurement to maintain a two line format across devices
+            width: 560px;
+        }
+    }
+
+    // Apply a semi-transparent filter to the image to make the title more prominent
+    &__image--filter{
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-color:$hero-filter;
+        opacity:0.5;
+        //Put the filter in the middle of the stack
+        z-index:1;
+    }
+}

@@ -18,17 +18,22 @@
 }
 
 // Make the hero image responsive vertically
-@mixin responsive-hero{
-    height:23vh;
+@mixin responsive-hero($mobile-ratio, $tablet-ratio, $desktop-ratio){
+    height:$mobile-ratio;
 
     // Change hero height ratio to increase as device size increases
     @include tablet{
-        height:40vh;        
+        height:$tablet-ratio;        
     }
 
     @include desktop{
-        height:74vh;        
+        height:$desktop-ratio;        
     }
+}
+@mixin hero-background($hero-url){
+    background-image: url($hero-url);
+    background-size:cover;
+    background-position:center;
 }
 
 // Create grid spacing for photo gallery
