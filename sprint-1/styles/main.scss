@@ -1,17 +1,17 @@
 /*Import any global default styles including partials containing typography, variables, and mixins*/
-@import "defaults";
+@import "./partials/defaults";
 
 // Import the global variables
-@import "variables";
+@import "./partials/variables";
 
 // Import mixins
-@import "mixins";
+@import "./partials/mixins";
 
 // Import the global header and navigation bar styling
-@import "nav-bar";
+@import "./partials/nav-bar";
 
 // Import the global footer styling
-@import "footer";
+@import "./partials/footer";
 
 
 /*======================= Hero Section ======================= */
