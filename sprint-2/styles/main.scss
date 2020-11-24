@@ -155,10 +155,9 @@
     background-color: $gallery-fill;
 
     // Added 40px of vertical separation between the gallery and the footer by adding gallery padding to 24px of image margins
-    padding-bottom:16px;
+    padding-bottom:26px;
 
     &__images{
-
         // Change to a 3 x 3 grid layout of the photos for devices >=tablet size
         @include tablet{
             display:flex;
@@ -195,17 +194,33 @@
 .comments{
     display:flex;
     flex-direction:column;
-
+    
+    &__title{
+        padding-bottom:40px;
+        
+        @include desktop{
+            padding:48px 0 56px 0;
+        }
+    }
     &__details{
         display:flex;
+        
+        @include tablet{
+            width:70%;
+            align-self:center;
+        }
     }
 
     &__avatar{
         margin-top:20px;
         background-color:grey;
         border-radius:100px;
-        width:50px;
-        height:50px;
+        width:48px;
+        height:48px;
+  
+        @include tablet{
+
+        }
     } 
 
     &__form{
@@ -217,10 +232,18 @@
     }
 
     &__name{
-        @include input-text(16px, 16px, 24px);
+        @include input-text(16px, 16px);
     }
     &__comment{
-        @include input-text(16px, 100px, 24px);
+        @include input-text(16px, 60px);
+    }
+    &__button{
+        align-self:flex-end;
+        @include input-button(100%,32px);
+        
+        @include tablet{
+            @include input-button(160px,24px);
+        }
     }
 
 }
