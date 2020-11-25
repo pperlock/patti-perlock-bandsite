@@ -451,6 +451,14 @@ h5, label, .shows__label {
   z-index: 1;
 }
 
+.avatar, .comments__avatar, .comment__avatar {
+  margin-top: 20px;
+  background-color: grey;
+  border-radius: 100px;
+  width: 48px;
+  height: 48px;
+}
+
 /*======================= Hero Section ======================= */
 .hero {
   background-image: url("../assets/images/hero-background.jpg");
@@ -648,6 +656,8 @@ h5, label, .shows__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-bottom: 2px solid grey;
+  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
@@ -657,14 +667,6 @@ h5, label, .shows__label {
         -ms-grid-row-align: center;
         align-self: center;
   }
-}
-
-.comments__avatar {
-  margin-top: 20px;
-  background-color: grey;
-  border-radius: 100px;
-  width: 48px;
-  height: 48px;
 }
 
 .comments__form {
@@ -733,5 +735,46 @@ h5, label, .shows__label {
   .comments__button {
     margin-bottom: 24px;
   }
+}
+
+.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-bottom: 2px solid grey;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.comment__avatar {
+  margin-top: 0;
+}
+
+.comment__details {
+  margin-left: 5%;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  width: 75%;
+}
+
+.comment__details-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.comment__details-name {
+  font-weight: bold;
+}
+
+.comment__details-message {
+  padding: 16px 0;
 }
 /*# sourceMappingURL=main.css.map */

@@ -15,6 +15,8 @@
 
 @import "./partials/hero";
 
+@import "./partials/comment";
+
 
 /*======================= Hero Section ======================= */
 
@@ -166,6 +168,8 @@
     }
     &__details{
         display:flex;
+        border-bottom: 2px solid grey;
+        margin-bottom:24px;
         
         @include tablet{
             width:70%;
@@ -174,15 +178,7 @@
     }
 
     &__avatar{
-        margin-top:20px;
-        background-color:grey;
-        border-radius:100px;
-        width:48px;
-        height:48px;
-  
-        @include tablet{
-
-        }
+        @extend .avatar;
     } 
 
     &__form{
@@ -205,6 +201,35 @@
         
         @include tablet{
             @include input-button(160px);
+        }
+    }
+
+}
+
+.comment{
+    display:flex;
+    justify-content:flex-end;
+    border-bottom:2px solid grey;
+    padding-top:16px;
+    margin-bottom:24px;
+
+    &__avatar{
+        @extend .avatar;
+        margin-top:0;
+    }
+    &__details{
+        margin-left:$mobile-padding;
+        flex-grow:2;
+        width:75%;
+        &-header{
+            display:flex;
+            justify-content:space-between;
+        }
+        &-name{
+            font-weight:bold;
+        }
+        &-message{
+            padding:16px 0;
         }
     }
 

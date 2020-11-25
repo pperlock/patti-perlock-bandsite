@@ -482,6 +482,18 @@ h5, label, .shows__label, .show__label--mobile {
   padding-right: 5%;
 }
 
+@media (min-width: 1200px) {
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 48px;
+  }
+}
+
 .shows__labels-tablet {
   display: none;
 }
@@ -499,8 +511,20 @@ h5, label, .shows__label, .show__label--mobile {
   padding-bottom: 40px;
 }
 
+@media (min-width: 1200px) {
+  .shows__title {
+    padding-top: 0;
+  }
+}
+
 .shows__list {
   margin-bottom: 24px;
+}
+
+@media (min-width: 1200px) {
+  .shows__list {
+    width: 75%;
+  }
 }
 
 .show {
