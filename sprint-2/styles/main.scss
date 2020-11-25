@@ -27,6 +27,8 @@
     @include hero-background("../assets/images/hero-background.jpg");
     // have the hero image respond vertically
     @include responsive-hero($mobile-bio-ratio,$tablet-bio-ratio,$desktop-bio-ratio);
+
+    justify-content:center;
 }
 
 

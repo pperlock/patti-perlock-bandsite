@@ -124,18 +124,18 @@ h5, label, .shows__label {
   font-weight: 600;
 }
 
-.hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
+.hero__content, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
   padding: 0 5%;
 }
 
 @media (min-width: 768px) {
-  .hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
+  .hero__content, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
     padding: 0 3%;
   }
 }
 
 @media (min-width: 1200px) {
-  .hero__title, .hero__subtitle, .hero__song, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
+  .hero__content, .bio, .gallery, .comments, .shows, .footer, .header__logo-link {
     padding: 0 12.5%;
   }
 }
@@ -438,16 +438,19 @@ h5, label, .shows__label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  Z-index: 0;
 }
 
-.hero__image--filter {
+.hero::before {
+  content: '';
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: #323232;
   opacity: 0.5;
-  z-index: 1;
+}
+
+.hero__content {
+  z-index: 2;
 }
 
 /*======================= Hero Section ======================= */
@@ -456,20 +459,22 @@ h5, label, .shows__label {
   background-size: cover;
   background-position: center;
   height: 23vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.hero .hero__title {
+.hero .hero__content-title {
   font-size: 1.5rem;
   line-height: 2rem;
   width: 250px;
   color: #FFFFFF;
   margin-bottom: auto;
   margin-top: auto;
-  z-index: 2;
 }
 
 @media (min-width: 768px) {
-  .hero .hero__title {
+  .hero .hero__content-title {
     font-size: 3.75rem;
     line-height: 68px;
     width: 560px;
