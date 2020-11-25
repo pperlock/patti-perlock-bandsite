@@ -17,14 +17,13 @@
 
 
 .hero{
-    @include styleHero(100%, $shows-hero-image);
-    
-    @include hero-background("../assets/images/shows-hero-background.jpg");
+    @include heroTitle(90%,2.3rem,3rem,64px,24px);
+    @include hero-background($shows-hero-image);
     @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
 
     &__subtitle{
         padding-top:64px;
-        padding-bottom: 24px;
+        // padding-bottom: 24px;
         color:$global-contrast;
         z-index:2;
     }

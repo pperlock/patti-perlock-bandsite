@@ -21,6 +21,8 @@
 /*======================= Hero Section ======================= */
 
 .hero{
+    // format hero title width,fontsize, lineheight,bottom margin,top margin
+    @include heroTitle(250px,1.5rem,2rem,auto,auto);
     // Add a background image that centered on and covers the entire section
     @include hero-background("../assets/images/hero-background.jpg");
     // have the hero image respond vertically

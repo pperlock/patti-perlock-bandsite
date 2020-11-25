@@ -424,19 +424,13 @@ h5, label, .shows__label, .show__label--mobile {
   }
 }
 
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
 .hero {
-  background-image: url("../assets/images/shows-hero-background.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-}
-
-.hero .hero {
   position: relative;
-  background-image: url("../assets/images/shows-hero-background.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -447,21 +441,29 @@ h5, label, .shows__label, .show__label--mobile {
   Z-index: 0;
 }
 
-@media (min-width: 768px) {
-  .hero .hero {
-    height: 65vh;
-  }
+.hero__image--filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #323232;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-@media (min-width: 1200px) {
-  .hero .hero {
-    height: 74vh;
-  }
+.hero {
+  background-image: url("../assets/images/shows-hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
 }
 
 .hero .hero__title {
-  width: 100%;
+  font-size: 2.3rem;
+  line-height: 3rem;
+  width: 90%;
   color: #FFFFFF;
+  margin-bottom: 64px;
+  margin-top: 24px;
   z-index: 2;
 }
 
@@ -471,15 +473,6 @@ h5, label, .shows__label, .show__label--mobile {
     line-height: 68px;
     width: 560px;
   }
-}
-
-.hero .hero__image--filter {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #323232;
-  opacity: 0.5;
-  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -496,7 +489,6 @@ h5, label, .shows__label, .show__label--mobile {
 
 .hero__subtitle {
   padding-top: 64px;
-  padding-bottom: 24px;
   color: #FFFFFF;
   z-index: 2;
 }

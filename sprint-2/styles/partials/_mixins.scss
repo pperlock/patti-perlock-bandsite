@@ -17,36 +17,11 @@
     }
 }
 
-// Make the hero image responsive vertically
-@mixin responsive-hero($mobile-ratio, $tablet-ratio, $desktop-ratio){
-    height:$mobile-ratio;
-
-    // Change hero height ratio to increase as device size increases
-    @include tablet{
-        height:$tablet-ratio;        
-    }
-
-    @include desktop{
-        height:$desktop-ratio;        
-    }
-}
-@mixin hero-background($hero-url){
-    background-image: url($hero-url);
-    background-size:cover;
-    background-position:center;
-}
-
 // Create grid spacing for photo gallery
 @mixin space-grid($image-width, $image-padding){
     width:$image-width;
     margin-bottom:$image-padding;
 }
-
-// Create Button
-// @mixin create-button(size){
-//     @extend .button;
-//     width:70%;
-// }
 
 
 @mixin input-text ($padding-top, $padding-bottom, $bottom-margin){

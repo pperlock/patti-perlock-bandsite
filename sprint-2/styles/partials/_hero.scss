@@ -1,43 +1,69 @@
-@mixin styleHero ($title-width){
-    .hero{
-        // Change to relative positioning to allow for placement of image filter
-        position:relative;
+// Import variables for mixin use
+@import "variables";
 
-        @include hero-background("../assets/images/shows-hero-background.jpg");
-        @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
-        
-        // Used to center the hero title vertically
-        display:flex;
-        flex-direction:column;
-        
-        //Push the hero section to the bottom of the stack
-        Z-index:0;
-        
-        &__title{
-            width: $title-width;
-            color:$global-contrast;
-            //Place the title on top of the image and its filter
-            z-index:2;
+// Import global mixins
+@import "mixins";
 
-            // Set explicit font styling that only applies to the titles for devices >= tablet
-            @include tablet{
-                font-size:3.75rem;
-                line-height:68px;
+// Make the hero image responsive vertically
+@mixin responsive-hero($mobile-ratio, $tablet-ratio, $desktop-ratio){
+    height:$mobile-ratio;
 
-                // Apply an absolute measurement to maintain a two line format across devices
-                width: 560px;
-            }
-        }
-
-        // Apply a semi-transparent filter to the image to make the title more prominent
-        &__image--filter{
-            position:absolute;
-            height:100%;
-            width:100%;
-            background-color:$hero-filter;
-            opacity:0.5;
-            //Put the filter in the middle of the stack
-            z-index:1;
-        }
+    // Change hero height ratio to increase as device size increases
+    @include tablet{
+        height:$tablet-ratio;        
     }
+
+    @include desktop{
+        height:$desktop-ratio;        
+    }
+}
+@mixin hero-background($hero-url){
+    background-image: url($hero-url);
+    background-size:cover;
+    background-position:center;
+}
+
+.hero{
+    // Change to relative positioning to allow for placement of image filter
+    position:relative;
+            
+    // Used to center the hero title vertically
+    display:flex;
+    flex-direction:column;
+    
+    //Push the hero section to the bottom of the stack
+    Z-index:0;
+
+    // Apply a semi-transparent filter to the image to make the title more prominent
+    &__image--filter{
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-color:$hero-filter;
+        opacity:0.5;
+        //Put the filter in the middle of the stack
+        z-index:1;
+    }
+}
+
+@mixin heroTitle ($title-width, $title-mobile-size, $title-line-height, $padding-bottom, $padding-top){
+    .hero__title{
+        font-size:$title-mobile-size;
+        line-height:$title-line-height;
+        width: $title-width;
+        color:$global-contrast;
+        margin-bottom:$padding-bottom;
+        margin-top:$padding-top;
+        //Place the title on top of the image and its filter
+        z-index:2;
+
+        // Set explicit font styling that only applies to the titles for devices >= tablet
+        @include tablet{
+            font-size:3.75rem;
+            line-height:68px;
+
+            // Apply an absolute measurement to maintain a two line format across devices
+            width: 560px;
+        }
+   }
 }
