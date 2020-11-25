@@ -170,15 +170,16 @@
             padding:48px 0 56px 0;
         }
     }
-    &__details{
-        display:flex;
-        border-bottom: 2px solid grey;
-        margin-bottom:24px;
-        
-        @include tablet{
-            width:70%;
-            align-self:center;
-        }
+}
+
+.new-comment{
+    display:flex;
+    border-bottom: 2px solid grey;
+    margin-bottom:24px;
+    
+    @include tablet{
+        width:70%;
+        align-self:center;
     }
 
     &__avatar{
@@ -191,24 +192,23 @@
         margin-left:$mobile-padding;
         flex-grow:2;
 
-    }
-
-    &__name{
-        @include input-text(16px, 16px,24px);
-    }
-    &__comment{
-        @include input-text(16px, 60px, 24px);
-    }
-    &__button{
-        align-self:flex-end;
-        @include input-button(100%);
-        
-        @include tablet{
-            @include input-button(160px);
+        &-name{
+            @include input-text(16px, 16px,24px);
+        }
+        &-comment{
+            @include input-text(16px, 60px, 24px);
+        }
+        &-button{
+            align-self:flex-end;
+            @include input-button(100%);
+            
+            @include tablet{
+                @include input-button(160px);
+            }
         }
     }
-
 }
+
 
 .comments__list{
     display:flex;

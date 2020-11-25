@@ -620,8 +620,21 @@ h5, label, .shows__label, .show__label--mobile {
 }
 
 .show__cta {
-  margin-top: 32px;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 16px 0;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 24px;
   width: 100%;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .show__cta {
+    margin-bottom: 24px;
+  }
 }
 
 @media (min-width: 768px) {

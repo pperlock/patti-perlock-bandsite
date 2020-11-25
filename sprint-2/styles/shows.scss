@@ -119,8 +119,8 @@
 
     }
     &__cta{
+        @include input-button(100%);
         margin-top:32px;
-        width:100%;
         @include tablet{
             margin-top:0;
             width:160px;
