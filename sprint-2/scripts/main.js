@@ -19,47 +19,52 @@ let comments = [
     }
 ]
 
+// This function builds and displays a comment based on the object passed to it
+function displayComment(newComment){
+    // Element containing the comment avatar
+    let commentAvatar = document.createElement('div');
+    commentAvatar.classList.add("comment__avatar");
 
-// Element containing the comment avatar
-let commentAvatar = document.createElement('div');
-commentAvatar.classList.add("comment__avatar");
+    // Element containing the comment name
+    let commentName = document.createElement('div');
+    commentName.classList.add("comment__details-name");
+    commentName.innerText = newComment.name;
 
-// Element containing the comment name
-let commentName = document.createElement('div');
-commentName.classList.add("comment__details-name");
-commentName.innerText = comments[0].name;
+    // Element containing the comment timestamp
+    let commentTime = document.createElement('div');
+    commentTime.classList.add("comment__details-timestamp");
+    commentTime.innerText = newComment.timeStamp;
 
-// Element containing the comment timestamp
-let commentTime = document.createElement('div');
-commentTime.classList.add("comment__details-timestamp");
-commentTime.innerText = comments[0].timeStamp;
+    // Element containing the comment message
+    let commentMessage = document.createElement('div');
+    commentMessage.classList.add("comment__details-message");
+    commentMessage.innerText = newComment.message;
 
-// Element containing the comment message
-let commentMessage = document.createElement('div');
-commentMessage.classList.add("comment__details-message");
-commentMessage.innerText = comments[0].message;
+    // div containing the message and time stamp
+    let commentDetailsHeader = document.createElement('div');
+    commentDetailsHeader.classList.add('comment__details-header');
+    commentDetailsHeader.appendChild(commentName);
+    commentDetailsHeader.appendChild(commentTime);
 
-// div containing the message and time stamp
-let commentDetailsHeader = document.createElement('div');
-commentDetailsHeader.classList.add('comment__details-header');
-commentDetailsHeader.appendChild(commentName);
-commentDetailsHeader.appendChild(commentTime);
+    //div containing header and message
 
-//div containing header and message
+    let commentDetails = document.createElement('div');
+    commentDetails.classList.add('comment__details')
+    commentDetails.appendChild(commentDetailsHeader);
+    commentDetails.appendChild(commentMessage);
 
-let commentDetails = document.createElement('div');
-commentDetails.classList.add('comment__details')
-commentDetails.appendChild(commentDetailsHeader);
-commentDetails.appendChild(commentMessage);
+    // div containing avatar and comment details
+    let comment = document.createElement('div');
+    comment.classList.add("comment");
+    comment.appendChild(commentAvatar);
+    comment.appendChild(commentDetails);
 
-// div containing avatar and comment details
-let comment = document.createElement('div');
-comment.classList.add("comment");
-comment.appendChild(commentAvatar);
-comment.appendChild(commentDetails);
+    //Once the comment is built add it to the comment list
+    let commentsList = document.querySelector('.comments__list');
+    commentsList.appendChild(comment);
+}
 
-let commentsList = document.querySelector('.comments__list');
-
-commentsList.appendChild(comment);
-
-// console.log(comment);
+// loop through each object in the comments array and build and display it
+comments.forEach(comment =>{
+displayComment(comment);
+});
