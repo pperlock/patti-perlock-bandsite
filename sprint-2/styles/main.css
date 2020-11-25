@@ -196,6 +196,14 @@ h5, label, .shows__label {
   padding-bottom: 16px;
 }
 
+.avatar, .comments__avatar, .comment__avatar {
+  margin-top: 20px;
+  background-color: grey;
+  border-radius: 100px;
+  width: 48px;
+  height: 48px;
+}
+
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Color Palette ======================= */
@@ -414,49 +422,6 @@ h5, label, .shows__label {
   .footer__copyright {
     width: 100%;
   }
-}
-
-.hero {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  Z-index: 0;
-}
-
-.hero__title {
-  width: 240px;
-  color: #FFFFFF;
-  z-index: 2;
-}
-
-@media (min-width: 768px) {
-  .hero__title {
-    font-size: 3.75rem;
-    line-height: 68px;
-    width: 560px;
-  }
-}
-
-.hero__image--filter {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #323232;
-  opacity: 0.5;
-  z-index: 1;
-}
-
-.avatar, .comments__avatar, .comment__avatar {
-  margin-top: 20px;
-  background-color: grey;
-  border-radius: 100px;
-  width: 48px;
-  height: 48px;
 }
 
 /*======================= Hero Section ======================= */
@@ -737,16 +702,32 @@ h5, label, .shows__label {
   }
 }
 
+.comments__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   border-bottom: 2px solid grey;
   padding-top: 16px;
   margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .comment {
+    width: 70%;
+  }
 }
 
 .comment__avatar {
@@ -770,8 +751,22 @@ h5, label, .shows__label {
           justify-content: space-between;
 }
 
+@media (min-width: 768px) {
+  .comment__details-header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .comment__details-name {
   font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .comment__details-name {
+    padding-right: 10px;
+  }
 }
 
 .comment__details-message {

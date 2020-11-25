@@ -1,3 +1,4 @@
+
 // initalize default values for comments array
 let comments = [
     {
@@ -20,7 +21,7 @@ let comments = [
 ]
 
 // This function builds and displays a comment based on the object passed to it
-function displayComment(newComment){
+const displayComment = (newComment) =>{
     // Element containing the comment avatar
     let commentAvatar = document.createElement('div');
     commentAvatar.classList.add("comment__avatar");

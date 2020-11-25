@@ -17,7 +17,8 @@
 
 
 .hero{
-    // Add a background image that centered on and covers the entire section
+    @include styleHero(100%, $shows-hero-image);
+    
     @include hero-background("../assets/images/shows-hero-background.jpg");
     @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
 
@@ -29,8 +30,10 @@
     }
 
     &__song{
-        border-radius:4px;
+        border-radius:50px;
         padding-right:$mobile-padding;
+        z-index:2;
+        height:10vh;
     }
 }
 

@@ -206,12 +206,20 @@
 
 }
 
+.comments__list{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
 .comment{
     display:flex;
-    justify-content:flex-end;
     border-bottom:2px solid grey;
     padding-top:16px;
     margin-bottom:24px;
+
+    @include tablet{
+        width:70%;
+    }
 
     &__avatar{
         @extend .avatar;
@@ -224,9 +232,15 @@
         &-header{
             display:flex;
             justify-content:space-between;
+            @include tablet{
+                justify-content:flex-start;
+            }
         }
         &-name{
             font-weight:bold;
+            @include tablet{
+                padding-right:10px;
+            }
         }
         &-message{
             padding:16px 0;
