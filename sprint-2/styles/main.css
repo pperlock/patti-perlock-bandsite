@@ -464,7 +464,7 @@ h5, label, .shows__label {
   background-image: url("../assets/images/hero-background.jpg");
   background-size: cover;
   background-position: center;
-  height: 23vh;
+  height: 57vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -489,13 +489,13 @@ h5, label, .shows__label {
 
 @media (min-width: 768px) {
   .hero {
-    height: 40vh;
+    height: 52vw;
   }
 }
 
 @media (min-width: 1200px) {
   .hero {
-    height: 74vh;
+    height: 47vw;
   }
 }
 
