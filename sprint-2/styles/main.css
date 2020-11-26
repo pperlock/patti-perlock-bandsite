@@ -705,7 +705,7 @@ h5, label, .shows__label {
   margin-bottom: 24px;
 }
 
-.new-comment__form-comment {
+.new-comment__form-message {
   border-radius: 4px;
   border: 2px solid #AFAFAF;
   background-color: #FAFAFA;
@@ -771,6 +771,7 @@ h5, label, .shows__label {
   border-bottom: 2px solid grey;
   padding-top: 16px;
   margin-bottom: 24px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {

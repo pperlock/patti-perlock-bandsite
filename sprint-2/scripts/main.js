@@ -16,11 +16,14 @@ let comments = [
         timeStamp:"12/18/2018",
         message:"They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed"
     }
-
 ]
+
+// var commentsList = document.createElement('div');
+// commentsList.classList.add('.comments__list');
 
 // This function builds and displays a comment based on the object passed to it
 const displayComment = (newComment) =>{
+
     // Element containing the comment avatar
     let commentAvatar = document.createElement('div');
     commentAvatar.classList.add("comment__avatar");
@@ -47,7 +50,6 @@ const displayComment = (newComment) =>{
     commentDetailsHeader.appendChild(commentTime);
 
     //div containing header and message
-
     let commentDetails = document.createElement('div');
     commentDetails.classList.add('comment__details')
     commentDetails.appendChild(commentDetailsHeader);
@@ -61,13 +63,49 @@ const displayComment = (newComment) =>{
 
     //Once the comment is built add it to the comment list
     let commentsList = document.querySelector('.comments__list');
-    commentsList.appendChild(comment);
+    commentsList.prepend(comment);
 }
 
-/* loop through each object in the comments array in reverse chronological order 
-    - build the html element and display it
-    - .slice used to create "copy" of the array without altering original array order*/
-comments.slice().reverse().forEach(comment =>{
+/* loop through each object in the comments array - build the html element and display it*/
+comments.forEach(comment =>{
     displayComment(comment);
+});
+
+
+
+let commentForm = document.querySelector('.new-comment__form');
+// submit the form values using an event listener
+commentForm.addEventListener('submit', event=>{
+    // prevents the page from reloading upon submit
+    event.preventDefault();
+
+    // new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    let today = new Date();
+    formattedDate =  (today.getMonth()+1) + "/" + today.getDate() + "/" + today.getFullYear();
+    
+    // create a new comment object from the values submitted
+    let newComment = {
+        name:event.target.name.value,
+        timeStamp:formattedDate,
+        message:event.target.message.value
+    }
+
+    //push the new comment to the comments array
+    comments.push(newComment);
+
+    //clear all the previous comments from the screen
+    const allComments = document.querySelectorAll('.comment');
+    allComments.forEach(comment=>{
+        comment.remove();
+    });
+    
+    // re-render all the comments from the comment array
+    comments.forEach(comment =>{
+        displayComment(comment);
+    });
+    
+    // Reset the input boxes with a blank value and the placeholder
+    event.target.name.value="";
+    event.target.message.value="";
 });
 

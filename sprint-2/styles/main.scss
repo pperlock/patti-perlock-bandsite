@@ -195,7 +195,7 @@
         &-name{
             @include input-text(16px, 16px,24px);
         }
-        &-comment{
+        &-message{
             @include input-text(16px, 60px, 24px);
         }
         &-button{
@@ -209,7 +209,6 @@
     }
 }
 
-
 .comments__list{
     display:flex;
     flex-direction:column;
@@ -220,6 +219,7 @@
     border-bottom:2px solid grey;
     padding-top:16px;
     margin-bottom:24px;
+    width:100%;
 
     @include tablet{
         width:70%;
