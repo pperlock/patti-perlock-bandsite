@@ -440,10 +440,10 @@ h5, label, .shows__label, .show__label--mobile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
 }
 
 .hero::before {
@@ -463,35 +463,46 @@ h5, label, .shows__label, .show__label--mobile {
   background-image: url("../assets/images/shows-hero-background.jpg");
   background-size: cover;
   background-position: center;
-  height: 60vh;
-}
-
-.hero .hero__content-title {
-  font-size: 2.3rem;
-  line-height: 3rem;
-  width: 100%;
-  color: #FFFFFF;
-  margin-bottom: 48px;
-  margin-top: 24px;
-}
-
-@media (min-width: 768px) {
-  .hero .hero__content-title {
-    font-size: 3.75rem;
-    line-height: 68px;
-    width: 560px;
-  }
+  height: 150vw;
 }
 
 @media (min-width: 768px) {
   .hero {
-    height: 65vh;
+    height: 87vw;
   }
 }
 
 @media (min-width: 1200px) {
   .hero {
-    height: 74vh;
+    height: 47vw;
+  }
+}
+
+.hero__content {
+  width: 100%;
+}
+
+.hero__content-title {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  width: 288px;
+  color: #FFFFFF;
+  margin-bottom: 48px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .hero__content-title {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    width: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__content-title {
+    font-size: 3.14rem;
+    width: 570px;
   }
 }
 
@@ -500,14 +511,13 @@ h5, label, .shows__label, .show__label--mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
 .hero__content-subtitle {
-  padding-top: 64px;
   color: #FFFFFF;
 }
 
@@ -527,7 +537,8 @@ h5, label, .shows__label, .show__label--mobile {
 @media (min-width: 1200px) {
   .hero__content-song {
     padding-left: 64px;
-    width: 436px;
+    padding-bottom: 4rem;
+    width: 50%;
     height: 146px;
   }
 }

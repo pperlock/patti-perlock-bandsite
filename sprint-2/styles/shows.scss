@@ -17,21 +17,36 @@
 
 
 .hero{
-    @include heroTitle(100%,2.3rem,3rem,48px,24px);
     @include hero-background($shows-hero-image);
     @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
 
     &__content{
-   
+        width:100%;
+        // padding-right:0;
+        // padding-top:6vw;
+        @include tablet{
+            // padding-top:0vw
+        }
+        &-title{
+            @include heroTitle(288px,2.3rem,3rem,48px,48px);
+            @include tablet{
+                font-size: 3.2rem;
+                line-height:4rem;
+                width:500px;
+            }
+            @include desktop{
+                font-size: 3.14rem;
+                width:570px;
+            }
+        }  
         &-bottom{
             @include desktop{
                 display:flex;
-                align-items:center;
+                align-items:flex-end;
             }
         }
 
         &-subtitle{
-            padding-top:64px;
             color:$global-contrast;
         }
 
@@ -45,8 +60,10 @@
             }
             @include desktop{
                 padding-left:64px;
-                width:436px;
+                padding-bottom:4rem;
+                width:50%;
                 height:146px;
+                // max-width:436px;
             }
         }
     }   

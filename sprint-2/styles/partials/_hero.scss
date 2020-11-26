@@ -30,7 +30,9 @@
             
     // Used to center the hero title vertically
     display:flex;
-    flex-direction:column;
+    align-items:center;
+    height:auto;
+    
     
     // Apply a semi-transparent filter to the image to make the title more prominent
     &::before{
@@ -48,7 +50,7 @@
 }
 
 @mixin heroTitle ($title-width, $title-mobile-size, $title-line-height, $padding-bottom, $padding-top){
-    .hero__content-title{
+    // .hero__content-title{
         font-size:$title-mobile-size;
         line-height:$title-line-height;
         width: $title-width;
@@ -58,12 +60,12 @@
         //Place the title on top of the image and its filter
 
         // Set explicit font styling that only applies to the titles for devices >= tablet
-        @include tablet{
-            font-size:3.75rem;
-            line-height:68px;
+        // @include tablet{
+        //     // font-size:3.75rem;
+        //     // line-height:68px;
 
-            // Apply an absolute measurement to maintain a two line format across devices
-            width: 560px;
-        }
-   }
+        //     // Apply an absolute measurement to maintain a two line format across devices
+        //     width: 560px;
+        // }
+//    }
 }
