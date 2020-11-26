@@ -196,6 +196,12 @@ h5, label, .shows__label, .show__label--mobile {
   padding-bottom: 16px;
 }
 
+@media (min-width: 768px) {
+  .shows__label, .show__label--mobile {
+    width: 30%;
+  }
+}
+
 .avatar {
   margin-top: 20px;
   background-color: grey;
@@ -547,6 +553,9 @@ h5, label, .shows__label, .show__label--mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 75%;
   }
 }
@@ -599,9 +608,6 @@ h5, label, .shows__label, .show__label--mobile {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
-    -webkit-box-flex: 3;
-        -ms-flex-positive: 3;
-            flex-grow: 3;
   }
 }
 
@@ -627,7 +633,7 @@ h5, label, .shows__label, .show__label--mobile {
   border: none;
   cursor: pointer;
   margin-bottom: 24px;
-  width: 100%;
+  width: 288px;
   margin-top: 32px;
 }
 
@@ -643,9 +649,6 @@ h5, label, .shows__label, .show__label--mobile {
     width: 160px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
   }
 }
 /*# sourceMappingURL=shows.css.map */

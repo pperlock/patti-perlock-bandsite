@@ -196,6 +196,12 @@ h5, label, .shows__label {
   padding-bottom: 16px;
 }
 
+@media (min-width: 768px) {
+  .shows__label {
+    width: 30%;
+  }
+}
+
 .avatar, .new-comment__avatar, .comment__avatar {
   margin-top: 20px;
   background-color: grey;
