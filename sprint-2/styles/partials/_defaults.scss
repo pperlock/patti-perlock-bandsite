@@ -168,3 +168,13 @@ h5, label, .shows__label{
     width:48px;
     height:48px;
 }
+
+.new-comment__form-name, .new-comment__form-message,.new-comment__form-button{
+    &:focus{
+        outline:none;
+        border-color:$active-input;
+    }
+    &:-webkit-autofill{
+        transition: background-color 5000s ease-in-out 0s
+    }
+}

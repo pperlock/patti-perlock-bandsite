@@ -210,6 +210,16 @@ h5, label, .shows__label, .show__label--mobile {
   height: 48px;
 }
 
+.new-comment__form-name:focus, .new-comment__form-message:focus, .new-comment__form-button:focus {
+  outline: none;
+  border-color: #323232;
+}
+
+.new-comment__form-name:-webkit-autofill, .new-comment__form-message:-webkit-autofill, .new-comment__form-button:-webkit-autofill {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Color Palette ======================= */

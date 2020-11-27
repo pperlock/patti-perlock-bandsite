@@ -212,10 +212,13 @@
         }
         &-button{
             align-self:flex-end;
-            @include input-button(100%);
+            @include input-button(225.61px);
             
             @include tablet{
                 @include input-button(160px);
+            }
+            &:hover{
+                background-color:black;
             }
         }
     }

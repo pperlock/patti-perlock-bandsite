@@ -210,6 +210,16 @@ h5, label, .shows__label {
   height: 48px;
 }
 
+.new-comment__form-name:focus, .new-comment__form-message:focus, .new-comment__form-button:focus {
+  outline: none;
+  border-color: #323232;
+}
+
+.new-comment__form-name:-webkit-autofill, .new-comment__form-message:-webkit-autofill, .new-comment__form-button:-webkit-autofill {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Color Palette ======================= */
@@ -742,7 +752,7 @@ h5, label, .shows__label {
   border: none;
   cursor: pointer;
   margin-bottom: 32px;
-  width: 100%;
+  width: 225.61px;
 }
 
 @media (min-width: 768px) {
@@ -768,6 +778,10 @@ h5, label, .shows__label {
   .new-comment__form-button {
     margin-bottom: 24px;
   }
+}
+
+.new-comment__form-button:hover {
+  background-color: black;
 }
 
 .comments__list {
