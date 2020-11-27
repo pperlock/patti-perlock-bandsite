@@ -1,4 +1,4 @@
-/*Import any global default styles including partials containing typography, variables, and mixins*/
+//Import any global default styles including partials containing typography, variables, and mixins*/
 @import "./partials/defaults";
 
 // Import the global variables
@@ -17,12 +17,10 @@
 
 
 .hero{
-    @include hero-background($shows-hero-image);
+    @include add-background($shows-hero-image);
     @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
 
     &__content{
-        width:100%;
-        // padding-right:0;
         // padding-top:6vw;
         @include tablet{
             // padding-top:0vw
@@ -143,6 +141,9 @@
             margin-top:0;
             width:160px;
             align-self:flex-end;
+        }
+        &:hover{
+            background-color:black;
         }
     }
 }

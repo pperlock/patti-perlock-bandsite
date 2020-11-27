@@ -23,7 +23,14 @@
     margin-bottom:$image-padding;
 }
 
+// add a background image to the hero section
+@mixin add-background($hero-url){
+    background-image: url($hero-url);
+    background-size:cover;
+    background-position:center;
+}
 
+//Apply default settings for input text boxes with varying padding options
 @mixin input-text ($padding-top, $padding-bottom, $bottom-margin){
     border-radius:4px;
     border:2px solid $text-field-border;
@@ -32,6 +39,7 @@
     margin-bottom: $bottom-margin;
 }
 
+//Apply default settings for input buttons at varying sizes
 @mixin input-button($width){
     border-radius:4px;
     background-color: $button-fill;

@@ -1,4 +1,3 @@
-/*Import any global default styles including partials containing typography, variables, and mixins*/
 /*======================= Global Default Styling ======================= */
 /*======================= Define Global Fonts ======================= */
 /**** Default Fonts ****/
@@ -192,13 +191,12 @@ h5, label, .shows__label, .show__label--mobile {
 }
 
 .shows__label, .show__label--mobile {
-  margin-right: 20px;
   padding-bottom: 16px;
 }
 
 @media (min-width: 768px) {
   .shows__label, .show__label--mobile {
-    width: 30%;
+    width: 34%;
   }
 }
 
@@ -466,6 +464,7 @@ h5, label, .shows__label, .show__label--mobile {
 }
 
 .hero__content {
+  width: 100%;
   z-index: 2;
 }
 
@@ -486,10 +485,6 @@ h5, label, .shows__label, .show__label--mobile {
   .hero {
     height: 47vw;
   }
-}
-
-.hero__content {
-  width: 100%;
 }
 
 .hero__content-title {
@@ -671,5 +666,9 @@ h5, label, .shows__label, .show__label--mobile {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.show__cta:hover {
+  background-color: black;
 }
 /*# sourceMappingURL=shows.css.map */

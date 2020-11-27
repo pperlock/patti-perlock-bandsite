@@ -192,13 +192,12 @@ h5, label, .shows__label {
 }
 
 .shows__label {
-  margin-right: 20px;
   padding-bottom: 16px;
 }
 
 @media (min-width: 768px) {
   .shows__label {
-    width: 30%;
+    width: 34%;
   }
 }
 
@@ -466,6 +465,7 @@ h5, label, .shows__label {
 }
 
 .hero__content {
+  width: 100%;
   z-index: 2;
 }
 
@@ -705,7 +705,7 @@ h5, label, .shows__label {
 }
 
 .new-comment__avatar {
-  background-image: url("../assets/images/avatar.jpg");
+  background-image: "../assets/images/avatar.jpg";
   background-size: cover;
 }
 
@@ -740,6 +740,12 @@ h5, label, .shows__label {
   padding-right: 16px;
   resize: none;
   font-family: "Avenir Next", "Roboto";
+}
+
+@media (min-width: 1200px) {
+  .new-comment__form-message {
+    padding-bottom: 48px;
+  }
 }
 
 .new-comment__form-button {
@@ -795,7 +801,7 @@ h5, label, .shows__label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 
 .comment {

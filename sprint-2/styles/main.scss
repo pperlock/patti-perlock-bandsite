@@ -23,7 +23,7 @@
 .hero{
 
     // Add a background image that centered on and covers the entire section
-    @include hero-background("../assets/images/hero-background.jpg");
+    @include add-background("../assets/images/hero-background.jpg");
     // have the hero image respond vertically
     @include responsive-hero($mobile-bio-ratio,$tablet-bio-ratio,$desktop-bio-ratio);
     &__content-title{
@@ -191,7 +191,7 @@
 
     &__avatar{
         @extend .avatar;
-        background-image:url("../assets/images/avatar.jpg");
+        background-image:("../assets/images/avatar.jpg");
         background-size:cover;
     } 
 
@@ -203,12 +203,17 @@
 
         &-name{
             @include input-text(16px, 16px,24px);
+            
         }
         &-message{
             @include input-text(16px, 60px, 24px);
             padding-right:16px;
             resize:none;
             font-family:"Avenir Next", "Roboto";
+            @include desktop{
+                padding-bottom:48px;
+            }
+
         }
         &-button{
             align-self:flex-end;
@@ -228,7 +233,7 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    margin-bottom:16px;
+    margin-bottom:40px;
 }
 .comment{
     display:flex;
