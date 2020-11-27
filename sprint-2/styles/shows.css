@@ -204,7 +204,7 @@ h5, label, .shows__label, .show__label--mobile {
 
 .avatar {
   margin-top: 20px;
-  background-color: grey;
+  background-color: #E1E1E1;
   border-radius: 100px;
   width: 48px;
   height: 48px;
@@ -643,7 +643,7 @@ h5, label, .shows__label, .show__label--mobile {
   padding: 16px 0;
   border: none;
   cursor: pointer;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   width: 288px;
   margin-top: 32px;
 }

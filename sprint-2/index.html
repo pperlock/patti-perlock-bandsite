@@ -82,11 +82,11 @@
             <h2 class="section__title comments__title"> Join the Conversation</h2>
             <div class="new-comment">
                 <div class="new-comment__avatar"></div>
-                <form class="new-comment__form">
+                <form id="new-comment__form" class="new-comment__form">
                     <label for="name">NAME</label>
                     <input class="new-comment__form-name" name="name" id="name" type="text" placeholder ="Mohan Muruge">
                     <label for="message">COMMENT</label>
-                    <input class="new-comment__form-message" name="message" id="message" type="textarea" placeholder="Add a new comment">
+                    <textarea class="new-comment__form-message" form="new-comment__form" wrap="hard" name="message" id="message" placeholder="Add a new comment" rows="2" cols="20"></textarea>
                     <button class="new-comment__form-button" id="submit" type="submit"> COMMENT </button>
                 </form>
             </div>   

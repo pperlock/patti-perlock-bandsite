@@ -178,16 +178,21 @@
 
 .new-comment{
     display:flex;
-    border-bottom: 2px solid grey;
-    margin-bottom:24px;
+    border-bottom:1px solid $divider;
+    // margin-bottom:24px;
     
     @include tablet{
         width:70%;
         align-self:center;
     }
+    @include desktop{
+        width:49%;
+    }
 
     &__avatar{
         @extend .avatar;
+        background-image:url("../assets/images/avatar.jpg");
+        background-size:cover;
     } 
 
     &__form{
@@ -201,6 +206,9 @@
         }
         &-message{
             @include input-text(16px, 60px, 24px);
+            padding-right:16px;
+            resize:none;
+            font-family:"Avenir Next", "Roboto";
         }
         &-button{
             align-self:flex-end;
@@ -217,18 +225,21 @@
     display:flex;
     flex-direction:column;
     align-items:center;
+    margin-bottom:16px;
 }
 .comment{
     display:flex;
-    border-bottom:2px solid grey;
-    padding-top:16px;
-    margin-bottom:24px;
+    border-bottom:1px solid $divider;
+    padding-top:24px;
+    // margin-bottom:24px;
     width:100%;
 
     @include tablet{
         width:70%;
     }
-
+    @include desktop{
+        width:49%;
+    }
     &__avatar{
         @extend .avatar;
         margin-top:0;
@@ -250,8 +261,13 @@
                 padding-right:10px;
             }
         }
+        &-timestamp{
+            color:$text-label;
+        }
         &-message{
-            padding:16px 0;
+            padding:16px 0 24px 0;
+            font-size:0.875rem;
+            line-height:1.375rem;
         }
     }
 
