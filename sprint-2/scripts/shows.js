@@ -73,7 +73,7 @@ const displayShow = show =>{
     let key='';
     labelCounter=0;
     keyCounter=0;
-    // loop through each object key*2 for a labels
+    // loop through each object key*2 for labels
     for(let i=0; i < Object.keys(show).length*2; i++){
         //create a list element 
         showElement = document.createElement('li');

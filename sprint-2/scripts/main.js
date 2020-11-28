@@ -18,8 +18,58 @@ let comments = [
     }
 ]
 
-// var commentsList = document.createElement('div');
-// commentsList.classList.add('.comments__list');
+// DIVING DEEPER --> Function that takes the timestamp of an object as a parameter and returns a message stating the difference between that time and the current time
+let timePassed = time =>{
+    // get the current date and time 
+    let today = new Date();
+    //get the data recorded when a post was made - new date added to accommodates the default values
+    let posted = new Date(time);
+
+    // find the difference between the time now and the post's timestamp
+    let diffTime = today.getTime() - posted.getTime();
+
+    // define the method of reduction for the units array
+    const reducer = (accumulator, currentValue) => accumulator*currentValue;
+    
+    // values used to convert milliseconds to seconds, minutes, hours, days, years, weeks,months and years
+    conversions = [1000,60,60,24,7,4,12];
+
+    // initialize the array to hold the differences in time for each unit [milliseconds --->years]
+    var diffTimes = [diffTime];
+    
+    for (let i=0; i<conversions.length; i++){
+        let units = [];
+        // for each unit, get the conversion values needed and push it into an array
+        units.push(conversions[i]);
+        // divide the difference in milliseconds by the multiplication of all the conversion values in the array
+        diffTimes.push(diffTimes[i]/units.reduce(reducer));
+    }
+    // reverse the order of the resulting array [years --> milliseconds]
+    diffTimes = diffTimes.reverse();    
+
+    // define an array to hold the units associated with each value of the diffTimes array
+    let diffunits = ["year","month", "week", "day", "hour", "minute","< 1 min","< 1 min"];
+
+    // Round all the time differences down to the nearest whole number - this will create 0s for the smaller units that we don't want to use
+    let convertedDates = diffTimes.map(date=>Math.floor(date));
+    
+    // find the location of the first value in the diffTimes array that is not 0
+    let timeLoc = convertedDates.findIndex(date=>date!=0);
+    
+    // find the first value in the diffTimes array is not o
+    let timediff = timeLoc < 0 ? diffunits[7] : convertedDates.find(date=>date!=0);
+    // get the units associated with the time diff value
+    let tempunits = timeLoc < 0 ? diffunits[7] : diffunits[timeLoc]; 
+
+    // take into account if the units should present as singular or plural
+    let units = (timediff===1 || tempunits=="< 1 min") ? tempunits : tempunits+"s";
+
+    // determine the message to be returned - if it is anything less than minutes than the value of timeDiff isn't included
+    let timeMessage = (units === "< 1 min") ? `${units} ago` : `${timediff} ${units} ago`
+    
+    return timeMessage;
+}
+
 
 // This function builds and displays a comment based on the object passed to it
 const displayComment = (newComment) =>{
@@ -36,7 +86,8 @@ const displayComment = (newComment) =>{
     // Element containing the comment timestamp
     let commentTime = document.createElement('div');
     commentTime.classList.add("comment__details-timestamp");
-    commentTime.innerText = newComment.timeStamp;
+    // display the time stamped as a time passed message    
+    commentTime.innerText = timePassed(newComment.timeStamp);
 
     // Element containing the comment message
     let commentMessage = document.createElement('div');
@@ -72,21 +123,16 @@ comments.forEach(comment =>{
 });
 
 
-
 let commentForm = document.querySelector('.new-comment__form');
 // submit the form values using an event listener
 commentForm.addEventListener('submit', event=>{
     // prevents the page from reloading upon submit
     event.preventDefault();
 
-    // new Date(year, month, day, hours, minutes, seconds, milliseconds)
-    let today = new Date();
-    formattedDate =  (today.getMonth()+1) + "/" + today.getDate() + "/" + today.getFullYear();
-    
     // create a new comment object from the values submitted
     let newComment = {
         name:event.target.name.value,
-        timeStamp:formattedDate,
+        timeStamp:new Date(),
         message:event.target.message.value
     }
 

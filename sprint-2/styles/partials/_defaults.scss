@@ -81,7 +81,7 @@ h4, p, address, .list{
 }
 
 // labels
-h5, label, .shows__label{
+h5, .new-comment__label, .shows__label{
     font-size:0.75rem;
     line-height:1.25rem;
     color:$text-label;
@@ -142,10 +142,8 @@ h5, label, .shows__label{
 }
 
 // Show spacing for tablet
-
-.show__details li {
+.show__li {
     font-size:1rem;
-    font-weight:400;
     flex-grow:1;
 
     @include tablet{
@@ -157,6 +155,10 @@ h5, label, .shows__label{
     padding-bottom:16px;
     @include tablet{
         width:34%;
+    }
+    @include desktop{
+        padding-bottom:32px;
+
     }
 }
 

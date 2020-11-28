@@ -61,26 +61,38 @@
                 padding-bottom:4rem;
                 width:50%;
                 height:146px;
-                // max-width:436px;
             }
         }
     }   
 }
 
 .shows{
+    margin-bottom:40px;
+   
     @include desktop{
         display:flex;
         justify-content:space-between;
         padding-top:48px;
-
     }
 
+    &__label:first-child{
+        @include tablet{
+            margin-right:16%;
+        }
+    }
     &__labels-tablet{
         display:none;        
+        
         @include tablet{
             display:flex;
             justify-content:space-between;
             width:75%;
+        }
+        
+        &:first-child{
+            @include tablet{
+                margin-right:100px;
+            }
         }
     }
     &__title{
@@ -100,7 +112,7 @@
 }    
 
 .show{
-    border-bottom:2px solid grey;
+    border-bottom:1px solid $divider;
     margin-bottom:16px;
     // Put the show details in a row for devices >=tablet size
     @include tablet{
@@ -126,19 +138,25 @@
     }
 
     &__date{
+        @extend .show__li;
+        font-weight:600;
         padding-bottom:24px;
+        margin-right:16%;
     }
     &__venue{
+        @extend .show__li;
         padding-bottom:24px;
     }
-    &__location{
 
+    &__location{
+        @extend .show__li;
     }
     &__cta{
         @include input-button(288px);
         margin-top:32px;
         @include tablet{
             margin-top:0;
+            margin-bottom:16px;
             width:160px;
             align-self:flex-end;
         }

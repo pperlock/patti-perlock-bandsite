@@ -116,7 +116,7 @@ h4, p, address, .list {
   }
 }
 
-h5, label, .shows__label, .show__label--mobile {
+h5, .new-comment__label, .shows__label, .show__label--mobile {
   font-size: 0.75rem;
   line-height: 1.25rem;
   color: #AFAFAF;
@@ -176,16 +176,15 @@ h5, label, .shows__label, .show__label--mobile {
   margin-bottom: 24px;
 }
 
-.show__details li {
+.show__li, .show__date, .show__venue, .show__location {
   font-size: 1rem;
-  font-weight: 400;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
 @media (min-width: 768px) {
-  .show__details li {
+  .show__li, .show__date, .show__venue, .show__location {
     width: 30%;
   }
 }
@@ -197,6 +196,12 @@ h5, label, .shows__label, .show__label--mobile {
 @media (min-width: 768px) {
   .shows__label, .show__label--mobile {
     width: 34%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shows__label, .show__label--mobile {
+    padding-bottom: 32px;
   }
 }
 
@@ -548,6 +553,10 @@ h5, label, .shows__label, .show__label--mobile {
   }
 }
 
+.shows {
+  margin-bottom: 40px;
+}
+
 @media (min-width: 1200px) {
   .shows {
     display: -webkit-box;
@@ -557,6 +566,12 @@ h5, label, .shows__label, .show__label--mobile {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-top: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .shows__label:first-child, .show__label--mobile:first-child {
+    margin-right: 16%;
   }
 }
 
@@ -573,6 +588,12 @@ h5, label, .shows__label, .show__label--mobile {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .shows__labels-tablet:first-child {
+    margin-right: 100px;
   }
 }
 
@@ -597,7 +618,7 @@ h5, label, .shows__label, .show__label--mobile {
 }
 
 .show {
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #E1E1E1;
   margin-bottom: 16px;
 }
 
@@ -634,7 +655,9 @@ h5, label, .shows__label, .show__label--mobile {
 }
 
 .show__date {
+  font-weight: 600;
   padding-bottom: 24px;
+  margin-right: 16%;
 }
 
 .show__venue {
@@ -648,7 +671,7 @@ h5, label, .shows__label, .show__label--mobile {
   padding: 16px 0;
   border: none;
   cursor: pointer;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   width: 288px;
   margin-top: 32px;
 }
@@ -662,6 +685,7 @@ h5, label, .shows__label, .show__label--mobile {
 @media (min-width: 768px) {
   .show__cta {
     margin-top: 0;
+    margin-bottom: 16px;
     width: 160px;
     -ms-flex-item-align: end;
         align-self: flex-end;

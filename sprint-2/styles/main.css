@@ -117,7 +117,7 @@ h4, p, address, .list {
   }
 }
 
-h5, label, .shows__label {
+h5, .new-comment__label, .shows__label {
   font-size: 0.75rem;
   line-height: 1.25rem;
   color: #AFAFAF;
@@ -177,16 +177,15 @@ h5, label, .shows__label {
   margin-bottom: 24px;
 }
 
-.show__details li {
+.show__li {
   font-size: 1rem;
-  font-weight: 400;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
 @media (min-width: 768px) {
-  .show__details li {
+  .show__li {
     width: 30%;
   }
 }
@@ -198,6 +197,12 @@ h5, label, .shows__label {
 @media (min-width: 768px) {
   .shows__label {
     width: 34%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shows__label {
+    padding-bottom: 32px;
   }
 }
 
@@ -757,7 +762,7 @@ h5, label, .shows__label {
   padding: 16px 0;
   border: none;
   cursor: pointer;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   width: 225.61px;
 }
 
@@ -775,7 +780,7 @@ h5, label, .shows__label {
     padding: 16px 0;
     border: none;
     cursor: pointer;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     width: 160px;
   }
 }
