@@ -453,6 +453,9 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -541,7 +544,6 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 
 @media (min-width: 768px) {
   .hero__content-song {
-    height: 12vh;
     width: 433px;
   }
 }
@@ -551,7 +553,8 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
     padding-left: 64px;
     padding-bottom: 4rem;
     width: 50%;
-    height: 146px;
+    max-width: 490px;
+    height: 126px;
   }
 }
 
@@ -573,7 +576,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 
 @media (min-width: 768px) {
   .shows__label:first-child, .show__label--mobile:first-child {
-    margin-right: 16%;
+    margin-right: 11%;
   }
 }
 
@@ -593,12 +596,6 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   }
 }
 
-@media (min-width: 768px) {
-  .shows__labels-tablet:first-child {
-    margin-right: 100px;
-  }
-}
-
 .shows__title {
   padding-bottom: 40px;
 }
@@ -615,7 +612,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 
 @media (min-width: 1200px) {
   .shows__list {
-    width: 75%;
+    width: 79%;
   }
 }
 
@@ -659,7 +656,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 .show__date {
   font-weight: 600;
   padding-bottom: 24px;
-  margin-right: 16%;
+  margin-right: 11%;
 }
 
 .show__venue {

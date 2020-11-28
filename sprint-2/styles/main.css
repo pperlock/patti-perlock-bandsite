@@ -454,6 +454,9 @@ h5, .new-comment__label, .shows__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -707,12 +710,12 @@ h5, .new-comment__label, .shows__label {
 
 @media (min-width: 1200px) {
   .new-comment {
-    width: 49%;
+    width: 60%;
   }
 }
 
 .new-comment__avatar {
-  background-image: "../assets/images/avatar.jpg";
+  background-image: url("../assets/images/avatar.jpg");
   background-size: cover;
 }
 
@@ -828,7 +831,7 @@ h5, .new-comment__label, .shows__label {
 
 @media (min-width: 1200px) {
   .comment {
-    width: 49%;
+    width: 60%;
   }
 }
 

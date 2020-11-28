@@ -49,18 +49,19 @@
         }
 
         &-song{
+            // With of iframe is static - doesn't look good growing and shrinking
             border-radius:50px;
             width:288px;
             height:11vh;
             @include tablet{
-                height:12vh;
                 width:433px;
             }
             @include desktop{
                 padding-left:64px;
                 padding-bottom:4rem;
                 width:50%;
-                height:146px;
+                max-width:490px;
+                height:126px;
             }
         }
     }   
@@ -77,7 +78,7 @@
 
     &__label:first-child{
         @include tablet{
-            margin-right:16%;
+            margin-right:11%;
         }
     }
     &__labels-tablet{
@@ -89,11 +90,6 @@
             width:75%;
         }
         
-        &:first-child{
-            @include tablet{
-                margin-right:100px;
-            }
-        }
     }
     &__title{
         padding-bottom:40px;
@@ -106,7 +102,7 @@
     &__list{
         margin-bottom:24px;
         @include desktop{
-            width:75%;
+            width:79%;
         }
     }
 }    
@@ -141,7 +137,7 @@
         @extend .show__li;
         font-weight:600;
         padding-bottom:24px;
-        margin-right:16%;
+        margin-right:11%;
     }
     &__venue{
         @extend .show__li;
