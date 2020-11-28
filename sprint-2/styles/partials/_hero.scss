@@ -7,11 +7,13 @@
 // Make the hero image responsive vertically
 @mixin responsive-hero($mobile-ratio, $tablet-ratio, $desktop-ratio){
     height:$mobile-ratio;
+    max-height: 640px; //stop growing at 640px - starts to look bad any bigger   
 
     // Change hero height ratio to increase as device size increases
     @include tablet{
-        height:$tablet-ratio;        
-    }
+        height:$tablet-ratio;    
+        max-height: 850px;   //stop growing at 850px - starts to look bad any bigger   
+     }
 
     @include desktop{
         height:$desktop-ratio;        

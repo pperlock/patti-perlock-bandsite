@@ -478,11 +478,13 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   background-size: cover;
   background-position: center;
   height: 150vw;
+  max-height: 640px;
 }
 
 @media (min-width: 768px) {
   .hero {
     height: 87vw;
+    max-height: 850px;
   }
 }
 
