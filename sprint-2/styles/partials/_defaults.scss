@@ -9,6 +9,7 @@
 // Import global mixins
 @import "mixins";
 
+// Default styling for global elements
 
 // Remove all the margins and padding from all elements to start
 *{
@@ -33,6 +34,7 @@ a{
     text-decoration: none;
     color:$global-contrast;
 }
+
 
 /*Default font formats for breakpoints from styleguide.  HTML font size is 16px*/
 
@@ -142,7 +144,7 @@ h5, .new-comment__label, .shows__label{
 }
 
 // Show spacing for tablet
-.show__li {
+.show li {
     font-size:1rem;
     flex-grow:1;
 
@@ -151,6 +153,7 @@ h5, .new-comment__label, .shows__label{
     }
 }
 
+// Default styling for show labels
 .shows__label{
     padding-bottom:16px;
     @include tablet{
@@ -162,6 +165,7 @@ h5, .new-comment__label, .shows__label{
     }
 }
 
+// Default styling for comments avatars
 .avatar{
     margin-top:20px;
     background-color:$avatar-fill;
@@ -170,13 +174,11 @@ h5, .new-comment__label, .shows__label{
     height:48px;
 }
 
+// default styling for input elements states
 .new-comment__form-name, .new-comment__form-message,.new-comment__form-button{
     &:focus{
         outline:none;
         border-color:$active-input;
-    }
-    &:-webkit-autofill{
-        transition: background-color 5000s ease-in-out 0s
     }
 }
 

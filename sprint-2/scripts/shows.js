@@ -1,35 +1,11 @@
 // initialize the shows array that holds each show Object
 let shows = [
-    {   
-        date:'Mon Dec 17 2018',
-        venue:'Ronald Lane',
-        location: 'San Francisco, CA'
-    },
-    {   
-        date:'Tue Jul 18 2019',
-        venue:'Pier 3 East',
-        location: 'San Francisco, CA'
-    },
-    {   
-        date:'Fri Jul 22 2019',
-        venue:'View Lounge',
-        location: 'San Francisco, CA'
-    },
-    {   
-        date:'Sat Aug 12 2019',
-        venue:'Hyatt Agency',
-        location: 'San Francisco, CA'
-    },
-    {   
-        date:'Fri Sep 05 2019',
-        venue:'Moscow Center',
-        location: 'San Francisco, CA'
-    },
-    {   
-        date:'Wed Aug 11 2019',
-        venue:'Pres Club',
-        location: 'San Francisco, CA'
-    }
+    {date:'Mon Dec 17 2018', venue:'Ronald Lane', location: 'San Francisco, CA'},
+    {date:'Tue Jul 18 2019', venue:'Pier 3 East', location: 'San Francisco, CA'},
+    {date:'Fri Jul 22 2019', venue:'View Lounge', location: 'San Francisco, CA'},
+    {date:'Sat Aug 12 2019', venue:'Hyatt Agency', location: 'San Francisco, CA'},
+    {date:'Fri Sep 05 2019', venue:'Moscow Center', location: 'San Francisco, CA'},
+    {date:'Wed Aug 11 2019', venue:'Pres Club', location: 'San Francisco, CA'}
 ];
 
 // initialize an array to hold each labels for each show detail
@@ -108,6 +84,7 @@ const displayShow = show =>{
     showsList.appendChild(showContainer);
 };
 
+// Display the entire shows array 
 shows.forEach(show=>{
     displayShow(show);
 })

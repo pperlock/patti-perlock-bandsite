@@ -15,37 +15,33 @@
 
 @import "./partials/hero";
 
+/*======================= Shows Hero ======================= */
 
 .hero{
+    // Add a background to the hero section
     @include add-background($shows-hero-image);
+    // Make the height of the hero image vertically responsive as the width grows
     @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
 
     &__content{
-        // padding-top:6vw;
-        @include tablet{
-            // padding-top:0vw
-        }
         &-title{
-            @include heroTitle(288px,2.3rem,3rem,48px,48px);
+            // Create a title with specific properties (width, font-size, line-height, top&bottom padding)
+            @include heroTitle(288px,2.3rem,3rem);
             @include tablet{
-                font-size: 3.2rem;
-                line-height:4rem;
-                width:500px;
+                // increase the width, fontsize and line height for tablet devices
+                @include heroTitle(500px,3.2rem,4rem);
             }
             @include desktop{
-                font-size: 3.14rem;
-                width:570px;
+                // increase the width and fontsize for desktop devices
+                @include heroTitle(570px,3.14rem,4rem);
             }
         }  
+        // put the title and the iframe side by side for desktop devices
         &-bottom{
             @include desktop{
                 display:flex;
                 align-items:flex-end;
             }
-        }
-
-        &-subtitle{
-            color:$global-contrast;
         }
 
         &-song{
@@ -67,34 +63,41 @@
     }   
 }
 
+/*======================= Shows Section ======================= */
+
 .shows{
     margin-bottom:40px;
-   
+    
+    //move the section title beside the table for desktops
     @include desktop{
         display:flex;
         justify-content:space-between;
         padding-top:48px;
     }
 
+    // add right margin to the  Dates label to make it the same size as the dates column of the table
     &__label:first-child{
         @include tablet{
             margin-right:11%;
         }
     }
+    // labels to be shown for devices >= tablet size
     &__labels-tablet{
+        // don't display these labels for mobile devices
         display:none;        
         
         @include tablet{
+            // display these labels for devices >= tablet size
             display:flex;
             justify-content:space-between;
             width:75%;
         }
-        
     }
     &__title{
         padding-bottom:40px;
         
         @include desktop{
+            // remove the padding from the top of the title to align it with the table
            padding-top:0;
         }
     }
@@ -102,10 +105,13 @@
     &__list{
         margin-bottom:24px;
         @include desktop{
+            // make the width of the table smaller to fit beside title on desktop devices
             width:79%;
         }
     }
 }    
+
+/*======================= Show Elements ======================= */
 
 .show{
     border-bottom:1px solid $divider;
@@ -118,6 +124,7 @@
     }
     &__details{
         @include tablet{
+            // have the details take up 3/4 of the container and align in a row for devices >=tablet size
             width:75%;
             display:flex;
             align-items:baseline;
@@ -126,7 +133,7 @@
 
     &__label--mobile{
         @extend .shows__label;
-
+        font-weight:400;
         // Remove the individual labels for devices >=tablet size
         @include tablet{
             display:none;
@@ -134,26 +141,25 @@
     }
 
     &__date{
-        @extend .show__li;
         font-weight:600;
         padding-bottom:24px;
+        //add a margin to the right side of the dates to make the column slightly wider than the other columns
         margin-right:11%;
     }
     &__venue{
-        @extend .show__li;
         padding-bottom:24px;
     }
-
-    &__location{
-        @extend .show__li;
-    }
     &__cta{
+        // create an input button with default sizing and specified height
         @include input-button(288px);
         margin-top:32px;
+        
         @include tablet{
+            // modify sizing and margins of the button for devices>= tablet size
             margin-top:0;
             margin-bottom:16px;
             width:160px;
+            // push to the right side of the table
             align-self:flex-end;
         }
         &:hover{

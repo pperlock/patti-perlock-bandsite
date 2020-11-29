@@ -57,12 +57,16 @@ $story-column-spacing: 47%;
 
 // Hero Section Sizing
 
+// vertical sizing ratio for biography page
 $mobile-bio-ratio:57vw;
 $tablet-bio-ratio:52vw;        
 $desktop-bio-ratio:47vw;    
 
+// vertical sizing ratio for shows page
 $mobile-shows-ratio:150vw;
 $tablet-shows-ratio:87vw;        
 $desktop-shows-ratio:47vw; 
 
+//hero background images
+$bio-hero-image: "../assets/images/hero-background.jpg";
 $shows-hero-image: "../assets/images/shows-hero-background.jpg";

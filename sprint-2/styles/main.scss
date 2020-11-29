@@ -15,26 +15,23 @@
 
 @import "./partials/hero";
 
-@import "./partials/comment";
-
 
 /*======================= Hero Section ======================= */
 
 .hero{
 
     // Add a background image that centered on and covers the entire section
-    @include add-background("../assets/images/hero-background.jpg");
+    @include add-background($bio-hero-image);
     // have the hero image respond vertically
     @include responsive-hero($mobile-bio-ratio,$tablet-bio-ratio,$desktop-bio-ratio);
     &__content-title{
         // format hero title width,fontsize, lineheight,bottom margin,top margin
-        @include heroTitle(250px,1.5rem,2rem,auto,auto);
+        @include heroTitle(250px,1.5rem,2rem);
         @include tablet{
-            @include heroTitle(560px,3.5rem,4.5rem,auto,auto);
+            @include heroTitle(560px,3.5rem,4.5rem);
         }
     }
 }
-
 
 /*======================= Bio Section ======================= */
 
@@ -163,6 +160,7 @@
 
 /*======================= Join the Conversation ======================= */
 
+// container for the entire comments section - title, new comment form and comments list
 .comments{
     display:flex;
     flex-direction:column;
@@ -176,11 +174,13 @@
     }
 }
 
+// section for submitting a new comment
 .new-comment{
+    // put the avatar and the form in a row
     display:flex;
     border-bottom:1px solid $divider;
-    // margin-bottom:24px;
     
+    // adjust the width of the section and center it on the page for devices >= tablet size
     @include tablet{
         width:70%;
         align-self:center;
@@ -196,19 +196,25 @@
     } 
 
     &__form{
+        // put the input elements in the form on top of one another
         display:flex;
         flex-direction:column;
         margin-left:$mobile-padding;
+        // make the input elements take up 2/3 of the new-comment container
         flex-grow:2;
 
         &-name{
+            // create an input box with specified top/bottom padding and bottom margin
             @include input-text(16px, 16px,24px);
             
         }
         &-message{
+            // create an input box with specified top/bottom padding and bottom margin
             @include input-text(16px, 60px, 24px);
             padding-right:16px;
+            // remove the ability to resize the textarea
             resize:none;
+            // set the font-family - doesn't inherit from defaults set
             font-family:"Avenir Next", "Roboto";
             @include desktop{
                 padding-bottom:48px;
@@ -216,10 +222,13 @@
 
         }
         &-button{
+            // push the button to right side of the container
             align-self:flex-end;
+            // create an input button with default styling of a specific size
             @include input-button(225.61px);
             
             @include tablet{
+                // increase the size of the button for devices >=tablet size
                 @include input-button(160px);
             }
             &:hover{
@@ -229,19 +238,23 @@
     }
 }
 
+// section for the list of comments
 .comments__list{
+    // display all the comments on top of each other and center them horizontally
     display:flex;
     flex-direction:column;
     align-items:center;
     margin-bottom:40px;
 }
+
 .comment{
+    // put the avatar beside the details
     display:flex;
     border-bottom:1px solid $divider;
     padding-top:24px;
-    // margin-bottom:24px;
     width:100%;
 
+    // the comments section takes up a smaller % of the screen for devices >= tablet size
     @include tablet{
         width:70%;
     }
@@ -252,20 +265,25 @@
         @extend .avatar;
         margin-top:0;
     }
+
     &__details{
         margin-left:$mobile-padding;
+        // make the comments take up 2/3 of the comments container
         flex-grow:2;
         width:75%;
         &-header{
+            // display the timestamp and name side by side
             display:flex;
             justify-content:space-between;
             @include tablet{
+                // bring the timestamp and name closer togetherr for devices >= tablet size
                 justify-content:flex-start;
             }
         }
         &-name{
             font-weight:bold;
             @include tablet{
+                // add more padding to the first column to push the location and venue slightly to the right
                 padding-right:10px;
             }
         }
@@ -278,5 +296,4 @@
             line-height:1.375rem;
         }
     }
-
 }

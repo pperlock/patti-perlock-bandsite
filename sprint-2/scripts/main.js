@@ -1,22 +1,10 @@
 
 // initalize default values for comments array - array is set up in chronological order to allow for .push use
 let comments = [
-    {
-        name:"Theodore Duncan",
-        timeStamp:"11/15/2018",
-        message: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
-    },
-    {
-        name:"Gary Wong",
-        timeStamp:"12/12/2018",
-        message: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
-    },
-    {
-        name:"Michael Lyons",
-        timeStamp:"12/18/2018",
-        message:"They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed"
-    }
-]
+    {name:"Theodore Duncan", timeStamp:"11/15/2018",message: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. everytime I see him I feel instantly happy! He’s definitely my favorite ever!"},
+    {name:"Gary Wong", timeStamp:"12/12/2018", message: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"},
+    {name:"Michael Lyons", timeStamp:"12/18/2018", message:"They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed"}
+];
 
 // DIVING DEEPER --> Function that takes the timestamp of an object as a parameter and returns a message stating the difference between that time and the current time
 let timePassed = time =>{
@@ -48,7 +36,7 @@ let timePassed = time =>{
     diffTimes = diffTimes.reverse();    
 
     // define an array to hold the units associated with each value of the diffTimes array
-    let diffunits = ["year","month", "week", "day", "hour", "minute","< 1 min","< 1 min"];
+    let diffunits = ["year","month", "week", "day", "hour", "minute","< 1 minute","< 1 minute"];
 
     // Round all the time differences down to the nearest whole number - this will create 0s for the smaller units that we don't want to use
     let convertedDates = diffTimes.map(date=>Math.floor(date));
@@ -62,10 +50,10 @@ let timePassed = time =>{
     let tempunits = timeLoc < 0 ? diffunits[7] : diffunits[timeLoc]; 
 
     // take into account if the units should present as singular or plural
-    let units = (timediff===1 || tempunits=="< 1 min") ? tempunits : tempunits+"s";
+    let units = (timediff===1 || tempunits=="< 1 minute") ? tempunits : tempunits+"s";
 
     // determine the message to be returned - if it is anything less than minutes than the value of timeDiff isn't included
-    let timeMessage = (units === "< 1 min") ? `${units} ago` : `${timediff} ${units} ago`
+    let timeMessage = (units === "< 1 minute") ? `${units} ago` : `${timediff} ${units} ago`
     
     return timeMessage;
 }

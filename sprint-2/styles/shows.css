@@ -176,7 +176,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   margin-bottom: 24px;
 }
 
-.show__li, .show__date, .show__venue, .show__location {
+.show li {
   font-size: 1rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -184,7 +184,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 }
 
 @media (min-width: 768px) {
-  .show__li, .show__date, .show__venue, .show__location {
+  .show li {
     width: 30%;
   }
 }
@@ -216,11 +216,6 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 .new-comment__form-name:focus, .new-comment__form-message:focus, .new-comment__form-button:focus {
   outline: none;
   border-color: #323232;
-}
-
-.new-comment__form-name:-webkit-autofill, .new-comment__form-message:-webkit-autofill, .new-comment__form-button:-webkit-autofill {
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
 }
 
 /*======================= Color Palette ======================= */
@@ -448,6 +443,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Media Breakpoints ======================= */
+/*======================= Default Styling for Hero Sections ======================= */
 .hero {
   position: relative;
   display: -webkit-box;
@@ -472,10 +468,12 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 }
 
 .hero__content {
+  color: #FFFFFF;
   width: 100%;
   z-index: 2;
 }
 
+/*======================= Shows Hero ======================= */
 .hero {
   background-image: url("../assets/images/shows-hero-background.jpg");
   background-size: cover;
@@ -511,13 +509,20 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
     font-size: 3.2rem;
     line-height: 4rem;
     width: 500px;
+    color: #FFFFFF;
+    margin-bottom: 48px;
+    margin-top: 48px;
   }
 }
 
 @media (min-width: 1200px) {
   .hero__content-title {
     font-size: 3.14rem;
+    line-height: 4rem;
     width: 570px;
+    color: #FFFFFF;
+    margin-bottom: 48px;
+    margin-top: 48px;
   }
 }
 
@@ -530,10 +535,6 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
         -ms-flex-align: end;
             align-items: flex-end;
   }
-}
-
-.hero__content-subtitle {
-  color: #FFFFFF;
 }
 
 .hero__content-song {
@@ -558,6 +559,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   }
 }
 
+/*======================= Shows Section ======================= */
 .shows {
   margin-bottom: 40px;
 }
@@ -616,6 +618,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   }
 }
 
+/*======================= Show Elements ======================= */
 .show {
   border-bottom: 1px solid #E1E1E1;
   margin-bottom: 16px;
@@ -645,6 +648,10 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
         -ms-flex-align: baseline;
             align-items: baseline;
   }
+}
+
+.show__label--mobile {
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
