@@ -47,8 +47,9 @@
         &-song{
             // With of iframe is static - doesn't look good growing and shrinking
             border-radius:50px;
-            width:288px;
-            height:11vh;
+            width:100%;
+            max-width:387px;
+            height:120px;
             @include tablet{
                 width:433px;
             }
@@ -60,6 +61,11 @@
                 height:126px;
             }
         }
+        &-iframe{
+            width:100%;
+            height:100%;
+        }
+   
     }   
 }
 
