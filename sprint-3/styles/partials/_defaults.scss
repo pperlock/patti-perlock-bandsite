@@ -1,0 +1,184 @@
+/*======================= Global Default Styling ======================= */
+
+// Import the default fonts
+@import "typography";
+
+// Import global variables
+@import "variables";
+
+// Import global mixins
+@import "mixins";
+
+// Default styling for global elements
+
+// Remove all the margins and padding from all elements to start
+*{
+    margin:0;
+    padding:0;
+}
+
+// Apply the default font and color for the entire site
+body{
+    font-family:"Avenir Next", "Roboto";
+    font-weight:400;
+    color:$global-text;
+}
+
+// Remove the bullet points from all lists
+ul{
+    list-style-type: none;
+}
+
+// Remove the underlines from all links
+a{
+    text-decoration: none;
+    color:$global-contrast;
+}
+
+
+/*Default font formats for breakpoints from styleguide.  HTML font size is 16px*/
+
+// Headers
+h1, .title{
+    font-weight:700;
+    font-size:1.5rem;
+    line-height:2rem;
+
+    @include tablet{
+        font-size:2.25rem;
+        line-height:2.75;
+    }
+}
+
+// Subheader
+h2{
+    font-weight:700;
+    font-size:0.875rem;
+    line-height:1.375rem;
+    
+    @include tablet{
+        font-size:1.5rem;
+        line-height:2rem;
+    }
+}
+
+h3{
+    @include tablet{
+        font-size:1rem;
+        line-height:1.5rem;
+    } 
+}
+
+// paragraphs, lists and contact information
+h4, p, address, .list{
+    font-size:0.81rem;
+    line-height:1.125rem;
+    // Added to remove the italics from the address tags
+    font-style:normal;
+
+    @include tablet{
+        font-size:0.875rem;
+        line-height:1.375rem;
+    }
+}
+
+// labels
+h5, .new-comment__label, .shows__label{
+    font-size:0.75rem;
+    line-height:1.25rem;
+    color:$text-label;
+    font-weight:600;
+}
+
+
+// Define the default padding on the left and right side of the page for consistent alignment
+.hero__content, .bio, .gallery, .comments, .shows, .footer, .header__logo-link{
+    
+    padding:0 $mobile-padding;
+
+    @include tablet{
+        padding:0 $tablet-padding;
+    }
+    @include desktop{
+        padding:0 $desk-padding;
+    }
+}
+
+// Default spacing for section titles
+.section__title{
+
+    @extend .title;
+    //Remove the line height from the section titles to attain style guide spacing between elements
+    line-height:1.2;
+    
+    // Set up consistent padding for the title of each section
+    padding: $mobile-section-top 0 $mobile-section-bottom 0;
+
+    @include tablet{
+        padding: $tablet-section-top 0 $tablet-section-bottom 0;
+    }
+    @include desktop{
+        padding: $desktop-section-top 0 $desktop-section-bottom 0;
+    }
+}
+
+// Default margins for the footer divs
+.footer__contact div{
+    padding-bottom:20px;
+    
+    @include desktop{
+        padding-bottom:24px;
+    }
+     
+}
+
+// Default button styling
+.button{
+    border-radius:4px;
+    background-color: $button-fill;
+    color:$button-text;
+    padding:16px 0;
+    border:none;
+    cursor: pointer;
+    margin-bottom:24px;
+}
+
+// Show spacing for tablet
+.show li {
+    font-size:1rem;
+    flex-grow:1;
+
+    @include tablet{
+        width:30%;
+    }
+}
+
+// Default styling for show labels
+.shows__label{
+    padding-bottom:16px;
+    @include tablet{
+        width:34%;
+    }
+    @include desktop{
+        padding-bottom:32px;
+
+    }
+}
+
+// Default styling for comments avatars
+.avatar{
+    margin-top:20px;
+    background-color:$avatar-fill;
+    border-radius:100px;
+    width:48px;
+    height:48px;
+}
+
+// default styling for input elements states
+.new-comment__form-name, .new-comment__form-message,.new-comment__form-button{
+    &:focus{
+        outline:none;
+        border-color:$active-input;
+    }
+}
+

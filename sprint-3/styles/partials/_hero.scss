@@ -1,0 +1,37 @@
+// Import variables for mixin use
+@import "variables";
+
+// Import global mixins
+@import "mixins";
+
+/*======================= Default Styling for Hero Sections ======================= */
+
+.hero{
+    // Change to relative positioning to allow for placement of image filter
+    position:relative;
+            
+    // Used to center the hero title vertically
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    height:auto;
+    
+    
+    // Apply a semi-transparent filter to the image to make the title more prominent
+    &::before{
+        content:'';
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-color:$hero-filter;
+        opacity:0.5;
+    }
+
+    // Bring the content to the front of the filter
+    &__content{
+        color:$global-contrast;
+        width:100%;
+        z-index:2;
+    }
+}
+

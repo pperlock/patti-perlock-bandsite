@@ -1,0 +1,85 @@
+// Import variables for mixin use
+@import "variables";
+
+/*======================= Media Breakpoints ======================= */
+
+// Changes to tablet format >=768px
+@mixin tablet{
+    @media (min-width:768px){
+        @content;
+    }
+}
+
+// Changes to desktop format >=1200px
+@mixin desktop{
+    @media (min-width:1200px){
+        @content;
+    }
+}
+
+// Create grid spacing for photo gallery - takes in the image width and padding
+@mixin space-grid($image-width, $image-padding){
+    width:$image-width;
+    margin-bottom:$image-padding;
+}
+
+// add a background image to the hero section - takes in background image
+@mixin add-background($hero-url){
+    background-image: url($hero-url);
+    background-size:cover;
+    background-position:center;
+}
+
+// Make the hero image responsive vertically - takes in height ratios for different device sizes
+@mixin responsive-hero($mobile-ratio, $tablet-ratio, $desktop-ratio){
+    height:$mobile-ratio;
+    max-height: 640px; //stop growing at 640px - starts to look bad any bigger   
+
+    // Change hero height ratio to increase as device size increases
+    @include tablet{
+        height:$tablet-ratio;    
+        max-height: 850px;   //stop growing at 850px - starts to look bad any bigger   
+     }
+
+    @include desktop{
+        height:$desktop-ratio;        
+    }
+}
+
+// Default styling for a hero title with a specified width, font-size and line-height
+@mixin heroTitle ($title-width, $title-mobile-size, $title-line-height){
+    font-size:$title-mobile-size;
+    line-height:$title-line-height;
+    width: $title-width;
+    color:$global-contrast;
+    margin-bottom:48px;
+    margin-top:48px;
+}
+
+//Apply default settings for input text boxes with varying padding options
+@mixin input-text ($padding-top, $padding-bottom, $bottom-margin){
+    border-radius:4px;
+    border:2px solid $text-field-border;
+    background-color:$text-field-background;
+    padding:$padding-top 0 $padding-bottom 16px;
+    margin-bottom: $bottom-margin;
+}
+
+//Apply default settings for input buttons at varying sizes
+@mixin input-button($width){
+    border-radius:4px;
+    background-color: $button-fill;
+    color:$button-text;
+    padding:16px 0;
+    border:none;
+    cursor: pointer;
+    margin-bottom:16px;
+    width:$width;
+
+    @include tablet{
+        margin-bottom:24px;
+    }
+}
+
+
+

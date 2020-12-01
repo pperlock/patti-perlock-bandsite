@@ -1,0 +1,299 @@
+/*Import any global default styles including partials containing typography, variables, and mixins*/
+@import "./partials/defaults";
+
+// Import the global variables
+@import "./partials/variables";
+
+// Import mixins
+@import "./partials/mixins";
+
+// Import the global header and navigation bar styling
+@import "./partials/nav-bar";
+
+// Import the global footer styling
+@import "./partials/footer";
+
+@import "./partials/hero";
+
+
+/*======================= Hero Section ======================= */
+
+.hero{
+
+    // Add a background image that centered on and covers the entire section
+    @include add-background($bio-hero-image);
+    // have the hero image respond vertically
+    @include responsive-hero($mobile-bio-ratio,$tablet-bio-ratio,$desktop-bio-ratio);
+    &__content-title{
+        // format hero title width,fontsize, lineheight,bottom margin,top margin
+        @include heroTitle(250px,1.5rem,2rem);
+        @include tablet{
+            @include heroTitle(560px,3.5rem,4.5rem);
+        }
+    }
+}
+
+/*======================= Bio Section ======================= */
+
+.bio{
+    // Align the bio containers in a column and push them to the left
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    &__content{
+        // Add increased padding to the content section for desktop screens
+        @include desktop{
+            padding:0 8.5%;
+        }
+    }
+    &__image{
+        margin-bottom:24px;
+        // Size to the full width of the content container
+        min-width:100%;
+        max-width:100%;
+
+        @include tablet{
+            margin-bottom:32px;
+        }
+        
+        // Assign absolute vertical margins set in style guide and automatic left and right margins to center in the content container for desktops
+        @include desktop{
+            margin:0 auto 48px auto;
+        }
+    }
+
+    //Assign all the absolute vertical spacings for all the device sizes
+    &__quote{
+        padding-bottom:32px;
+        @include desktop{
+            width:90%;
+        }
+    }
+
+    &__signature{
+        font-size:0.875rem;
+        font-weight:600;
+        padding-bottom:40px;
+
+        @include tablet{
+            font-size:1rem;
+        }
+
+    }
+
+    &__name{
+        padding-bottom:24px;
+        @include desktop{
+            padding-bottom:32px;
+        }
+    }
+
+    &__story{
+        // Add padding to the bottom for mobile to maintain vertical spacing between paragraphs while achieve spacing between sections 
+        padding-bottom:16px;
+        
+        // Align the paragraphs side by side for devices >=tablet size
+        @include tablet{
+            // Remove the extra padding on the bottom for devices >=tablet
+            padding-bottom:0;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+        }
+ 
+        //Assign the spacing to each individual paragraph
+        &-text{
+            padding-bottom:24px;
+ 
+            @include tablet{
+                width:47%;
+                padding-bottom:40px;
+            }
+
+            @include desktop{
+                padding-bottom:48px;
+            }
+        }
+    }
+}
+
+/*======================= Photo Gallery Section ======================= */
+
+.gallery{
+    background-color: $gallery-fill;
+
+    // Added 40px of vertical separation between the gallery and the footer by adding gallery padding to 24px of image margins
+    padding-bottom:26px;
+
+    &__images{
+        // Change to a 3 x 3 grid layout of the photos for devices >=tablet size
+        @include tablet{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+        }
+    }
+
+    // Adjust the image widths and margins to maintain aspect ratios and attractive spacing across all devices
+    &__img{
+
+        // Apply the appropriate grid spacing based on device size
+        @include space-grid(100%, $mobile-grid-spacing);
+        
+        @include tablet{
+            @include space-grid(31%, $tablet-grid-spacing);
+        }
+        @include desktop{
+            @include space-grid(31.9%, $desktop-grid-spacing);
+        }
+ 
+        // Put a filter over images to turn them black and white
+        filter: grayscale(100%);
+
+        // Return the images to full color when the user hovers over them
+        &:hover{
+            filter: grayscale(0);
+        }
+    }
+}
+
+/*======================= Join the Conversation ======================= */
+
+// container for the entire comments section - title, new comment form and comments list
+.comments{
+    display:flex;
+    flex-direction:column;
+    
+    &__title{
+        padding-bottom:40px;
+        
+        @include desktop{
+            padding:48px 0 56px 0;
+        }
+    }
+}
+
+// section for submitting a new comment
+.new-comment{
+    // put the avatar and the form in a row
+    display:flex;
+    border-bottom:1px solid $divider;
+    
+    // adjust the width of the section and center it on the page for devices >= tablet size
+    @include tablet{
+        width:70%;
+        align-self:center;
+    }
+    @include desktop{
+        width:60%;
+    }
+
+    &__avatar{
+        @extend .avatar;
+        background-image:url("../assets/images/avatar.jpg");
+        background-size:cover;
+    } 
+
+    &__form{
+        // put the input elements in the form on top of one another
+        display:flex;
+        flex-direction:column;
+        margin-left:$mobile-padding;
+        // make the input elements take up 2/3 of the new-comment container
+        flex-grow:2;
+
+        &-name{
+            // create an input box with specified top/bottom padding and bottom margin
+            @include input-text(16px, 16px,24px);
+            
+        }
+        &-message{
+            // create an input box with specified top/bottom padding and bottom margin
+            @include input-text(16px, 60px, 24px);
+            padding-right:16px;
+            // remove the ability to resize the textarea
+            resize:none;
+            // set the font-family - doesn't inherit from defaults set
+            font-family:"Avenir Next", "Roboto";
+            @include desktop{
+                padding-bottom:48px;
+            }
+
+        }
+        &-button{
+            // push the button to right side of the container
+            align-self:flex-end;
+            // create an input button with default styling of a specific size
+            @include input-button(225.61px);
+            
+            @include tablet{
+                // increase the size of the button for devices >=tablet size
+                @include input-button(160px);
+            }
+            &:hover{
+                background-color:black;
+            }
+        }
+    }
+}
+
+// section for the list of comments
+.comments__list{
+    // display all the comments on top of each other and center them horizontally
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.comment{
+    // put the avatar beside the details
+    display:flex;
+    border-bottom:1px solid $divider;
+    padding-top:24px;
+    width:100%;
+
+    // the comments section takes up a smaller % of the screen for devices >= tablet size
+    @include tablet{
+        width:70%;
+    }
+    @include desktop{
+        width:60%;
+    }
+    &__avatar{
+        @extend .avatar;
+        margin-top:0;
+    }
+
+    &__details{
+        margin-left:$mobile-padding;
+        // make the comments take up 2/3 of the comments container
+        flex-grow:2;
+        width:75%;
+        &-header{
+            // display the timestamp and name side by side
+            display:flex;
+            justify-content:space-between;
+            @include tablet{
+                // bring the timestamp and name closer togetherr for devices >= tablet size
+                justify-content:flex-start;
+            }
+        }
+        &-name{
+            font-weight:bold;
+            @include tablet{
+                // add more padding to the first column to push the location and venue slightly to the right
+                padding-right:10px;
+            }
+        }
+        &-timestamp{
+            color:$text-label;
+        }
+        &-message{
+            padding:16px 0 24px 0;
+            font-size:0.875rem;
+            line-height:1.375rem;
+        }
+    }
+}

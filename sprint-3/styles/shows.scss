@@ -1,0 +1,175 @@
+//Import any global default styles including partials containing typography, variables, and mixins*/
+@import "./partials/defaults";
+
+// Import the global variables
+@import "./partials/variables";
+
+// Import mixins
+@import "./partials/mixins";
+
+// Import the global header and navigation bar styling
+@import "./partials/nav-bar";
+
+// Import the global footer styling
+@import "./partials/footer";
+
+@import "./partials/hero";
+
+/*======================= Shows Hero ======================= */
+
+.hero{
+    // Add a background to the hero section
+    @include add-background($shows-hero-image);
+    // Make the height of the hero image vertically responsive as the width grows
+    @include responsive-hero($mobile-shows-ratio,$tablet-shows-ratio,$desktop-shows-ratio);
+
+    &__content{
+        &-title{
+            // Create a title with specific properties (width, font-size, line-height, top&bottom padding)
+            @include heroTitle(288px,2.3rem,3rem);
+            @include tablet{
+                // increase the width, fontsize and line height for tablet devices
+                @include heroTitle(500px,3.2rem,4rem);
+            }
+            @include desktop{
+                // increase the width and fontsize for desktop devices
+                @include heroTitle(570px,3.14rem,4rem);
+            }
+        }  
+        // put the title and the iframe side by side for desktop devices
+        &-bottom{
+            @include desktop{
+                display:flex;
+                align-items:flex-end;
+            }
+        }
+
+        &-song{
+            // With of iframe is static - doesn't look good growing and shrinking
+            border-radius:50px;
+            width:100%;
+            max-width:387px;
+            height:120px;
+            @include tablet{
+                width:433px;
+            }
+            @include desktop{
+                padding-left:64px;
+                padding-bottom:4rem;
+                width:50%;
+                max-width:490px;
+                height:126px;
+            }
+        }
+        &-iframe{
+            width:100%;
+            height:100%;
+        }
+   
+    }   
+}
+
+/*======================= Shows Section ======================= */
+
+.shows{
+    margin-bottom:40px;
+    
+    //move the section title beside the table for desktops
+    @include desktop{
+        display:flex;
+        justify-content:space-between;
+        padding-top:48px;
+    }
+
+    // add right margin to the  Dates label to make it the same size as the dates column of the table
+    &__label:first-child{
+        @include tablet{
+            margin-right:11%;
+        }
+    }
+    // labels to be shown for devices >= tablet size
+    &__labels-tablet{
+        // don't display these labels for mobile devices
+        display:none;        
+        
+        @include tablet{
+            // display these labels for devices >= tablet size
+            display:flex;
+            justify-content:space-between;
+            width:75%;
+        }
+    }
+    &__title{
+        padding-bottom:40px;
+        
+        @include desktop{
+            // remove the padding from the top of the title to align it with the table
+           padding-top:0;
+        }
+    }
+
+    &__list{
+        margin-bottom:24px;
+        @include desktop{
+            // make the width of the table smaller to fit beside title on desktop devices
+            width:79%;
+        }
+    }
+}    
+
+/*======================= Show Elements ======================= */
+
+.show{
+    border-bottom:1px solid $divider;
+    margin-bottom:16px;
+    // Put the show details in a row for devices >=tablet size
+    @include tablet{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    &__details{
+        @include tablet{
+            // have the details take up 3/4 of the container and align in a row for devices >=tablet size
+            width:75%;
+            display:flex;
+            align-items:baseline;
+        }
+    }
+
+    &__label--mobile{
+        @extend .shows__label;
+        font-weight:400;
+        // Remove the individual labels for devices >=tablet size
+        @include tablet{
+            display:none;
+        }
+    }
+
+    &__date{
+        font-weight:600;
+        padding-bottom:24px;
+        //add a margin to the right side of the dates to make the column slightly wider than the other columns
+        margin-right:11%;
+    }
+    &__venue{
+        padding-bottom:24px;
+    }
+    &__cta{
+        // create an input button with default sizing and specified height
+        @include input-button(288px);
+        margin-top:32px;
+        
+        @include tablet{
+            // modify sizing and margins of the button for devices>= tablet size
+            margin-top:0;
+            margin-bottom:16px;
+            width:160px;
+            // push to the right side of the table
+            align-self:flex-end;
+        }
+        &:hover{
+            background-color:black;
+        }
+    }
+}

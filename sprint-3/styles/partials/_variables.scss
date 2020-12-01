@@ -1,0 +1,72 @@
+/*======================= Color Palette ======================= */
+
+// Global Fonts
+$global-text:#323232;
+$global-contrast:#FFFFFF;
+$nav-inactive:#AFAFAF;
+$nav-active:#FFFFFF;
+
+// Background Fill colors
+
+$nav-fill:#323232;
+$footer-fill:#323232;
+$hero-filter:#323232;
+$gallery-fill: #FAFAFA;
+$link-hover-fill:#AFAFAF;
+
+// Form Elements
+$button-fill:#323232;
+$button-text:#FFFFFF;
+$avatar-fill:#E1E1E1;
+$text-label: #AFAFAF;
+$text-field-border: #E1E1E1;
+$text-field-background: #FAFAFA;
+$divider:#E1E1E1;
+$active-input:#323232;
+
+/*======================= Margins and Padding ======================= */
+
+// The outside padding used for alignment for all elements 
+
+// Corresponds to 16px @ 320px screen width
+$mobile-padding:5%;
+
+// Corresponds to 24px @ 768px screen width
+$tablet-padding:3%;
+
+// Corresponds to 180px @ 1440px screen width
+$desk-padding:12.5%;
+
+// Gallery Grid Spacing
+$mobile-grid-spacing: 5%;
+$tablet-grid-spacing: 3.3%;
+$desktop-grid-spacing: 2.26%;
+
+// Title Spacing
+$mobile-section-top:32px;
+$mobile-section-bottom:24px;
+
+$tablet-section-top: 40px;
+$tablet-section-bottom: 32px;
+
+$desktop-section-top: 40px;
+$desktop-section-bottom: 40px;
+
+$story-column-spacing: 47%;
+
+
+// Hero Section Sizing
+
+// vertical sizing ratio for biography page
+$mobile-bio-ratio:57vw;
+$tablet-bio-ratio:52vw;        
+$desktop-bio-ratio:47vw;    
+
+// vertical sizing ratio for shows page
+$mobile-shows-ratio:150vw;
+$tablet-shows-ratio:87vw;        
+$desktop-shows-ratio:47vw; 
+
+//hero background images
+$bio-hero-image: "../assets/images/hero-background.jpg";
+$shows-hero-image: "../assets/images/shows-hero-background.jpg";

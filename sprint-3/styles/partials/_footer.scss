@@ -1,0 +1,105 @@
+// Import variables for use on footer
+@import "variables";
+
+// Import mixins  for use in footer
+@import "mixins";
+
+/*======================= Global Footer ======================= */
+.footer{
+    background-color:$footer-fill;
+    color:$global-contrast;
+
+    &__top{
+        // Put the title, social icons and logo in a row for devices >=tablet
+        @include tablet{
+            display:flex;
+            justify-content:space-between;
+            align-items:baseline;
+        }
+
+        // Split the top part of the footer into two sections for easier alignment for devices >=tablet
+        &--left{
+            @include tablet{
+                width:60%;
+                display:flex;
+                align-items: baseline;
+            }
+        }
+
+        &-title{
+            // Increase font size to match mockup
+            font-size:2rem;
+            @include tablet{
+               padding-right:40px;
+            } 
+ 
+        }
+        &-social{
+            // Put the social icons in a row for all devices - spacing is controlled by static padding instead of justify-content
+            display:flex;
+            justify-content:flex-start;
+            padding-bottom:32px;
+
+            // Set the icon spacing 
+            &-icon{
+                padding-right:32px;
+            }
+        }
+
+        &-logo{
+            // Hide the logo for mobile display
+            display:none;
+
+            // Show the logo for devices >= tablet size
+            @include tablet{
+                display:block;
+            }
+
+            // Increase the logo size for desktops
+            @include desktop{
+                height:24px;
+                width:150px;
+            }
+        }
+    }
+
+    &__contacts{
+        // Put the contact information in a row for devices >= tablet size       
+        @include tablet{
+            display:flex;
+        }
+    }
+
+    &__contact{
+        @include tablet{
+            // Creates consistent spacing between the contacts once they are flexed
+            padding-right:$tablet-padding;
+            padding-right:24px;
+            // Set the width of each contact to be absolute to keep them from moving across devices
+            width:220px;
+        }
+
+        &-name{
+            font-weight:600;
+        }
+        
+        &-email{
+            padding-bottom:30px;
+            @include desktop{
+                padding-bottom:40px;
+            }
+        }
+    }
+
+    &__copyright{
+        font-weight:400;
+        padding-bottom:40px;
+        // Used absolute measurements to ensure it stays on 2 lines for all mobile devices
+        width:204px;
+        
+        // Displays the contact information in one line for devices >= tablet size
+        @include tablet{
+            width:100%;
+        }    
+    }
+}
