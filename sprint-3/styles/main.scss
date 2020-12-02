@@ -267,6 +267,8 @@
     }
 
     &__details{
+        display:flex;
+        flex-direction:column;
         margin-left:$mobile-padding;
         // make the comments take up 2/3 of the comments container
         flex-grow:2;
@@ -291,9 +293,16 @@
             color:$text-label;
         }
         &-message{
-            padding:16px 0 24px 0;
+            padding:16px 0 8px 0;
             font-size:0.875rem;
             line-height:1.375rem;
         }
+    }
+    &__delete{
+        @include input-button(20px);
+        height:20px;
+        margin:0 0 16px 0;
+        padding:2px;
+        align-self:flex-end;
     }
 }

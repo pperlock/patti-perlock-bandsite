@@ -1,3 +1,17 @@
+// Start by retrieve the comments the api and load them them to the screen when page opens
+
+let apiURL = "https://project-1-api.herokuapp.com/comments";
+apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
+
+axios.get(`${apiURL}?api_key=${apiKey}`)
+.then(res =>{
+    //console.log(res);
+    /* loop through each object in the comments array - build the html element and display it*/
+    res.data.forEach(comment =>{
+        displayComment(comment);
+    });
+})
+.catch(err => console.log(err));
 
 // DIVING DEEPER --> Function that takes the timestamp of an object as a parameter and returns a message stating the difference between that time and the current time
 let timePassed = time =>{
@@ -88,21 +102,29 @@ const displayComment = (newComment) =>{
     commentDetails.appendChild(commentDetailsHeader);
     commentDetails.appendChild(commentMessage);
 
+    deleteBtn = document.createElement('button');
+    deleteBtn.classList.add("comment__delete");
+    deleteBtn.innerText = "x";
+    // console.log(deleteBtn);
+    document.createAttribute('data-id');
+    deleteBtn.setAttribute('data-id', newComment.id);
+    commentDetails.appendChild(deleteBtn);
+    // console.log(deleteBtn.getAttribute("data-id"));
+
     // div containing avatar and comment details
     let comment = document.createElement('div');
     comment.classList.add("comment");
     comment.appendChild(commentAvatar);
     comment.appendChild(commentDetails);
 
+
+
     //Once the comment is built add it to the comment list
     let commentsList = document.querySelector('.comments__list');
     commentsList.prepend(comment);
 }
 
-let apiURL = "https://project-1-api.herokuapp.com/comments";
-apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
-
-console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
+//console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
 
 // //CLEAN OUT THE POSTS TO START WITH DEFAULT
 // axios.get(`${apiURL}?api_key=${apiKey}`)
@@ -115,17 +137,6 @@ console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
 //     }
 // })
 // .catch(err => console.log(err));
-
-// get the comments data from the api and load them them to the screen when page opens
-axios.get(`${apiURL}?api_key=${apiKey}`)
-.then(res =>{
-    console.log(res);
-    /* loop through each object in the comments array - build the html element and display it*/
-    res.data.forEach(comment =>{
-        displayComment(comment);
-    });
-})
-.catch(err => console.log(err));
 
 
 let commentForm = document.querySelector('.new-comment__form');
@@ -162,5 +173,15 @@ commentForm.addEventListener('submit', event=>{
     event.target.name.value="";
     event.target.message.value="";
     
+});
+
+let deleteBtns = document.querySelectorAll('.comment__details');
+// submit the form values using an event listener
+console.log(deleteBtns);
+
+deleteBtns.forEach(deleteBtn =>{
+    deleteBtn.addEventListener('click', event=>{
+        console.log(event.target);
+    });
 });
 

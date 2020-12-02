@@ -837,6 +837,13 @@ h5, .new-comment__label, .shows__label {
 }
 
 .comment__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: 5%;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -876,8 +883,30 @@ h5, .new-comment__label, .shows__label {
 }
 
 .comment__details-message {
-  padding: 16px 0 24px 0;
+  padding: 16px 0 8px 0;
   font-size: 0.875rem;
   line-height: 1.375rem;
+}
+
+.comment__delete {
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 16px 0;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  width: 20px;
+  height: 20px;
+  margin: 0 0 16px 0;
+  padding: 2px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .comment__delete {
+    margin-bottom: 24px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
