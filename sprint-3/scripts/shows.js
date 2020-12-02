@@ -1,12 +1,3 @@
-// initialize the shows array that holds each show Object
-let shows = [
-    {date:'Mon Dec 17 2018', venue:'Ronald Lane', location: 'San Francisco, CA'},
-    {date:'Tue Jul 18 2019', venue:'Pier 3 East', location: 'San Francisco, CA'},
-    {date:'Fri Jul 22 2019', venue:'View Lounge', location: 'San Francisco, CA'},
-    {date:'Sat Aug 12 2019', venue:'Hyatt Agency', location: 'San Francisco, CA'},
-    {date:'Fri Sep 05 2019', venue:'Moscow Center', location: 'San Francisco, CA'},
-    {date:'Wed Aug 11 2019', venue:'Pres Club', location: 'San Francisco, CA'}
-];
 
 // initialize an array to hold each labels for each show detail
 let labels = ['DATE', 'VENUE', 'LOCATION'];
@@ -84,8 +75,19 @@ const displayShow = show =>{
     showsList.appendChild(showContainer);
 };
 
-// Display the entire shows array 
-shows.forEach(show=>{
-    displayShow(show);
-})
+// url and key for the API
+let apiURL = "https://project-1-api.herokuapp.com/showdates";
+apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
 
+// get the shows data from the api
+axios.get(`${apiURL}?api_key=${apiKey}`)
+.then(res =>{
+    let shows  = res.data;
+    // remove the id key from the shows objects to accomodate the loops used above
+    shows.forEach(show=> delete show.id);
+    // Display the entire shows array     
+    shows.forEach(show=>{
+        displayShow(show);
+    });
+})
+.catch(err => console.log(err));

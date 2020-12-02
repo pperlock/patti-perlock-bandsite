@@ -1,11 +1,4 @@
 
-// initalize default values for comments array - array is set up in chronological order to allow for .push use
-let comments = [
-    {name:"Theodore Duncan", timeStamp:"11/15/2018",message: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. everytime I see him I feel instantly happy! He’s definitely my favorite ever!"},
-    {name:"Gary Wong", timeStamp:"12/12/2018", message: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"},
-    {name:"Michael Lyons", timeStamp:"12/18/2018", message:"They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed"}
-];
-
 // DIVING DEEPER --> Function that takes the timestamp of an object as a parameter and returns a message stating the difference between that time and the current time
 let timePassed = time =>{
     // get the current date and time 
@@ -41,11 +34,12 @@ let timePassed = time =>{
     // Round all the time differences down to the nearest whole number - this will create 0s for the smaller units that we don't want to use
     let convertedDates = diffTimes.map(date=>Math.floor(date));
     
-    // find the location of the first value in the diffTimes array that is not 0
-    let timeLoc = convertedDates.findIndex(date=>date!=0);
-    
-    // find the first value in the diffTimes array is not o
+    // find the location of the first value in the diffTimes array that is greater than 0
+    let timeLoc = convertedDates.findIndex(date=>date>0);
+  
+    // find the first value in the diffTimes array is not 0
     let timediff = timeLoc < 0 ? diffunits[7] : convertedDates.find(date=>date!=0);
+        
     // get the units associated with the time diff value
     let tempunits = timeLoc < 0 ? diffunits[7] : diffunits[timeLoc]; 
 
@@ -75,12 +69,12 @@ const displayComment = (newComment) =>{
     let commentTime = document.createElement('div');
     commentTime.classList.add("comment__details-timestamp");
     // display the time stamped as a time passed message    
-    commentTime.innerText = timePassed(newComment.timeStamp);
+    commentTime.innerText = timePassed(newComment.timestamp);
 
     // Element containing the comment message
     let commentMessage = document.createElement('div');
     commentMessage.classList.add("comment__details-message");
-    commentMessage.innerText = newComment.message;
+    commentMessage.innerText = newComment.comment;
 
     // div containing the message and time stamp
     let commentDetailsHeader = document.createElement('div');
@@ -105,10 +99,33 @@ const displayComment = (newComment) =>{
     commentsList.prepend(comment);
 }
 
-/* loop through each object in the comments array - build the html element and display it*/
-comments.forEach(comment =>{
-    displayComment(comment);
-});
+let apiURL = "https://project-1-api.herokuapp.com/comments";
+apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
+
+console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
+
+// //CLEAN OUT THE POSTS TO START WITH DEFAULT
+// axios.get(`${apiURL}?api_key=${apiKey}`)
+// .then(res =>{
+//     for (let i=3; i<res.data.length;i++){
+//         axios.delete(`${apiURL}/${res.data[i].id}?api_key=${apiKey}`)
+//         .then(res =>{
+//             console.log(res);
+//         })
+//     }
+// })
+// .catch(err => console.log(err));
+
+// get the comments data from the api and load them them to the screen when page opens
+axios.get(`${apiURL}?api_key=${apiKey}`)
+.then(res =>{
+    console.log(res);
+    /* loop through each object in the comments array - build the html element and display it*/
+    res.data.forEach(comment =>{
+        displayComment(comment);
+    });
+})
+.catch(err => console.log(err));
 
 
 let commentForm = document.querySelector('.new-comment__form');
@@ -117,29 +134,33 @@ commentForm.addEventListener('submit', event=>{
     // prevents the page from reloading upon submit
     event.preventDefault();
 
-    // create a new comment object from the values submitted
-    let newComment = {
-        name:event.target.name.value,
-        timeStamp:new Date(),
-        message:event.target.message.value
-    }
-
-    //push the new comment to the comments array
-    comments.push(newComment);
-
     //clear all the previous comments from the screen
     const allComments = document.querySelectorAll('.comment');
     allComments.forEach(comment=>{
         comment.remove();
     });
-    
-    // re-render all the comments from the comment array
-    comments.forEach(comment =>{
-        displayComment(comment);
-    });
-    
+
+    // post the new comment to the API
+    axios.post(`${apiURL}?api_key=${apiKey}`,{
+        name:event.target.name.value,
+        comment:event.target.message.value
+    })
+    .then(res =>{
+        // once the post has been added then get the comments array and display it
+        axios.get(`${apiURL}?api_key=${apiKey}`)
+        .then(res =>{
+            /* loop through each object in the comments array - build the html element and display it*/
+            res.data.forEach(comment =>{
+                displayComment(comment);
+            });
+        })
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));    
+
     // Reset the input boxes with a blank value and the placeholder
     event.target.name.value="";
     event.target.message.value="";
+    
 });
 
