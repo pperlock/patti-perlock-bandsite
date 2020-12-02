@@ -7,6 +7,7 @@ axios.get(`${apiURL}?api_key=${apiKey}`)
 .then(res =>{
     //console.log(res);
     /* loop through each object in the comments array - build the html element and display it*/
+    console.log(res.data);
     res.data.forEach(comment =>{
         displayComment(comment);
     });
@@ -110,7 +111,7 @@ const displayComment = (newComment) =>{
     deleteBtn.setAttribute('data-id', newComment.id);
     deleteBtn.setAttribute('data-tooltip', "Delete");
     commentDetails.appendChild(deleteBtn);
-    // console.log(deleteBtn.getAttribute("data-id"));
+
 
     deleteBtn.addEventListener('click', event=>{
         let commentID = event.target.getAttribute('data-id');
@@ -124,6 +125,7 @@ const displayComment = (newComment) =>{
                 allComments.forEach(comment=>{
                     comment.remove();
                 });
+                console.log(res.data);
                 /* loop through each object in the comments array - build the html element and display it*/
                 res.data.forEach(comment =>{
                     displayComment(comment);
@@ -195,13 +197,3 @@ commentForm.addEventListener('submit', event=>{
     event.target.message.value="";
     
 });
-
-// let deleteBtns = document.querySelectorAll('.comment__details');
-// // submit the form values using an event listener
-// console.log(deleteBtns);
-
-// deleteBtns.forEach(deleteBtn =>{
-//     deleteBtn.addEventListener('click', event=>{
-//         console.log(event.target);
-//     });
-// });

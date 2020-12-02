@@ -300,6 +300,9 @@
     }
     &__delete{
         @include input-button(20px);
+        background-color:$delete-button;
+        color:$delete-text;
+        font-weight:bold;
         height:20px;
         margin:0 0 16px 0;
         padding:2px;
@@ -307,7 +310,7 @@
         position:relative;
 
         &:hover{
-            background-color: black;
+            color:$hover-delete-text;
         }
 
         &::before{
