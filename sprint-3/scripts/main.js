@@ -111,13 +111,33 @@ const displayComment = (newComment) =>{
     commentDetails.appendChild(deleteBtn);
     // console.log(deleteBtn.getAttribute("data-id"));
 
+    deleteBtn.addEventListener('click', event=>{
+        let commentID = event.target.getAttribute('data-id');
+        axios.delete(`${apiURL}/${commentID}?api_key=${apiKey}`)
+        .then(res=>{
+            axios.get(`${apiURL}?api_key=${apiKey}`)
+            .then(res =>{
+                console.log(res);
+                //clear all the previous comments from the screen
+                const allComments = document.querySelectorAll('.comment');
+                allComments.forEach(comment=>{
+                    comment.remove();
+                });
+                /* loop through each object in the comments array - build the html element and display it*/
+                res.data.forEach(comment =>{
+                    displayComment(comment);
+                });
+            })
+            .catch(err => console.log(err));
+        })    
+        .catch(err => console.log(err));
+    });
+
     // div containing avatar and comment details
     let comment = document.createElement('div');
     comment.classList.add("comment");
     comment.appendChild(commentAvatar);
     comment.appendChild(commentDetails);
-
-
 
     //Once the comment is built add it to the comment list
     let commentsList = document.querySelector('.comments__list');
@@ -175,13 +195,12 @@ commentForm.addEventListener('submit', event=>{
     
 });
 
-let deleteBtns = document.querySelectorAll('.comment__details');
-// submit the form values using an event listener
-console.log(deleteBtns);
+// let deleteBtns = document.querySelectorAll('.comment__details');
+// // submit the form values using an event listener
+// console.log(deleteBtns);
 
-deleteBtns.forEach(deleteBtn =>{
-    deleteBtn.addEventListener('click', event=>{
-        console.log(event.target);
-    });
-});
-
+// deleteBtns.forEach(deleteBtn =>{
+//     deleteBtn.addEventListener('click', event=>{
+//         console.log(event.target);
+//     });
+// });
