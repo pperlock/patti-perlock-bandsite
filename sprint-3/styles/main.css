@@ -902,11 +902,33 @@ h5, .new-comment__label, .shows__label {
   padding: 2px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .comment__delete {
     margin-bottom: 24px;
   }
+}
+
+.comment__delete:hover {
+  background-color: black;
+}
+
+.comment__delete::before {
+  content: attr(data-tooltip);
+  display: none;
+  top: -20px;
+  left: -12px;
+  font-size: 12px;
+  padding: 1px 5px;
+  color: white;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.comment__delete:hover::before {
+  position: absolute;
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

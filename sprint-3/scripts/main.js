@@ -108,6 +108,7 @@ const displayComment = (newComment) =>{
     // console.log(deleteBtn);
     document.createAttribute('data-id');
     deleteBtn.setAttribute('data-id', newComment.id);
+    deleteBtn.setAttribute('data-tooltip', "Delete");
     commentDetails.appendChild(deleteBtn);
     // console.log(deleteBtn.getAttribute("data-id"));
 

@@ -304,5 +304,26 @@
         margin:0 0 16px 0;
         padding:2px;
         align-self:flex-end;
+        position:relative;
+
+        &:hover{
+            background-color: black;
+        }
+
+        &::before{
+            content: attr(data-tooltip);
+            display:none;
+            top: -20px;
+            left:-12px;
+            font-size: 12px;
+            padding: 1px 5px;
+            color: white;
+            border-radius:4px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        &:hover::before {
+            position:absolute;
+            display: block;
+        }
     }
 }
