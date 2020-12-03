@@ -1,20 +1,24 @@
-// Start by retrieve the comments the api and load them them to the screen when page opens
+/*=================================================== FUNCTION DECLARATIONS =============================================================================*/
 
 let apiURL = "https://project-1-api.herokuapp.com/comments";
 apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
 
-axios.get(`${apiURL}?api_key=${apiKey}`)
-.then(res =>{
-    //console.log(res);
-    /* loop through each object in the comments array - build the html element and display it*/
-    console.log(res.data);
-    res.data.forEach(comment =>{
-        displayComment(comment);
-    });
-})
-.catch(err => console.log(err));
+// Function: getCommentData -  used to retrieve and display data from the api
+let getCommentData = (()=>{
+    axios.get(`${apiURL}?api_key=${apiKey}`)
+    .then(res =>{
+        //console.log(res);
+        /* loop through each object in the comments array - build the html element and display it*/
+        // console.log(res.data);
+        res.data.forEach(comment =>{
+            displayComment(comment);
+        });
+    })
+    .catch(err => console.log(err));
+});
 
-// DIVING DEEPER --> Function that takes the timestamp of an object as a parameter and returns a message stating the difference between that time and the current time
+
+// Function: timePassed - takes the timestamp of an object as a parameter and returns a message stating the difference time passed in a readable format
 let timePassed = time =>{
     // get the current date and time 
     let today = new Date();
@@ -68,7 +72,7 @@ let timePassed = time =>{
 }
 
 
-// This function builds and displays a comment based on the object passed to it
+// Function: displayComment - builds the html structure of a comment and displays data based on the object passed to it
 const displayComment = (newComment) =>{
 
     // Element containing the comment avatar
@@ -103,35 +107,33 @@ const displayComment = (newComment) =>{
     commentDetails.appendChild(commentDetailsHeader);
     commentDetails.appendChild(commentMessage);
 
+    //button used to delete comments
     deleteBtn = document.createElement('button');
     deleteBtn.classList.add("comment__delete");
     deleteBtn.innerText = "x";
-    // console.log(deleteBtn);
+    
+    // data-id attribute is created for the delete button containing the id for the comment from the API
     document.createAttribute('data-id');
     deleteBtn.setAttribute('data-id', newComment.id);
+    //tool tip to identify what the "x" button does
     deleteBtn.setAttribute('data-tooltip', "Delete");
     commentDetails.appendChild(deleteBtn);
 
-
+    // add an event listener to each delete button that is created
     deleteBtn.addEventListener('click', event=>{
+        //gets the id associated with the comment
         let commentID = event.target.getAttribute('data-id');
+        
+        //clear all the previous comments from the screen
+        const allComments = document.querySelectorAll('.comment');
+        allComments.forEach(comment=>{
+            comment.remove();
+        });
+        
+        // delete the selected comment from the API based on the id stored in teh data-id attribute and then display the rest of the comments
         axios.delete(`${apiURL}/${commentID}?api_key=${apiKey}`)
         .then(res=>{
-            axios.get(`${apiURL}?api_key=${apiKey}`)
-            .then(res =>{
-                console.log(res);
-                //clear all the previous comments from the screen
-                const allComments = document.querySelectorAll('.comment');
-                allComments.forEach(comment=>{
-                    comment.remove();
-                });
-                console.log(res.data);
-                /* loop through each object in the comments array - build the html element and display it*/
-                res.data.forEach(comment =>{
-                    displayComment(comment);
-                });
-            })
-            .catch(err => console.log(err));
+            getCommentData();
         })    
         .catch(err => console.log(err));
     });
@@ -147,20 +149,10 @@ const displayComment = (newComment) =>{
     commentsList.prepend(comment);
 }
 
-//console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
+/*=================================================== END OF FUNCTION DECLARATIONS =============================================================================*/
 
-// //CLEAN OUT THE POSTS TO START WITH DEFAULT
-// axios.get(`${apiURL}?api_key=${apiKey}`)
-// .then(res =>{
-//     for (let i=3; i<res.data.length;i++){
-//         axios.delete(`${apiURL}/${res.data[i].id}?api_key=${apiKey}`)
-//         .then(res =>{
-//             console.log(res);
-//         })
-//     }
-// })
-// .catch(err => console.log(err));
-
+//display data from the api when page is loaded
+getCommentData();
 
 let commentForm = document.querySelector('.new-comment__form');
 // submit the form values using an event listener
@@ -180,16 +172,9 @@ commentForm.addEventListener('submit', event=>{
         comment:event.target.message.value
     })
     .then(res =>{
-        // once the post has been added then get the comments array and display it
-        axios.get(`${apiURL}?api_key=${apiKey}`)
-        .then(res =>{
-            /* loop through each object in the comments array - build the html element and display it*/
-            res.data.forEach(comment =>{
-                displayComment(comment);
-            });
-        })
-        .catch(err => console.log(err));
-    })
+        // once the post has been added to the API then get the new comments array and display it
+        getCommentData();
+     })
     .catch(err => console.log(err));    
 
     // Reset the input boxes with a blank value and the placeholder
@@ -197,3 +182,19 @@ commentForm.addEventListener('submit', event=>{
     event.target.message.value="";
     
 });
+
+
+// //CLEAN OUT THE POSTS TO START WITH DEFAULT
+// axios.get(`${apiURL}?api_key=${apiKey}`)
+// .then(res =>{
+//     for (let i=3; i<res.data.length;i++){
+//         axios.delete(`${apiURL}/${res.data[i].id}?api_key=${apiKey}`)
+//         .then(res =>{
+//             console.log(res);
+//         })
+//     }
+// })
+// .catch(err => console.log(err));
+
+
+//console.log(`${apiURL}/8d3aea60-8f97-4772-aa9f-93179bcc3659?api_key=${apiKey}`)
