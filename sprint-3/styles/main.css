@@ -888,6 +888,21 @@ h5, .new-comment__label, .shows__label {
   line-height: 1.375rem;
 }
 
+.comment__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.comment__likes {
+  font-size: 16px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 .comment__delete {
   border-radius: 4px;
   background-color: #323232;

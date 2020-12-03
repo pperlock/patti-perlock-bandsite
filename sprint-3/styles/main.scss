@@ -298,6 +298,15 @@
             line-height:1.375rem;
         }
     }
+    &__bottom{
+        display:flex;
+        justify-content:flex-end;
+    }
+    &__likes{
+        font-size:16px;
+        margin-right:20px;
+        cursor:pointer;
+    }
     &__delete{
         @include input-button(20px);
         background-color:$delete-button;
@@ -330,3 +339,4 @@
         }
     }
 }
+
