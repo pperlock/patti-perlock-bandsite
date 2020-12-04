@@ -7,30 +7,11 @@ let getPath = `${apiURL}?api_key=${apiKey}`;
 let postPath = `${apiURL}?api_key=${apiKey}`;
 
 //Declare the Comment prototype
-function Comment(apiComment){
-    this.comment =  apiComment.comment;
-    this.id = apiComment.id;
-    this.likes = apiComment.likes;
-    this.name = apiComment.name;
-    this.timestamp = apiComment.timestamp;
-
+function Comment(){
     this.setAvatar = function(image){
         this.avatar = image;
     }
 }
-
-// //Declare the Comment prototype
-// function Comment(apiComment){
-//     // this.comment =  apiComment.comment;
-//     // this.id = apiComment.id;
-//     // this.likes = apiComment.likes;
-//     // this.name = apiComment.name;
-//     // this.timestamp = apiComment.timestamp;
-
-//     this.setAvatar = function(image){
-//         this.avatar = image;
-//     }
-// }
 
 /*=================================================== FUNCTION DECLARATIONS =============================================================================*/
 
@@ -200,11 +181,13 @@ axios.get(getPath)
     
     //loop through each object in the comments array - build the html element and display it
     commentsArray.forEach((comment,index) =>{
-        // build a new comment from the API data
-        let newComment = new Comment(comment);
+        // add the Comment protoype to the API object to allow for background images
+        comment.__proto__= new Comment();
+        
         // if the apiData is one of the default comments then use one of my chosen avatars otherwise use the default one provided with the project
-        index <=2 ? newComment.setAvatar(avatarImages[index]) : newComment.setAvatar(avatarImages[3]);
-        displayComment(newComment);
+        index <=2 ? comment.setAvatar(avatarImages[index]) : comment.setAvatar(avatarImages[3]);
+        console.log(comment);
+        displayComment(comment);
     });
 })
 .catch(err => console.log(err));
@@ -214,6 +197,7 @@ let commentForm = document.querySelector('.new-comment__form');
 commentForm.addEventListener('submit', event=>{
     // prevents the page from reloading upon submit
     event.preventDefault();
+    
     // post the new comment to the API
     axios.post(postPath,{
         name:event.target.name.value,
@@ -224,15 +208,18 @@ commentForm.addEventListener('submit', event=>{
        
         //get the background image of the avatar associated with the new post
         let commentAvatar = document.querySelector('.new-comment__avatar');
+        
+        //need to used window.computedStyle to get css styles - .style only returns inline styling
         let computedStyles = window.getComputedStyle(commentAvatar);
         
-        //create a Comment object from the data being posted from the API
-        let newComment = new Comment(res.data);
+        //add the Comment prototype to the API object
+        res.data.__proto__= new Comment();
+        
         //add an avatar image to the new Comment
-        newComment.setAvatar(computedStyles.getPropertyValue('background-image'));
+        res.data.setAvatar(computedStyles.getPropertyValue('background-image'));
         
         // display the new comment
-        displayComment(newComment);
+        displayComment(res.data);
      })
     .catch(err => console.log(err));    
 
