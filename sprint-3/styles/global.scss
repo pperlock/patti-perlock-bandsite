@@ -1,0 +1,16 @@
+//Import any global default styles including partials containing typography, variables, and mixins*/
+@import "./partials/defaults";
+
+// Import the global variables
+@import "./partials/variables";
+
+// Import mixins
+@import "./partials/mixins";
+
+// Import the global header and navigation bar styling
+@import "./partials/nav-bar";
+
+// Import the global footer styling
+@import "./partials/footer";
+
+@import "./partials/hero";

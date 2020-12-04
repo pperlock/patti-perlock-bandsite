@@ -1,8 +1,38 @@
-/*=================================================== FUNCTION DECLARATIONS =============================================================================*/
 
+// Declare variables for API calls
 let apiURL = "https://project-1-api.herokuapp.com/comments";
 apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
 
+let getPath = `${apiURL}?api_key=${apiKey}`;
+let postPath = `${apiURL}?api_key=${apiKey}`;
+
+//Declare the Comment prototype
+function Comment(apiComment){
+    this.comment =  apiComment.comment;
+    this.id = apiComment.id;
+    this.likes = apiComment.likes;
+    this.name = apiComment.name;
+    this.timestamp = apiComment.timestamp;
+
+    this.setAvatar = function(image){
+        this.avatar = image;
+    }
+}
+
+// //Declare the Comment prototype
+// function Comment(apiComment){
+//     // this.comment =  apiComment.comment;
+//     // this.id = apiComment.id;
+//     // this.likes = apiComment.likes;
+//     // this.name = apiComment.name;
+//     // this.timestamp = apiComment.timestamp;
+
+//     this.setAvatar = function(image){
+//         this.avatar = image;
+//     }
+// }
+
+/*=================================================== FUNCTION DECLARATIONS =============================================================================*/
 
 // Function: timePassed - takes the timestamp of an object as a parameter and returns a message stating the difference time passed in a readable format
 let timePassed = time =>{
@@ -14,9 +44,6 @@ let timePassed = time =>{
     // find the difference between the time now and the post's timestamp
     let diffTime = today.getTime() - posted.getTime();
 
-    // define the method of reduction for the units array
-    const reducer = (accumulator, currentValue) => accumulator*currentValue;
-    
     // values used to convert milliseconds to seconds, minutes, hours, days, years, weeks,months and years
     conversions = [1000,60,60,24,7,4,12];
 
@@ -28,7 +55,7 @@ let timePassed = time =>{
         // for each unit, get the conversion values needed and push it into an array
         units.push(conversions[i]);
         // divide the difference in milliseconds by the multiplication of all the conversion values in the array
-        diffTimes.push(diffTimes[i]/units.reduce(reducer));
+        diffTimes.push(diffTimes[i]/units.reduce((acc,curr)=>acc*curr));
     }
     // reverse the order of the resulting array [years --> milliseconds]
     diffTimes = diffTimes.reverse();    
@@ -61,12 +88,18 @@ let timePassed = time =>{
 // Function: displayComment - builds the html structure of a comment and displays data based on the object passed to it
 const displayComment = (newComment) =>{
 
-     document.createAttribute('data-id');
+    // let divClasses = ["comment__avatar", "comment__details-name", "comment__details-timestamp", ]
+
+    //document.body.style.backgroundImage = "url('img_tree.png')";
+
+    document.createAttribute('data-id');
 
     // Element containing the comment avatar
     let commentAvatar = document.createElement('div');
     commentAvatar.classList.add("comment__avatar");
-
+    //set the background image of the avatar
+    commentAvatar.style.backgroundImage = newComment.avatar;
+    
     // Element containing the comment name
     let commentName = document.createElement('div');
     commentName.classList.add("comment__details-name");
@@ -135,8 +168,6 @@ const displayComment = (newComment) =>{
         .catch(err => console.log(err));
     });
 
-
-
     commentDetails.appendChild(commentBottom);
 
     // div containing avatar and comment details
@@ -155,15 +186,25 @@ const displayComment = (newComment) =>{
 
 //display data from the api when page is loaded
 
-axios.get(`${apiURL}?api_key=${apiKey}`)
+// set the images to be used upon refresh - not ideal but there is no way to post an image to the API for reuse upon refresh
+let avatarPrefix = "http://127.0.0.1:5501/sprint-3/assets/images/";
+let avatarImages = [`url(${avatarPrefix}michael-avatar.jpg)`,`url(${avatarPrefix}gary-avatar.jpg)`,`url(${avatarPrefix}theo-avatar.jpg)`, `url(${avatarPrefix}avatar.jpg)`];
+
+axios.get(getPath)
 .then(res =>{
-    //console.log(res);
-    /* loop through each object in the comments array - build the html element and display it*/
+    // the first three comments retrieved from the API are newest to oldest so they need to be reversed to accomodate new data added to the end of the api?
+    // split the three off, reverse their order, and put the array back together
     firstThree = res.data.splice(0,3);
     flippedArray = firstThree.reverse();
     commentsArray = firstThree.concat(res.data);
-    commentsArray.forEach(comment =>{
-        displayComment(comment);
+    
+    //loop through each object in the comments array - build the html element and display it
+    commentsArray.forEach((comment,index) =>{
+        // build a new comment from the API data
+        let newComment = new Comment(comment);
+        // if the apiData is one of the default comments then use one of my chosen avatars otherwise use the default one provided with the project
+        index <=2 ? newComment.setAvatar(avatarImages[index]) : newComment.setAvatar(avatarImages[3]);
+        displayComment(newComment);
     });
 })
 .catch(err => console.log(err));
@@ -174,13 +215,24 @@ commentForm.addEventListener('submit', event=>{
     // prevents the page from reloading upon submit
     event.preventDefault();
     // post the new comment to the API
-    axios.post(`${apiURL}?api_key=${apiKey}`,{
+    axios.post(postPath,{
         name:event.target.name.value,
         comment:event.target.message.value
     })
     .then(res =>{
         // once the post has been added to the API then get the new comments array and display it
-        displayComment(res.data);
+       
+        //get the background image of the avatar associated with the new post
+        let commentAvatar = document.querySelector('.new-comment__avatar');
+        let computedStyles = window.getComputedStyle(commentAvatar);
+        
+        //create a Comment object from the data being posted from the API
+        let newComment = new Comment(res.data);
+        //add an avatar image to the new Comment
+        newComment.setAvatar(computedStyles.getPropertyValue('background-image'));
+        
+        // display the new comment
+        displayComment(newComment);
      })
     .catch(err => console.log(err));    
 

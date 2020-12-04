@@ -1,20 +1,5 @@
-/*Import any global default styles including partials containing typography, variables, and mixins*/
-@import "./partials/defaults";
-
-// Import the global variables
-@import "./partials/variables";
-
-// Import mixins
-@import "./partials/mixins";
-
-// Import the global header and navigation bar styling
-@import "./partials/nav-bar";
-
-// Import the global footer styling
-@import "./partials/footer";
-
-@import "./partials/hero";
-
+//Import all the global elements --> default styling, variables, mixins, typography, nav-bar, footer and hero
+@import "global";
 
 /*======================= Hero Section ======================= */
 
@@ -263,6 +248,7 @@
     }
     &__avatar{
         @extend .avatar;
+        background-size:cover;
         margin-top:0;
     }
 

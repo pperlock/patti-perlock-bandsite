@@ -1,19 +1,5 @@
-//Import any global default styles including partials containing typography, variables, and mixins*/
-@import "./partials/defaults";
-
-// Import the global variables
-@import "./partials/variables";
-
-// Import mixins
-@import "./partials/mixins";
-
-// Import the global header and navigation bar styling
-@import "./partials/nav-bar";
-
-// Import the global footer styling
-@import "./partials/footer";
-
-@import "./partials/hero";
+//Import all the global elements --> default styling, variables, mixins, typography, nav-bar, footer and hero
+@import "global";
 
 /*======================= Shows Hero ======================= */
 
@@ -84,7 +70,7 @@
     // add right margin to the  Dates label to make it the same size as the dates column of the table
     &__label:first-child{
         @include tablet{
-            margin-right:11%;
+            margin-right:-7%;
         }
     }
     // labels to be shown for devices >= tablet size
@@ -146,14 +132,21 @@
         }
     }
 
+    &:first-child{
+        width:20%;
+    }
+
     &__date{
         font-weight:600;
-        padding-bottom:24px;
         //add a margin to the right side of the dates to make the column slightly wider than the other columns
-        margin-right:11%;
+        // margin-right:-7%;
+        width:28%;
     }
     &__venue{
-        padding-bottom:24px;
+        width:35%;
+    }
+    &__location{
+        width:35%;
     }
     &__cta{
         // create an input button with default sizing and specified height

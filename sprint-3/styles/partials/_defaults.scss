@@ -146,10 +146,12 @@ h5, .new-comment__label, .shows__label{
 // Show spacing for tablet
 .show li {
     font-size:1rem;
+    padding-bottom:24px;
+    margin-right:6px;
     flex-grow:1;
 
     @include tablet{
-        width:30%;
+        font-size:0.8rem;
     }
 }
 
@@ -157,7 +159,7 @@ h5, .new-comment__label, .shows__label{
 .shows__label{
     padding-bottom:16px;
     @include tablet{
-        width:34%;
+        width:36%;
     }
     @include desktop{
         padding-bottom:32px;

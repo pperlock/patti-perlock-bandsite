@@ -1,4 +1,3 @@
-/*Import any global default styles including partials containing typography, variables, and mixins*/
 /*======================= Global Default Styling ======================= */
 /*======================= Define Global Fonts ======================= */
 /**** Default Fonts ****/
@@ -179,6 +178,8 @@ h5, .new-comment__label, .shows__label {
 
 .show li {
   font-size: 1rem;
+  padding-bottom: 24px;
+  margin-right: 6px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -186,7 +187,7 @@ h5, .new-comment__label, .shows__label {
 
 @media (min-width: 768px) {
   .show li {
-    width: 30%;
+    font-size: 0.8rem;
   }
 }
 
@@ -196,7 +197,7 @@ h5, .new-comment__label, .shows__label {
 
 @media (min-width: 768px) {
   .shows__label {
-    width: 34%;
+    width: 36%;
   }
 }
 
@@ -219,11 +220,6 @@ h5, .new-comment__label, .shows__label {
   border-color: #323232;
 }
 
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Media Breakpoints ======================= */
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
 /*======================= Color Palette ======================= */
@@ -319,11 +315,6 @@ h5, .new-comment__label, .shows__label {
   color: #FFFFFF;
 }
 
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Media Breakpoints ======================= */
 /*======================= Global Footer ======================= */
 .footer {
   background-color: #323232;
@@ -439,11 +430,6 @@ h5, .new-comment__label, .shows__label {
   }
 }
 
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Media Breakpoints ======================= */
 /*======================= Default Styling for Hero Sections ======================= */
 .hero {
   position: relative;
@@ -833,6 +819,7 @@ h5, .new-comment__label, .shows__label {
 }
 
 .comment__avatar {
+  background-size: cover;
   margin-top: 0;
 }
 
