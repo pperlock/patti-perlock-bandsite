@@ -1,6 +1,3 @@
-// Import variables for mixin use
-@import "variables";
-
 /*======================= Media Breakpoints ======================= */
 
 // Changes to tablet format >=768px
@@ -38,7 +35,7 @@
     // Change hero height ratio to increase as device size increases
     @include tablet{
         height:$tablet-ratio;    
-        max-height: 850px;   //stop growing at 850px - starts to look bad any bigger   
+        max-height: 1000px;   //large max-height set to negate the mobile restriction set
      }
 
     @include desktop{

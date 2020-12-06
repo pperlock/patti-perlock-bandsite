@@ -1,4 +1,3 @@
-
 // Declare variables for API calls
 let apiURL = "https://project-1-api.herokuapp.com/comments";
 apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
@@ -15,7 +14,12 @@ function Comment(){
 
 /*=================================================== FUNCTION DECLARATIONS =============================================================================*/
 
-// Function: timePassed - takes the timestamp of an object as a parameter and returns a message stating the difference time passed in a readable format
+/**
+ * Function: timePassed
+ * Useage: takes the timestamp of an object as a parameter and returns a message stating the difference time passed in a readable format
+ * @param {Date} time 
+ */
+
 let timePassed = time =>{
     // get the current date and time 
     let today = new Date();
@@ -65,14 +69,14 @@ let timePassed = time =>{
     return timeMessage;
 }
 
-
-// Function: displayComment - builds the html structure of a comment and displays data based on the object passed to it
+/**
+ * Function: displayComment
+ * Useage: builds the html structure of a comment and displays data based on the object passed to it
+ * @param {comment Object} newComment 
+ */
 const displayComment = (newComment) =>{
 
-    // let divClasses = ["comment__avatar", "comment__details-name", "comment__details-timestamp", ]
-
-    //document.body.style.backgroundImage = "url('img_tree.png')";
-
+    //create the "data-id" attribute to be used to identify elements associated with specific comments
     document.createAttribute('data-id');
 
     // Element containing the comment avatar
@@ -112,15 +116,20 @@ const displayComment = (newComment) =>{
     let commentBottom = document.createElement('div');
     commentBottom.classList.add("comment__bottom");
 
+    // div containing likes data
     let likes = document.createElement('div');
     likes.classList.add('comment__likes');
+    // Set the data-id attribute to the comment id from the api to update the appropriate API object
     likes.setAttribute('data-id', newComment.id);
     likes.innerText = "👍 " + newComment.likes;
     commentBottom.appendChild(likes);
 
+    // add an event listener to the likes div to allow the user to like a comment
     likes.addEventListener('click', event=>{
+        // get the id of the comment to update the appropriate data in the API
         let likeID = event.target.getAttribute('data-id');
-
+        
+        // update the likes associated with the appropriate comment
         axios.put(`${apiURL}/${likeID}/like?api_key=${apiKey}`)
         .then(res=> likes.innerText = "👍 " + res.data.likes)
         .catch(err=>console.log(err));
@@ -133,18 +142,21 @@ const displayComment = (newComment) =>{
     
     // data-id attribute is created for the delete button containing the id for the comment from the API
     deleteBtn.setAttribute('data-id', newComment.id);
-    //tool tip to identify what the "x" button does
+    
+    //tool tip to identify what the "x" button does - used for content in :before pseudo-element
     deleteBtn.setAttribute('data-tooltip', "Delete");
     commentBottom.appendChild(deleteBtn);
 
     // add an event listener to each delete button that is created
     deleteBtn.addEventListener('click', event=>{
-        //gets the id associated with the comment
+        //gets the id associated with the appropriate comment for the API call
         let commentID = event.target.getAttribute('data-id');
+        
+        // find the element associated with that id and remove it from the page
         let removedComment = document.querySelector("[data-id='" + commentID + "']");
         removedComment.remove();
         
-        // delete the selected comment from the API based on the id stored in teh data-id attribute and then display the rest of the comments
+        // delete the selected comment from the API based on the id stored in the data-id attribute
         axios.delete(`${apiURL}/${commentID}?api_key=${apiKey}`)
         .catch(err => console.log(err));
     });
@@ -173,7 +185,7 @@ let avatarImages = [`url(${avatarPrefix}michael-avatar.jpg)`,`url(${avatarPrefix
 
 axios.get(getPath)
 .then(res =>{
-    // the first three comments retrieved from the API are newest to oldest so they need to be reversed to accomodate new data added to the end of the api?
+    // the first three comments retrieved from the API are newest to oldest so they need to be reversed to accomodate new data added to the end of the api
     // split the three off, reverse their order, and put the array back together
     firstThree = res.data.splice(0,3);
     flippedArray = firstThree.reverse();
@@ -186,7 +198,8 @@ axios.get(getPath)
         
         // if the apiData is one of the default comments then use one of my chosen avatars otherwise use the default one provided with the project
         index <=2 ? comment.setAvatar(avatarImages[index]) : comment.setAvatar(avatarImages[3]);
-        console.log(comment);
+        
+        //construct and build comment
         displayComment(comment);
     });
 })

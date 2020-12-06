@@ -1,4 +1,3 @@
-
 // initialize an array to hold each labels for each show detail
 let labels = ['DATE', 'VENUE', 'LOCATION'];
 
@@ -26,7 +25,11 @@ labels.forEach(label=>{
 // add the tablet labels to the shows list container
 showsList.appendChild(showsTabletLabels);
 
-//Function displayShow==> Takes in a show object, builds the html structure and displays it
+/**
+ * Function displayShow
+ * Useage: Takes in a show object, builds the html structure and displays it
+ * @param {show Object} show 
+ */
 const displayShow = show =>{
     // create a container for the show
     let showContainer = document.createElement('div');
@@ -53,7 +56,7 @@ const displayShow = show =>{
         }else{
             key = Object.keys(show)[keyCounter];
             showElement.classList.add(classes[keyCounter]);
-            showElement.innerText = show[key];
+            key==="date" ? showElement.innerText = new Date(show[key]).toDateString() : showElement.innerText = show[key];
             keyCounter++;
         }
         // append the new element to the details list
@@ -83,10 +86,11 @@ apiKey = "ff3a12db-f14e-431c-a352-c5da9393f05b";
 axios.get(`${apiURL}?api_key=${apiKey}`)
 .then(res =>{
     let shows  = res.data;
-    // remove the id key from the shows objects to accomodate the loops used above
+    //remove the id key from the shows objects to accomodate the loops used above
     shows.forEach(show=> delete show.id);
+
     // Display the entire shows array     
-    shows.forEach(show=>{
+    shows.forEach((show)=>{
         displayShow(show);
     });
 })

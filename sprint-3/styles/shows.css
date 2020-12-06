@@ -1,4 +1,6 @@
-/*======================= Global Default Styling ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
 /*======================= Define Global Fonts ======================= */
 /**** Default Fonts ****/
 @font-face {
@@ -46,9 +48,8 @@
 
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
 /*======================= Media Breakpoints ======================= */
+/*======================= Global Default Styling ======================= */
 * {
   margin: 0;
   padding: 0;
@@ -220,11 +221,6 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   border-color: #323232;
 }
 
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Media Breakpoints ======================= */
 /*======================= Global Header and Navigation Bar ======================= */
 .header {
   display: -webkit-box;
@@ -472,7 +468,7 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
 @media (min-width: 768px) {
   .hero {
     height: 87vw;
-    max-height: 850px;
+    max-height: 1000px;
   }
 }
 
@@ -653,21 +649,26 @@ h5, .new-comment__label, .shows__label, .show__label--mobile {
   }
 }
 
-.show:first-child {
-  width: 20%;
-}
-
 .show__date {
   font-weight: 600;
-  width: 28%;
 }
 
-.show__venue {
-  width: 35%;
+@media (min-width: 768px) {
+  .show__date {
+    width: 28%;
+  }
 }
 
-.show__location {
-  width: 35%;
+@media (min-width: 768px) {
+  .show__venue {
+    width: 35%;
+  }
+}
+
+@media (min-width: 768px) {
+  .show__location {
+    width: 35%;
+  }
 }
 
 .show__cta {

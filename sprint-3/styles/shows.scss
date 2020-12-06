@@ -132,21 +132,23 @@
         }
     }
 
-    &:first-child{
-        width:20%;
-    }
-
+    // give the date, venue and location columns widths for attractive spacing
     &__date{
         font-weight:600;
-        //add a margin to the right side of the dates to make the column slightly wider than the other columns
-        // margin-right:-7%;
-        width:28%;
+
+        @include tablet{
+            width:28%;
+        }
     }
     &__venue{
-        width:35%;
+        @include tablet{
+            width:35%;
+        }
     }
     &__location{
-        width:35%;
+        @include tablet{
+            width:35%;
+        }
     }
     &__cta{
         // create an input button with default sizing and specified height

@@ -1,4 +1,6 @@
-/*======================= Global Default Styling ======================= */
+/*======================= Color Palette ======================= */
+/*======================= Margins and Padding ======================= */
+/*======================= Media Breakpoints ======================= */
 /*======================= Define Global Fonts ======================= */
 /**** Default Fonts ****/
 @font-face {
@@ -46,9 +48,8 @@
 
 /*======================= Color Palette ======================= */
 /*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
 /*======================= Media Breakpoints ======================= */
+/*======================= Global Default Styling ======================= */
 * {
   margin: 0;
   padding: 0;
@@ -220,11 +221,6 @@ h5, .new-comment__label, .shows__label {
   border-color: #323232;
 }
 
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Color Palette ======================= */
-/*======================= Margins and Padding ======================= */
-/*======================= Media Breakpoints ======================= */
 /*======================= Global Header and Navigation Bar ======================= */
 .header {
   display: -webkit-box;
@@ -472,7 +468,7 @@ h5, .new-comment__label, .shows__label {
 @media (min-width: 768px) {
   .hero {
     height: 52vw;
-    max-height: 850px;
+    max-height: 1000px;
   }
 }
 
