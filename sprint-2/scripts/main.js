@@ -12,6 +12,7 @@ let timePassed = time =>{
     let today = new Date();
     //get the data recorded when a post was made - new date added to accommodates the default values
     let posted = new Date(time);
+    console.log(time);
 
     // find the difference between the time now and the post's timestamp
     let diffTime = today.getTime() - posted.getTime();
